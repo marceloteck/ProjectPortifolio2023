@@ -62,3 +62,15 @@ npm install
 npm run dev
 ```
 > Nas configurações do breeze deve ser escolhida vue + inertia, e assim o Inertia será instalado Automaticamente.
+
+## ☕ Como usar o projeto
+
+Depois de baixar o repositorio execultar
+
+```sh
+npm install
+```
+e tambpém
+```sh
+composer install
+```
