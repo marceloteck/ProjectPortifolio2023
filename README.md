@@ -7,3 +7,5 @@
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/marceloteck/ProjectPortifolio2023?style=for-the-badge)
 
 <img src="/docs/image/model.png" alt="Exemplo imagem">
+
+> Projeto criado com Laravel Vue.js e Inertia.js
