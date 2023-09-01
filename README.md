@@ -36,24 +36,25 @@ Antes de começar, pode usar as seguintes ferramentas:
 <br>
  Instalando Laravel 
 
-```shell
+```sh
 composer create-project laravel/laravel ProjectPortifolio2023
 ```
 
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) 
 <br>
+
 Instalando Vue.js e o plugin do vitejs
-```shell
+```sh
 npm install vue@next @vitejs/plugin-vue
 ```
 
 Instalando breeze do Laravel
-```shell
+```sh
 composer require laravel/breeze --dev
 ```
 
 Configurando breeze para o vue.js
-```shell
+```sh
 php artisan breeze:install
 
 php artisan migrate
