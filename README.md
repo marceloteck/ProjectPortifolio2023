@@ -14,10 +14,10 @@
 
 Instalações necessárias, frameworks e bibliotecas
 
-- [x] php 8.1
+- [x] php 8.1x
 - [x] Laravel 10x
-- [x] Vue.js v.3
-- [x] Inertia.js v. 1.0
+- [x] Vue.js 3x
+- [x] Inertia.js 1.0x
 
 
 
@@ -25,6 +25,6 @@ Instalações necessárias, frameworks e bibliotecas
 
 Antes de começar, pode usar as seguintes ferramentas:
 
-* (Vs Code Desktop)[https://code.visualstudio.com/] ou (VsCode Web)[https://vscode.dev/]
-* (Laragon)[https://laragon.org/index.html] 
-* (Github Desktop)[https://desktop.github.com/] 
+* [Vs Code Desktop](https://code.visualstudio.com/) ou [VsCode Web](https://vscode.dev/)
+* [Laragon](https://laragon.org/index.html) 
+* [Github Desktop](https://desktop.github.com/)
