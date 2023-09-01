@@ -9,3 +9,11 @@
 <img src="/docs/image/model.png" alt="Exemplo imagem">
 
 > Projeto criado com Laravel Vue.js e Inertia.js
+
+### 💻 Pré-requisitos 
+
+Instalações necessárias, frameworks e bibliotecas
+
+- [x] Laravel
+- [x] Vue.js
+- [x] Inertia.js
