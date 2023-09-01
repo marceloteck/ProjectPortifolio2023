@@ -32,7 +32,8 @@ Antes de começar, pode usar as seguintes ferramentas:
 
 ## 🚀 Instalando Recursos
 
-Instalando Laravel
+![laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white) Instalando Laravel 
+
 ```shell
 composer create-project laravel/laravel ProjectPortifolio2023
 ```
