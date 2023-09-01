@@ -10,10 +10,22 @@
 
 > Projeto criado com Laravel Vue.js e Inertia.js
 
-### 💻 Pré-requisitos 
+### Recursos Necessários
 
 Instalações necessárias, frameworks e bibliotecas
 
-- [x] Laravel
-- [x] Vue.js
-- [x] Inertia.js
+- [x] php 8.1
+- [x] Laravel 10x
+- [x] Vue.js v.3
+- [x] Inertia.js v. 1.0
+
+
+
+## 💻 Pré-requisitos
+
+Antes de começar, pode usar as seguintes ferramentas:
+
+* Vs Code ou (VsCode Web)[https://vscode.dev/]
+* Laravel 10
+* vue.js 3
+* Inertia.js 1.0
