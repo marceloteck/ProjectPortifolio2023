@@ -21,11 +21,10 @@ Instalações necessárias, frameworks e bibliotecas
 
 
 
-## 💻 Pré-requisitos
+## 💻 Ferramentas usadas nesse projeto
 
 Antes de começar, pode usar as seguintes ferramentas:
 
-* Vs Code ou (VsCode Web)[https://vscode.dev/]
-* Laravel 10
-* vue.js 3
-* Inertia.js 1.0
+* (Vs Code Desktop)[https://code.visualstudio.com/] ou (VsCode Web)[https://vscode.dev/]
+* (Laragon)[https://laragon.org/index.html] 
+* (Github Desktop)[https://desktop.github.com/] 
