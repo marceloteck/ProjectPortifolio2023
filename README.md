@@ -28,3 +28,16 @@ Antes de começar, pode usar as seguintes ferramentas:
 * [Vs Code Desktop](https://code.visualstudio.com/) ou [VsCode Web](https://vscode.dev/)
 * [Laragon](https://laragon.org/index.html) 
 * [Github Desktop](https://desktop.github.com/)
+
+
+## 🚀 Instalando Recursos
+
+Instalando Laravel
+```shell
+composer create-project laravel/laravel ProjectPortifolio2023
+```
+
+Instalando Vue.js e o plugin do vitejs
+```shell
+npm install vue@next @vitejs/plugin-vue
+```
