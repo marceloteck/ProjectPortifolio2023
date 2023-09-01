@@ -40,7 +40,7 @@ Instalando breeze do Laravel
 ```shell
 composer require laravel/breeze --dev
 ```
-Configurando Instalação para o vue.js
+Configurando breeze para o vue.js
 ```shell
 php artisan breeze:install
 
