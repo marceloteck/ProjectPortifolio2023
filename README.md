@@ -27,4 +27,4 @@ Antes de começar, pode usar as seguintes ferramentas:
 
 * [Vs Code Desktop](https://code.visualstudio.com/) ou [VsCode Web](https://vscode.dev/)
 * [Laragon](https://laragon.org/index.html) 
-* [Github Desktop](https://desktop.github.com/){style="color: red;"}
+* [Github Desktop](https://desktop.github.com/)
