@@ -60,3 +60,4 @@ php artisan migrate
 npm install
 npm run dev
 ```
+> Nas configurações do breeze deve ser escolhida vue + inertia, e assim o Inertia será instalado Automaticamente.
