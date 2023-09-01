@@ -74,3 +74,4 @@ e tambpém
 ```sh
 composer install
 ```
+> E depois criar e editar o arquivo .env
