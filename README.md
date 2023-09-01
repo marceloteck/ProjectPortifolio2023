@@ -32,12 +32,16 @@ Antes de começar, pode usar as seguintes ferramentas:
 
 ## 🚀 Instalando Recursos
 
-![laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white) Instalando Laravel 
+![laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+<br>
+ Instalando Laravel 
 
 ```shell
 composer create-project laravel/laravel ProjectPortifolio2023
 ```
 
+![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) 
+<br>
 Instalando Vue.js e o plugin do vitejs
 ```shell
 npm install vue@next @vitejs/plugin-vue
