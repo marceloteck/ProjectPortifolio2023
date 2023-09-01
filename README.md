@@ -36,6 +36,19 @@ Instalando Laravel
 ```shell
 composer create-project laravel/laravel ProjectPortifolio2023
 ```
+Instalando breeze do Laravel
+```shell
+composer require laravel/breeze --dev
+```
+Configurando Instalação para o vue.js
+```shell
+php artisan breeze:install
+
+php artisan migrate
+npm install
+npm run dev
+```
+
 
 Instalando Vue.js e o plugin do vitejs
 ```shell
