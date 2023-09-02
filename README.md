@@ -19,6 +19,9 @@ Instalações necessárias, frameworks e bibliotecas
 - [x] Vue.js 3x
 - [x] Inertia.js 1.0x
 - [x] Sass 1.64x
+- [x] Bootstrap 5.2x
+- [x] vite 4.4x
+- [x] node 18.8x
 
 
 
