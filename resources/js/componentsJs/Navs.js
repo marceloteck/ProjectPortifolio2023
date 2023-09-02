@@ -1,5 +1,5 @@
 // Importar componentes fixos
-//import NavExemplo from "@/PagesView/components/Navs/NavExemplo.vue";
+//import NavExemplo from "@PagesVuejs/components/Navs/NavExemplo.vue";
 
 const Navs = { };
 

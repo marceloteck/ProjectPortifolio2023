@@ -1,5 +1,5 @@
 <template>
     <div>
-        INDEX
+        Main aqui
     </div>
 </template>

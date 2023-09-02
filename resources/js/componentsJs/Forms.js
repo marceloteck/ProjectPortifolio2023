@@ -1,5 +1,5 @@
 // Importar componentes fixos
-//import Exemplo from "@/PagesView/components/Forms/Exemplo.vue";
+//import Exemplo from "@PagesVuejs/components/Forms/Exemplo.vue";
 
 const Forms = {  };
 

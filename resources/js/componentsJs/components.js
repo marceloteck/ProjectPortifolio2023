@@ -7,6 +7,7 @@ import Navs from '@/componentsJs/Navs.js';
 import Layouts from '@/componentsJs/Layouts.js';
 import ConfigComponents from '@/componentsJs/ConfigComponents.js';
 import ContentPages from '@/componentsJs/ContentPages.js';
+import MainRoutesVue from '@/componentsJs/MainRoutesVue.js';
 
 // constante Map
 const ComponentsMap = {
@@ -18,6 +19,7 @@ const ComponentsMap = {
   ...Layouts,
   ...ConfigComponents,
   ...ContentPages,
+  ...MainRoutesVue,
 };
 
 export default ComponentsMap;

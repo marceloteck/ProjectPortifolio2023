@@ -1,5 +1,5 @@
 // Importar componentes 
-//import ExemploLayout from '@/PagesView/Layouts/ExemploLayout.vue';
+//import ExemploLayout from '@PagesVuejs/Layouts/ExemploLayout.vue';
 
 const Layouts = { };
 
