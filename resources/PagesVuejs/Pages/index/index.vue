@@ -1,6 +1,6 @@
 <template>
     <AppHead title="inicio" />
-    <div>
+    <div class="container text-center mt-5">
         INDEX web site
         <br>
         <mainIndex />
