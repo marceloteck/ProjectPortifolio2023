@@ -79,6 +79,23 @@ Para modo desenvolvimento
 npm install -D sass
 ```
 
+#### Instalando o Bootstrap
+
+```sh
+npm install bootstrap
+```
+
+Instalando o popperjs
+```sh
+npm i @popperjs/core
+```
+#### Importando o bootstrap 5 no main.js
+
+```javascript
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.js"
+```
+
 ## ☕ Como usar o projeto
 
 Depois de baixar o repositorio execultar
