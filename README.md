@@ -68,3 +68,5 @@
 └── vite.config.js
 
 </pre>
+
+### #Para Verificar o código de cada arquivo basta acessar no repositório
