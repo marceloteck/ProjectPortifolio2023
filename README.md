@@ -8,6 +8,10 @@
 
 > Configuração para o projeto
 
+### Navegação
+| [branch installation](https://github.com/marceloteck/ProjectPortifolio2023/tree/installation) | [branch Main](https://github.com/marceloteck/ProjectPortifolio2023/tree/main)
+
+
 ### Pastas modificadas para uso no Projeto
 <pre>
 ├── app
