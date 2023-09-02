@@ -18,6 +18,7 @@ Instalações necessárias, frameworks e bibliotecas
 - [x] Laravel 10x
 - [x] Vue.js 3x
 - [x] Inertia.js 1.0x
+- [x] Sass 1.64x
 
 
 
@@ -62,6 +63,14 @@ npm install
 npm run dev
 ```
 > Nas configurações do breeze deve ser escolhida vue + inertia, e assim o Inertia será instalado Automaticamente.
+
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+<br>
+
+Instalando o Sass
+```sh
+npm install -g sass
+```
 
 ## ☕ Como usar o projeto
 
