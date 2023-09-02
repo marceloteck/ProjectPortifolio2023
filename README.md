@@ -10,6 +10,9 @@
 
 > Projeto criado com Laravel Vue.js e Inertia.js
 
+### Navegação
+| [branch configuration](https://github.com/marceloteck/ProjectPortifolio2023/tree/configuration) | [branch Main](https://github.com/marceloteck/ProjectPortifolio2023/tree/main)
+
 ### Recursos Necessários
 
 Instalações necessárias, frameworks e bibliotecas
