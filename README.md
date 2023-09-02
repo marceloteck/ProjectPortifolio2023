@@ -1,4 +1,4 @@
-# Portfólio Marcelo Henrique 2023
+# Portfólio Marcelo Henrique 2023 - branch configuration
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/marceloteck/ProjectPortifolio2023?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/marceloteck/ProjectPortifolio2023?style=for-the-badge)
@@ -6,72 +6,216 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/marceloteck/ProjectPortifolio2023?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/marceloteck/ProjectPortifolio2023?style=for-the-badge)
 
-<img src="/docs/image/model1.1.png" alt="Exemplo imagem">
+> Configuração para o projeto
 
-> Projeto criado com Laravel Vue.js e Inertia.js
-
-### Recursos Necessários
-
-Instalações necessárias, frameworks e bibliotecas
-
-- [x] php 8.1x
-- [x] Laravel 10x
-- [x] Vue.js 3x
-- [x] Inertia.js 1.0x
+### Navegação
+| [branch installation](https://github.com/marceloteck/ProjectPortifolio2023/tree/installation) | [branch Main](https://github.com/marceloteck/ProjectPortifolio2023/tree/main)
 
 
+### Pastas modificadas para uso no Projeto
+<pre>
+├── app
+│   └── Custom
+│       └── helpers.php
+│   
+├── config
+│   └── view.php
+│ 
+├── public
+│   └── Assets
+│       ├── files
+│       ├── image
+│       └── js
+│
+├── resources
+│    ├── css
+│    |    ├── app.css
+│    |    └── tailwind.css
+│    |
+│    ├── js
+|    |    ├── componentsJs
+|    |    |     ├── Applications.js
+|    |    |     ├── Buttons.js
+|    |    |     ├── components.js
+|    |    |     ├── ConfigComponents.js
+|    |    |     ├── ContentPages.js
+|    |    |     ├── Forms.js
+|    |    |     ├── Layouts.js
+|    |    |     ├── MainRoutesVue.js
+|    |    |     ├── Modals.js
+|    |    |     └── Navs.js
+|    |    |     
+|    |    └── config
+|    |          ├── app.js
+|    |          └── bootstrap.js
+|    |    
+│    ├── PagesVuejs
+|    |    ├── components
+|    |    |     ├── Applications
+|    |    |     ├── Buttons
+|    |    |     ├── ContentPages
+|    |    |     ├── Forms
+|    |    |     ├── Layouts
+|    |    |     ├── Modals
+|    |    |     └── Navs
+|    |    |    
+|    |    └── Pages
+|    |         └── index
+|    |              ├── index.vue
+|    |              └── mainIndex.vue
+|    |   
+│    ├── plugins
+│    ├── scss
+│    |    └── app.scss
+│    |  
+│    └── views
+|         ├── AssetsGlobal 
+|         |    ├── globalCss.php
+|         |    └── globalJs.php
+|         | 
+|         ├── configApp 
+|         └── app.blade.php 
+|
+└── vite.config.js
 
-## 💻 Ferramentas usadas nesse projeto
+</pre>
 
-Antes de começar, pode usar as seguintes ferramentas:
+### # Para Verificar o código de cada arquivo basta acessar no repositório
 
-* [Vs Code Desktop](https://code.visualstudio.com/) ou [VsCode Web](https://vscode.dev/)
-* [Laragon](https://laragon.org/index.html) 
-* [Github Desktop](https://desktop.github.com/)
+## Alguns códigos de configuração
+### vite.config.js
 
+```javascript
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue';
 
-## 🚀 Instalando Recursos
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: 'resources/js/app.js',
+            refresh: true,
+        }),
+        vue({
+            template: {
+                transformAssetUrls: {
+                    base: null,
+                    includeAbsolute: false,
+                },
+            },
+        }),
+    ],
+    resolve: {
+        alias: {
+          '@PagesVuejs': 'resources/PagesVuejs',
+        },
+      },
 
-![laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-<br>
- Instalando Laravel 
+});
 
-```sh
-composer create-project laravel/laravel ProjectPortifolio2023
+```
+### app.js
+```Javascript
+import './bootstrap';
+import '../../css/app.css';
+import '../../scss/app.scss';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.js";
+
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { ZiggyVue } from '../../../vendor/tightenco/ziggy/dist/vue.m';
+import ComponentsMap from '../componentsJs/components.js';
+
+const appName = (import.meta.env.VITE_APP_NAME.replaceAll(/[_-]/g, ' ')) || 'Laravel';
+
+createInertiaApp({
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) => 
+    resolvePageComponent(`../../PagesVuejs/${name}.vue`, import.meta.glob('../../PagesVuejs/**/*.vue')),
+ 
+    setup({ el, App, props, plugin }) {
+        const app = createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .use(ZiggyVue, Ziggy);
+
+             // chamada dos componentes
+             Object.entries(ComponentsMap).forEach(([name, component]) => {
+                app.component(name, component);
+            });
+            app.mount(el);
+    },
+    progress: {
+        color: '#4B5563',
+    },
+});
+```
+### components.js
+```javascript
+// Importando Componentes
+import Applications from '@/componentsJs/Applications.js';
+import Buttons  from '@/componentsJs/Buttons.js';
+import Forms from '@/componentsJs/Forms.js';
+import Modals from '@/componentsJs/Modals.js';
+import Navs from '@/componentsJs/Navs.js';
+import Layouts from '@/componentsJs/Layouts.js';
+import ConfigComponents from '@/componentsJs/ConfigComponents.js';
+import ContentPages from '@/componentsJs/ContentPages.js';
+import MainRoutesVue from '@/componentsJs/MainRoutesVue.js';
+
+// constante Map
+const ComponentsMap = {
+  ...Applications,
+  ...Buttons,
+  ...Forms,
+  ...Modals,
+  ...Navs,
+  ...Layouts,
+  ...ConfigComponents,
+  ...ContentPages,
+  ...MainRoutesVue,
+};
+
+export default ComponentsMap;
 ```
 
-![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) 
-<br>
-
-Instalando Vue.js e o plugin do vitejs
-```sh
-npm install vue@next @vitejs/plugin-vue
+### config/view.php
+```php
+'extensions' => [
+        'php',
+    ],
 ```
 
-Instalando breeze do Laravel
-```sh
-composer require laravel/breeze --dev
+### app/Custom/helpers.php
+```php
+// não colocar namespace aqui
+use illuminate\Support\Str;
+class HtmlHelper
+{
+    public static function mix_version($path)
+    {
+        $filePath = public_path($path);
+        $version = file_exists($filePath) ? filemtime($filePath) : Str::random(5) . rand(10, 99);
+        return $path . ($version ? "?v=" . $version . Str::random(5) . rand(10, 99) : '');
+    }
+
+    public static function htmlResources($links = [], $type = 'link')
+    {
+        $html = '';
+        $crossOrigin = 'anonymous';
+        if ($type === 'link') {
+            foreach ($links as $link) {
+                $html .= "<link href='$link' rel='stylesheet' />";
+            }
+        } else {
+            foreach ($links as $link) {
+                $crossAttr = (strpos($link, 'http://') !== false || strpos($link, 'https://') !== false) ? " crossorigin='$crossOrigin'" : "";
+                $html .= "<script src='$link' type='text/javascript'$crossAttr></script>\n";
+            }
+        }
+
+        return $html;
+    }
+}
 ```
-
-Configurando breeze para o vue.js
-```sh
-php artisan breeze:install
-
-php artisan migrate
-npm install
-npm run dev
-```
-> Nas configurações do breeze deve ser escolhida vue + inertia, e assim o Inertia será instalado Automaticamente.
-
-## ☕ Como usar o projeto
-
-Depois de baixar o repositorio execultar
-
-```sh
-npm install
-```
-e tambpém
-```sh
-composer install
-```
-> E depois criar e editar o arquivo .env
