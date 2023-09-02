@@ -33,28 +33,29 @@ Antes de começar, pode usar as seguintes ferramentas:
 
 ## 🚀 Instalando Recursos
 
+#### Instalando Laravel 
+
 ![laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 <br>
- Instalando Laravel 
 
 ```sh
 composer create-project laravel/laravel ProjectPortifolio2023
 ```
+#### Instalando Vue.js e o plugin do vitejs
 
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) 
 <br>
 
-Instalando Vue.js e o plugin do vitejs
 ```sh
 npm install vue@next @vitejs/plugin-vue
 ```
+#### Instalando breeze do Laravel
 
-Instalando breeze do Laravel
 ```sh
 composer require laravel/breeze --dev
 ```
+#### Configurando breeze para o vue.js
 
-Configurando breeze para o vue.js
 ```sh
 php artisan breeze:install
 
@@ -64,12 +65,18 @@ npm run dev
 ```
 > Nas configurações do breeze deve ser escolhida vue + inertia, e assim o Inertia será instalado Automaticamente.
 
+
+#### Instalando o Sass
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 <br>
 
-Instalando o Sass
 ```sh
 npm install -g sass
+
+```
+Para modo desenvolvimento
+```sh
+npm install -D sass
 ```
 
 ## ☕ Como usar o projeto
