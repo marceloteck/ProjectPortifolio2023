@@ -8,7 +8,7 @@
 
 > Configuração para o projeto
 
-### Pasta Modificadas para uso no Projeto
+### Pastas modificadas para uso no Projeto
 <pre>
 ├── public
 │   └── Assets
@@ -16,13 +16,52 @@
 │       ├── image
 │       └── js
 │
-└── resources
+├── resources
 │    ├── css
 │    ├── js
+|    |    ├── componentsJs
+|    |    |     ├── Applications.js
+|    |    |     ├── Buttons.js
+|    |    |     ├── components.js
+|    |    |     ├── ConfigComponents.js
+|    |    |     ├── ContentPages.js
+|    |    |     ├── Forms.js
+|    |    |     ├── Layouts.js
+|    |    |     ├── MainRoutesVue.js
+|    |    |     ├── Modals.js
+|    |    |     └── Navs.js
+|    |    |     
+|    |    └── config
+|    |          ├── app.js
+|    |          └── bootstrap.js
+|    |    
 │    ├── PagesVuejs
+|    |    ├── components
+|    |    |     ├── Applications
+|    |    |     ├── Buttons
+|    |    |     ├── ContentPages
+|    |    |     ├── Forms
+|    |    |     ├── Layouts
+|    |    |     ├── Modals
+|    |    |     └── Navs
+|    |    |    
+|    |    └── Pages
+|    |         └── index
+|    |              ├── index.vue
+|    |              └── mainIndex.vue
+|    |   
 │    ├── plugins
 │    ├── scss
+│    |    └── app.scss
+│    |  
 │    └── views
-
+|         ├── AssetsGlobal 
+|         |    ├── globalCss.php
+|         |    └── globalJs.php
+|         | 
+|         ├── configApp 
+|         └── app.blade.php 
+|
+└── vite.config.js
 
 </pre>
