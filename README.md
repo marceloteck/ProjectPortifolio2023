@@ -18,6 +18,9 @@
 │
 ├── resources
 │    ├── css
+│    |    ├── app.css
+│    |    └── tailwind.css
+│    |
 │    ├── js
 |    |    ├── componentsJs
 |    |    |     ├── Applications.js
