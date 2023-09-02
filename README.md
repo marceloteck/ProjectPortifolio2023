@@ -105,8 +105,8 @@ Depois de baixar o repositorio execultar
 ```sh
 npm install
 ```
-e tambpém
+e também
 ```sh
 composer install
 ```
-> E depois criar e editar o arquivo .env
+ E depois criar e editar o arquivo .env
