@@ -69,4 +69,102 @@
 
 </pre>
 
-### #Para Verificar o código de cada arquivo basta acessar no repositório
+### # Para Verificar o código de cada arquivo basta acessar no repositório
+
+## Alguns códigos de configuração
+### vite.config.js
+
+```javascript
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue';
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: 'resources/js/app.js',
+            refresh: true,
+        }),
+        vue({
+            template: {
+                transformAssetUrls: {
+                    base: null,
+                    includeAbsolute: false,
+                },
+            },
+        }),
+    ],
+    resolve: {
+        alias: {
+          '@PagesVuejs': 'resources/PagesVuejs',
+        },
+      },
+
+});
+
+```
+### app.js
+```Javascript
+import './bootstrap';
+import '../../css/app.css';
+import '../../scss/app.scss';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.js";
+
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { ZiggyVue } from '../../../vendor/tightenco/ziggy/dist/vue.m';
+import ComponentsMap from '../componentsJs/components.js';
+
+const appName = (import.meta.env.VITE_APP_NAME.replaceAll(/[_-]/g, ' ')) || 'Laravel';
+
+createInertiaApp({
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) => 
+    resolvePageComponent(`../../PagesVuejs/${name}.vue`, import.meta.glob('../../PagesVuejs/**/*.vue')),
+ 
+    setup({ el, App, props, plugin }) {
+        const app = createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .use(ZiggyVue, Ziggy);
+
+             // chamada dos componentes
+             Object.entries(ComponentsMap).forEach(([name, component]) => {
+                app.component(name, component);
+            });
+            app.mount(el);
+    },
+    progress: {
+        color: '#4B5563',
+    },
+});
+```
+### components.js
+```javascript
+// Importando Componentes
+import Applications from '@/componentsJs/Applications.js';
+import Buttons  from '@/componentsJs/Buttons.js';
+import Forms from '@/componentsJs/Forms.js';
+import Modals from '@/componentsJs/Modals.js';
+import Navs from '@/componentsJs/Navs.js';
+import Layouts from '@/componentsJs/Layouts.js';
+import ConfigComponents from '@/componentsJs/ConfigComponents.js';
+import ContentPages from '@/componentsJs/ContentPages.js';
+import MainRoutesVue from '@/componentsJs/MainRoutesVue.js';
+
+// constante Map
+const ComponentsMap = {
+  ...Applications,
+  ...Buttons,
+  ...Forms,
+  ...Modals,
+  ...Navs,
+  ...Layouts,
+  ...ConfigComponents,
+  ...ContentPages,
+  ...MainRoutesVue,
+};
+
+export default ComponentsMap;
+```
