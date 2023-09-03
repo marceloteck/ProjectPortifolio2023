@@ -1,0 +1,23 @@
+/* Estilo para a barra de rolagem vertical */
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+  }
+  
+
+  ::-webkit-scrollbar-track { /* Cor de fundo da barra de rolagem*/
+    background-color: #dfdfdf;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #808080; /* Cor da barra de rolagem */
+    border-radius: 3px; /* Bordas arredondadas */
+  }
+  
+  /* Estilo para a barra de rolagem horizontal (caso necessário) */
+  ::-webkit-scrollbar-horizontal {
+    height: 6px; /* Altura da barra de rolagem */
+  }
+  
+  ::-webkit-scrollbar-thumb:horizontal {
+    background-color: #636363; /* Cor da barra de rolagem horizontal */
+  }

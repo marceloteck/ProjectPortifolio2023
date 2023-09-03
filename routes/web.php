@@ -1,29 +1,22 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\Pages\index\HomeContollerRoutes;
 
-Route::get('/', function () {
-    return Inertia::render('Pages/index/index', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+// Rotas principais do usuário
+Route::middleware('guest')->group(function () {
+    Route::get('/', [HomeContollerRoutes::class, 'index'])->name('index.home');
+    Route::get('/about', [HomeContollerRoutes::class, 'about'])->name('index.about');
+    Route::get('/contact', [HomeContollerRoutes::class, 'contact'])->name('index.contact');
+    Route::get('/project', [HomeContollerRoutes::class, 'project'])->name('index.project');
+    Route::get('/education', [HomeContollerRoutes::class, 'education'])->name('index.education');
+    Route::get('/experiences', [HomeContollerRoutes::class, 'experiences'])->name('index.experiences');
 });
+// end rotas
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

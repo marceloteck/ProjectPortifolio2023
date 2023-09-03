@@ -1,0 +1,6 @@
+@import 'Scrollbar.css';
+
+html {
+    scroll-behavior: smooth;
+}
+
