@@ -1,6 +1,6 @@
 // Importar componentes fixos
-//import NavExemplo from "@PagesVuejs/components/Navs/NavExemplo.vue";
+import NavBar from "@PagesVuejs/components/Navs/NavBar.vue";
 
-const Navs = { };
+const Navs = { NavBar };
 
 export default Navs;
