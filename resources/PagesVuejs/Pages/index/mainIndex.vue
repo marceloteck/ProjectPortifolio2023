@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row text-light">
             <div class="col-12 col-lg-7">
-                <div class="leftMain bg-success">
+                <div class="leftMain">
                     <div class="row">
                         <div class="col-12">
                             <buttonsSocial class="buttonsSocial" />
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-5 bg-dark">
+            <div class="col-12 col-lg-5">
                 <imgEfects ImgSrc="/Assets/image/index/programador1.0.png" />
             </div>
         </div>

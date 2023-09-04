@@ -23,10 +23,10 @@
     const x = e.clientX / container.offsetWidth;
     const y = e.clientY / container.offsetHeight;
 
-    const offsetX = (x - 0.5) * 2; 
-    const offsetY = ((x + 0.5) * (y - 0.5)) * 2; 
+    const offsetX = (x - 0.9) * 2; 
+    const offsetY = ((x + 0.9) * (y - 0.9)) * 2; 
 
-    const maxRotation = 5; // Ângulo máximo de rotação
+    const maxRotation = 2; // Ângulo máximo de rotação
 
     const rotateY = offsetX * maxRotation;
     const rotateX = offsetY * maxRotation;
@@ -54,10 +54,9 @@
     justify-content: center;
 
     #element {
-      width: 70%;
+      width: 90%;
       position: relative;
       will-change: transform;
-      background: #b82525;
       
       .img-fluid{
         position:relative;
