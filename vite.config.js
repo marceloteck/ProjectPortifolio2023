@@ -22,5 +22,7 @@ export default defineConfig({
           '@PagesVuejs': 'resources/PagesVuejs',
         },
       },
-
+    server: {
+        watch: true,
+    },
 });
