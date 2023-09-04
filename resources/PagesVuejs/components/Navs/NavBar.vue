@@ -64,7 +64,7 @@ const Active = (routeActive) => { if(route().current(routeActive)) return 'activ
     nav {
         font-family: $fontePrimary;
         font-weight: 600;
-        z-index: 2;
+        z-index: 5;
         .logo {
             width: 200px;
         }

@@ -14,8 +14,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-5 align-itens-center">
-                sfsd
+            <div class="col-12 col-lg-5">
+                <imgEfects ImgSrc="/Assets/image/index/programador1.0.png" />
             </div>
         </div>
         
@@ -23,13 +23,13 @@
 </template>
 
 <style lang="scss" scoped>
-    $fontFamilyPrimary: 'Titillium Web', sans-serif;
+    $fontePrimary: 'Titillium Web', sans-serif;
 
     .container{
         z-index: 2;
         
         .col-12 h3{
-            font-family: $fontFamilyPrimary;
+            font-family: $fontePrimary;
             font-weight:300;
             font-size: 3rem;
             color: #dbdbdb;
@@ -37,6 +37,11 @@
         }
         .buttonsSocial{
             margin-top:-4rem;
+        }
+        .leftMain{
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 </style>
