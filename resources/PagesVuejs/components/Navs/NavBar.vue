@@ -82,6 +82,9 @@ const Active = (routeActive) => { if(route().current(routeActive)) return 'activ
         transition: all .4s;
         border-bottom: 2px solid #fda543;
 
+        .logo {
+            width: 150px;
+        }
         .nav-link{
             color: $ColorNavLinkDark;
             text-shadow: none;
@@ -89,5 +92,6 @@ const Active = (routeActive) => { if(route().current(routeActive)) return 'activ
         .nav-link:hover{
             color: $hoverNavLink;
         }
+        
     }
 </style>
