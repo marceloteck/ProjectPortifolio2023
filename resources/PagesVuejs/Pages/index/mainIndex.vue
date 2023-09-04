@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row text-light">
             <div class="col-12 col-lg-7">
-                <div class="leftMain">
+                <div class="leftMain bg-success">
                     <div class="row">
                         <div class="col-12">
                             <buttonsSocial class="buttonsSocial" />
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-5">
+            <div class="col-12 col-lg-5 bg-dark">
                 <imgEfects ImgSrc="/Assets/image/index/programador1.0.png" />
             </div>
         </div>
@@ -42,6 +42,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
     }
 </style>

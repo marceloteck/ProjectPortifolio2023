@@ -1,7 +1,7 @@
 <template>
-    <div id="container itens-align-center justify-content-center" ref="containerRef">
+    <div id="container" ref="containerRef">
       <div id="element" ref="elementRef">
-        <img :src="ImgSrc" ref="elementRefImg" class="image-shadow img-fluid">
+        <img :src="ImgSrc" ref="elementRefImg" class="img-fluid">
       </div>
     </div>
   </template>
@@ -23,8 +23,8 @@
     const x = e.clientX / container.offsetWidth;
     const y = e.clientY / container.offsetHeight;
 
-    const offsetX = (x - 0.8) * 2; 
-    const offsetY = ((x + 0.8) * (y - 0.8)) * 2; 
+    const offsetX = (x - 0.5) * 2; 
+    const offsetY = ((x + 0.5) * (y - 0.5)) * 2; 
 
     const maxRotation = 5; // Ângulo máximo de rotação
 
@@ -44,42 +44,44 @@
 
   </script>
   
-  <style scoped>
-  .image-shadow{
-    position:relative;
-    top:0px;
-    bottom:0px;
-    -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.9)); 
-    filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
-    animation: shoes 1s ease infinite alternate;
-    transition: all .9s ease-in;
-    filter: drop-shadow(3px 3px 5px #18181815);
-    }
-
+<style lang="scss" scoped>
   #container {
     perspective: 1000px;
-    position:absolute;
+    position:relative;
     bottom:0px;
-  }
-  
-  #element {
-    width: 90%;
-    position: relative;
-    will-change: transform;
-  }
- 
-  #element img:hover{
-    animation: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #element {
+      width: 70%;
+      position: relative;
+      will-change: transform;
+      background: #b82525;
+      
+      .img-fluid{
+        position:relative;
+        top:0px;
+        bottom:0px;
+        -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.9)); 
+        filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
+        animation: shoes 1s ease infinite alternate;
+        transition: all .9s ease-in;
+        filter: drop-shadow(3px 3px 5px #18181815);
+      }
+    }
+    #element img:hover{
+      animation: none;
+    }
   }
 
   @keyframes shoes {
-  from {
-    top: 10px;
-  }
+    from {
+      top: 10px;
+    }
 
-  to {
-    top: 15px;
+    to {
+      top: 15px;
+    }
   }
-}
-
-  </style>
+</style>
