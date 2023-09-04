@@ -1,6 +1,6 @@
 // Importar componentes 
-//import exemplo from "@PagesVuejs/components/ContentPages/exemplo.vue";
+import buttonsSocial from "@PagesVuejs/components/ContentPages/buttonsSocial.vue";
 
-const ContentPages = {  };
+const ContentPages = { buttonsSocial };
 
 export default ContentPages;

@@ -1,7 +1,9 @@
 <template>
     <article>
         <AppHead title="inicio" />
-        <NavBar />
+        <header>
+            <NavBar />
+        </header>
 
         <LayoutSectionIndex classes="section01">
             <particles />
@@ -22,6 +24,9 @@
         background-size: cover;
         background-attachment: fixed;
         background-blend-mode: multiply;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .section01::before {
         content: "";
