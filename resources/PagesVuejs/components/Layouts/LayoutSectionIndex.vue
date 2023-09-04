@@ -1,9 +1,9 @@
 <script setup>
-    const { title } = defineProps(['title']);
+    const { classes } = defineProps(['classes']);
 </script>
 
 <template>  
-    <section>
+    <section :class="classes">
         <slot />
     </section>
 </template>

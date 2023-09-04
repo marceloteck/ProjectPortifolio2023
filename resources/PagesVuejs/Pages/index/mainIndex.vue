@@ -1,10 +1,3 @@
 <template>
-    <article>
-        <LayoutSectionIndex>
-            Main aqui
-        </LayoutSectionIndex>
-        <LayoutSectionIndex>
-            pagina 2 aqui
-        </LayoutSectionIndex>
-    </article>
+    <div>dsfsa</div>
 </template>

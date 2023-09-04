@@ -1,4 +1,5 @@
 @import 'Scrollbar.css';
+@import 'fontes.css';
 
 html {
     scroll-behavior: smooth;
