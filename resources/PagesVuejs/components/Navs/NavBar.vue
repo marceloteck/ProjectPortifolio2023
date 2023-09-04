@@ -67,7 +67,7 @@ const Active = (routeActive) => { if(route().current(routeActive)) return 'activ
         z-index: 5;
         transition: all .4s ease-in-out;
         .logo {
-            width: 200px;
+            width: 180px;
         }
         .nav-link{
             color: $ColorNavLinkLigth;
