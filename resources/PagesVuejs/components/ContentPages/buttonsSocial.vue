@@ -52,7 +52,7 @@ $Whatsapp: #256d45;
     box-shadow: 0px 0px 6px 3px #00000027;
   }
   .GitHub {background-color: $github; }
-  .GitHub:hover{fill: $github;}
+  .GitHub:hover {fill: $github;}
   .Facebook { background-color: $Facebook; }
   .Facebook:hover { fill: $Facebook; }
   .Linkedin { background-color: $Linkedin; }

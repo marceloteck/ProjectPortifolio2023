@@ -1,6 +1,6 @@
 <template>
     <div class="col-12">
-        <h1>Desenvolvedor <br>
+        <h1>Sou Desenvolvedor <br>
             <span class="typed-text">{{ typeValue }}</span>
             <span class="cursor" :class="{'typing': typeStatus}">&nbsp;</span>
         </h1>
@@ -12,7 +12,7 @@
         return {
           typeValue: '',
           typeStatus: false,
-          typeArray: ['Full-stack Júnior', 'PHP e Laravel', 'Inertia.js', 'Vue.js'],
+          typeArray: ['Full Stack Júnior', 'PHP e Laravel', 'Inertia.js', 'Vue.js'],
           typingSpeed: 200,
           erasingSpeed: 100,
           newTextDelay: 2000,

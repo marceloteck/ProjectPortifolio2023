@@ -74,6 +74,7 @@ const Active = (routeActive) => { if(route().current(routeActive)) return 'activ
         }
         .nav-link:hover{
             color: $hoverNavLink;
+            text-shadow: none;
         }
     }
     .is-sticky {
