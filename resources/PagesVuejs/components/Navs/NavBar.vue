@@ -65,6 +65,7 @@ const Active = (routeActive) => { if(route().current(routeActive)) return 'activ
         font-family: $fontePrimary;
         font-weight: 600;
         z-index: 5;
+        transition: all .4s ease-in-out;
         .logo {
             width: 200px;
         }
@@ -79,7 +80,7 @@ const Active = (routeActive) => { if(route().current(routeActive)) return 'activ
     }
     .is-sticky {
         background-color: $backgroundSticky;
-        transition: all .4s;
+        transition: all .4s ease-in-out;
         border-bottom: 2px solid #fda543;
 
         .logo {
