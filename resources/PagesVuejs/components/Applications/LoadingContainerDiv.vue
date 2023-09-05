@@ -1,13 +1,29 @@
 <template>
+  <div class="gif">
   <div class="containe">
     <span></span>
     <span></span>
     <span></span>
     <span></span>
   </div>
+</div>
 </template>
 <style lang="css" scoped>
-  .containe {
+.gif{
+  position: absolute;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(218, 218, 218, 0.8); /* Fundo turvo transparente */
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.containe {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -17,7 +33,6 @@
   animation: rotate_3922 1.2s linear infinite;
   background-color: #9b59b6;
   background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
-  z-index: 8;
 }
 
 .containe span {

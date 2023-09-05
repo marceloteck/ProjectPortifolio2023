@@ -26,8 +26,8 @@ function linkClick(linkRota) {
     <div class="container">
         <div class="row">
             <div class="col-4 d-flex align-items-center justify-content-center" v-for="item in content" :key="item[0]">
-                <div class="card-container"><!--v-if="IsLoading"-->
-                    <LoadingContainerDiv  />
+                <div class="card-container">
+                    <LoadingContainerDiv  v-if="IsLoading" />
                     <div class="card" @click="linkClick(item[3])">
                         <div class="front-content">
                             <span>{{ item[0] }}</span>
