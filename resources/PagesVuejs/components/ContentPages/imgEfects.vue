@@ -57,6 +57,7 @@
       width: 90%;
       position: relative;
       will-change: transform;
+      transition: all .3s ease-in;
       
       .img-fluid{
         position:relative;
