@@ -12,5 +12,5 @@
 
 ### Bibliotecas em uso no projeto
 
-- [x] Particles js ![link](https://vincentgarreau.com/particles.js/)
+- [x] Particles js [link](https://vincentgarreau.com/particles.js/)
 
