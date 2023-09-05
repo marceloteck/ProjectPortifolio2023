@@ -10,65 +10,7 @@
 
 > Projeto criado com Laravel Vue.js e Inertia.js
 
-### Recursos Necessários
+### Bibliotecas em uso no projeto
 
-Instalações necessárias, frameworks e bibliotecas
+- [x] Particles js ![link](https://vincentgarreau.com/particles.js/)
 
-- [x] php 8.1x
-- [x] Laravel 10x
-- [x] Vue.js 3x
-- [x] Inertia.js 1.0x
-
-
-### Bibliotecas em Uso no projeto
-
-Instalações necessárias, frameworks e bibliotecas
-
-- [x] php 8.1x
-- [x] Laravel 10x
-- [x] Vue.js 3x
-- [x] Inertia.js 1.0x
-
-
-
-## 💻 Ferramentas usadas nesse projeto
-
-Antes de começar, pode usar as seguintes ferramentas:
-
-* [Vs Code Desktop](https://code.visualstudio.com/) ou [VsCode Web](https://vscode.dev/)
-* [Laragon](https://laragon.org/index.html) 
-* [Github Desktop](https://desktop.github.com/)
-
-
-## 🚀 Instalando Recursos
-
-![laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-<br>
- Instalando Laravel 
-
-```sh
-composer create-project laravel/laravel ProjectPortifolio2023
-```
-
-![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) 
-<br>
-Instalando Vue.js e o plugin do vitejs
-
-```sh
-npm install vue@next @vitejs/plugin-vue
-```
-
-Instalando breeze do Laravel
-```sh
-composer require laravel/breeze --dev
-```
-
-Configurando breeze para o vue.js
-```sh
-php artisan breeze:install
-
-php artisan migrate
-npm install
-npm run dev
-```
-> Nas configurações do breeze deve ser escolhida vue + inertia, e assim o Inertia será instalado Automaticamente.
