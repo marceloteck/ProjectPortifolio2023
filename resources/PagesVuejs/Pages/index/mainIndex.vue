@@ -50,7 +50,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-const message = ref('Bom dia');
+const message = ref('');
 
 const updateMessage = () => {
   const now = new Date();
