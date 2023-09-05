@@ -20,6 +20,16 @@ Instalações necessárias, frameworks e bibliotecas
 - [x] Inertia.js 1.0x
 
 
+### Bibliotecas em Uso no projeto
+
+Instalações necessárias, frameworks e bibliotecas
+
+- [x] php 8.1x
+- [x] Laravel 10x
+- [x] Vue.js 3x
+- [x] Inertia.js 1.0x
+
+
 
 ## 💻 Ferramentas usadas nesse projeto
 

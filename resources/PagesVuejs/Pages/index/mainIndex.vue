@@ -46,32 +46,26 @@
         }
     }
 </style>
-<script>
-export default {
-  data() {
-    return {
-      message: "Bom dia!",
-    };
-  },
-  mounted() {
-    const now = new Date();
-    const hour = now.getHours();
 
-    if (hour >= 0 && hour < 12) {
-      this.message = "Bom dia!";
-    } else if (hour >= 12 && hour < 18) {
-      this.message = "Boa tarde!";
-    } else if (hour >= 18 && hour < 24) {
-      this.message = "Boa noite!";
-    }
-  },
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+const message = ref('Bom dia');
+
+const updateMessage = () => {
+  const now = new Date();
+  const hour = now.getHours();
+
+  if (hour >= 0 && hour < 12) message.value = "Bom dia!"; else 
+  if (hour >= 12 && hour < 18) message.value = "Boa tarde!"; else 
+  if (hour >= 18 && hour < 24) message.value = "Boa noite!";
 };
+
+onMounted(() => {
+  window.addEventListener('mousemove', updateMessage);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('mousemove', updateMessage);
+});
 </script>
-
-<!--
-
-    <LeftItemMain />
-
-    <imgEfects ImgSrc="/Assets/img/index/programador1.0.png" />
-<BarraBottom /> 
--->
