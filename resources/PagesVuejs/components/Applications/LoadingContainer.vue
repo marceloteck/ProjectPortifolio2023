@@ -11,8 +11,7 @@
 </template>
 
 <style scoped lang="css">
-    /* Estilo para a div de carregamento */
-    .pl {
+.pl {
   width: 6em;
   height: 6em;
 }
