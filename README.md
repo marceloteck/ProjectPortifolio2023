@@ -16,5 +16,21 @@
 
 ### Bibliotecas em uso no projeto
 
-- [x] Particles js [link](https://vincentgarreau.com/particles.js/)
+- [x] [Particles js](https://vincentgarreau.com/particles.js/)
+- [x] [vue3-carousel](https://ismail9k.github.io/vue3-carousel/getting-started.html)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- atualização no vite -->

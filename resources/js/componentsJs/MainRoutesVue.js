@@ -3,7 +3,9 @@
 import mainIndex from '@PagesVuejs/Pages/index/mainIndex.vue';
 import EfeitoDigitacao from '@PagesVuejs/Pages/index/EfeitoDigitacao.vue';
 import BarraBottomUser from '@PagesVuejs/Pages/index/BarraBottomUser.vue';
+import Carousel_Skills from '@PagesVuejs/Pages/index/Carousel/Carousel_Skills.vue';
+import curriculoEmail from '@PagesVuejs/Pages/index/curriculoEmail.vue';
 
-const MainRoutesVue = { mainIndex, EfeitoDigitacao, BarraBottomUser };
+const MainRoutesVue = { mainIndex, EfeitoDigitacao, BarraBottomUser, Carousel_Skills, curriculoEmail };
 
 export default MainRoutesVue;

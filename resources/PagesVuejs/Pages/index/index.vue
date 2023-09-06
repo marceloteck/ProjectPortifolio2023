@@ -10,8 +10,9 @@
             <mainIndex />
         </LayoutSectionIndex>
 
-        <LayoutSectionIndex>
-            pagina 2 aqui
+        <LayoutSectionIndex classes="section02">
+            <Carousel_Skills />
+            <curriculoEmail />
         </LayoutSectionIndex>
     </article>
 </template>
@@ -28,7 +29,18 @@
         align-items: center;
         justify-content: center;
     }
-    .section01::before {
+    .section02 {
+        background: rgb(24, 26, 55);
+        background: linear-gradient(36deg, rgb(34, 35, 43) 0%, rgb(19, 20, 26) 100%);
+        background-image: url('Assets/image/index/backgrounds/emailCurriculoBackground.avif');
+        background-size: cover;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+        width: 100%;
+        height: 95vh;
+        
+    }
+    .section01::before, .section02::before {
         content: "";
         position: absolute;
         width: 100%;
@@ -36,4 +48,7 @@
         background-color: rgba(0, 0, 0, 0.6);
         background-blend-mode: multiply;
     }
+
+    
+
 </style>

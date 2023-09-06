@@ -19,7 +19,8 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-          '@PagesVuejs': 'resources/PagesVuejs',
+          '@PagesVuejs': 'resources/PagesVuejs/',
+          '@resources': 'resources/',
         },
       },
     server: {
