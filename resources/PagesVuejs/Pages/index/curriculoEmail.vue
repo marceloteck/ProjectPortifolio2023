@@ -1,29 +1,36 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
-                <imgEfects ImgSrc="Assets/image/index/dev.png" style="width: 85%;" />
+            <div class="col-6 imgIlustration">
+                <imgEfects ImgSrc="Assets/image/index/dev.png" class="imgEfects" />
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6 ">
                 <h2>Tenha acesso ao meu currículo</h2>
                 <span>Escolha enviar por email ou baixar.</span>
                 <div class="formBtn">
                     <input type="email" :style="inputBtnStyles" v-model="emailUser" class="inputBtn" placeholder="Digite seu E-mail">
                     <button type="button" class="btn button shadow-lg bg-body rounded">
                         <div v-if="emailUser !== ''">
-                            <div class="svgiconUp" v-html="svgIconBtn.iconSend"></div>
+                            <IconSendSvg classes="svgiconUp" />
                             <span>Enviar Email</span>
                         </div>
                         <div v-else>Passe o Mouse</div>
                     </button>
                     <button type="button" class="btn text-light DownBtn">
                         <div class="Btn">
-                            <div class="svgIcon" v-html="svgIconBtn.iconDown"></div>
+                            <iconDownloadSvg class="svgIcon" />
                             <span class="icon2"></span>
                             <span class="tooltip">Download</span>
                         </div>
                     </button>
                 </div>
+                <div class="formEmail">
+                    <input type="email" v-model="emailUser" class="inputBtn" placeholder="Digite seu E-mail">
+                    <button type="button" class="btn sendbtn"><IconSendSvg classes="svgiconUp" /></button>
+                </div>
+                <div class="Linkcv"><Link href="#">Baixar curriculo</Link></div>
+
+
             </div>
         </div>
     </div>
@@ -42,24 +49,45 @@
         };
     });
 const svgIconBtn = {
-    iconSend: '<svg fill="currentColor"  height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" fill="currentColor"></path></svg>',
-    iconDown: '<svg fill="currentColor"  viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>',
+    iconSend: '',
+    iconDown: '',
 }
 </script>
 
 <style lang="scss" scoped>
 $corTexto: #ffffff;
 .container-fluid{
-    position:relative;
     z-index: 2;
 
-    .col-6{
-        position: relative;
+    @media (max-width: 768px) { height: 50vh; }
+
+   .row {
+    position: relative;
+    height: 100%;
+        .imgIlustration{
+                position: relative;
+                @media (max-width: 768px) { display: none; }
+            
+                .imgEfects{
+                    width: 85%;
+
+                    @media screen and (max-width: 992px){ width: 100%; }
+                    
+                }
+            }
+    }
+    
+    .col-12{
         display: flex;
         justify-content: center;
-        align-items: center;
         flex-direction: column;
-        color: $corTexto;
+        align-items: center;
+        position: relative;
+        color: #fff;
+
+        span{
+            @media (max-width: 768px) { display: none; }
+        }
 
         .formBtn{
             margin-top: 15px;
@@ -68,7 +96,8 @@ $corTexto: #ffffff;
             font-size: 19px;
             color: rgb(255, 255, 255);
             z-index: 1;
-            background-color: #000;
+
+            @media (max-width: 768px) { display: none; }
 
             .inputBtn{
                 padding: 18px 15px 15px 18px;
@@ -104,7 +133,7 @@ $corTexto: #ffffff;
 
                 .svgiconUp{
                     transition: all 0.2s ease-in-out;
-                    margin: 0;
+                    margin-right: 5px;
                 }
             }
             .button:focus{
@@ -141,14 +170,14 @@ $corTexto: #ffffff;
                     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
 
                     .svgIcon {
-                        fill: #f1444d;
+                        fill: #d48e63;
                     }
                     .icon2 {
                         width: 18px;
                         height: 5px;
-                        border-bottom: 2px solid #f1444d;
-                        border-left: 2px solid #f1444d;
-                        border-right: 2px solid #f1444d;
+                        border-bottom: 2px solid #d48e63;
+                        border-left: 2px solid #d48e63;
+                        border-right: 2px solid #d48e63;
                     }
                     .tooltip {
                         position: absolute;
@@ -207,6 +236,55 @@ $corTexto: #ffffff;
                     fill: rgb(255, 255, 255);
                     animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
                 }
+            }
+        }
+        .formEmail{
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+            position: relative;
+
+            @media screen and (min-width: 768px){ display: none;}
+            .inputBtn{
+                padding: 18px 15px 15px 18px;
+                border: 1px solid #fff;
+                border-radius: 5px;
+                position: relative;
+                width: 300px;
+                margin-top: 2px;
+                background-color: rgb(12, 15, 24);
+                color: aliceblue;
+                transition: all 0.3s ease-in-out;
+            }
+            .inputBtn:focus{
+                outline: none;
+            }
+            .sendbtn{
+                position: absolute;
+                right: 4px;
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                background: linear-gradient(36deg, #CB7C3E 0%, #FB3740 100%);
+
+                .svgiconUp{
+                    fill: #fff;
+                    color: #fff;
+                }
+            }
+        }
+        .Linkcv{
+            margin-top: 15px;
+            @media screen and (min-width: 768px){display: none;}
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+            a:hover{
+                text-decoration: underline;
             }
         }
     }

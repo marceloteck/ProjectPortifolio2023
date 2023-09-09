@@ -14,6 +14,10 @@
             <Carousel_Skills />
             <curriculoEmail />
         </LayoutSectionIndex>
+
+        <LayoutSectionIndex classes="section03">
+            <cardProjectsIndex />
+        </LayoutSectionIndex>
     </article>
 </template>
 
@@ -36,19 +40,29 @@
         background-size: cover;
         background-attachment: fixed;
         background-blend-mode: multiply;
-        width: 100%;
-        height: 95vh;
-        
     }
     .section01::before, .section02::before {
         content: "";
         position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(29, 29, 29, 0.6);
         background-blend-mode: multiply;
+        background-size: cover;
+        background-attachment: fixed;
     }
+    .section02, .section02::before{
+        width: 100%;
+        min-height: 93vh;
+    }
+    .section01, .section01::before{
+        width: 100%;
+        height: 100vh;
+        min-height: 490px;
+    }
+    .section03{
+        background: rgb(221, 221, 221);
+        width: 100%;
+        min-height: 90vh;
+        padding-top: 20px;
 
-    
-
+    }
 </style>

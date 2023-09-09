@@ -68,6 +68,12 @@
         font-weight:800;
         font-size: 4.4rem;
         text-shadow: 0px 0px 13px #000000;
+
+        @media screen and (max-width: 1199px) { font-size: 3.5rem; }
+        @media screen and (max-width: 991px) { font-size: 3.4rem; }
+        @media screen and (max-width: 576px) { font-size: 2.6rem; }
+        @media screen and (max-width: 320px) { font-size: 2.2rem; }
+        
   
       span.typed-text {
         color: #fda543;

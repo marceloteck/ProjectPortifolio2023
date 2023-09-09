@@ -45,24 +45,28 @@
   </script>
   
 <style lang="scss" scoped>
-  #container {
+  #container { 
     perspective: 1000px;
-    position:relative;
-    bottom:0px;
+    position: relative;
+    width: 100%;
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
 
     #element {
       width: 90%;
+      height: 100%;
       position: relative;
       will-change: transform;
       transition: all .3s ease-in;
+
+      @media screen and (max-width: 1200px) { width: 100%; }
+      
       
       .img-fluid{
         position:relative;
-        top:0px;
-        bottom:0px;
         -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.9)); 
         filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
         animation: shoes 1s ease infinite alternate;
@@ -83,5 +87,6 @@
     to {
       top: 15px;
     }
-  }
+}
+
 </style>

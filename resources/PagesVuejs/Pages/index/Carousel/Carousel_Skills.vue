@@ -146,9 +146,19 @@ const linguagens = [
       // breakpoints are mobile first
       // any settings not specified will fallback to the carousel settings
       breakpoints: {
+        // 300px and up
+        300: {
+          itemsToShow: 1,
+          snapAlign: 'center',
+        },
+        // 425px and up
+        425: {
+          itemsToShow: 3,
+          snapAlign: 'center',
+        },
         // 700px and up
         700: {
-          itemsToShow: 3.5,
+          itemsToShow: 5,
           snapAlign: 'center',
         },
         // 1024 and up

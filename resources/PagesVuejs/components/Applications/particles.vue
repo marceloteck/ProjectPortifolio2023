@@ -8,13 +8,23 @@ export default {
         loadParticles() {
             particlesJS('particles-js', this.particlesConfig);
         },
+        sizeScreen(input){
+            const larguraJanela = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const alturaJanela = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+            if(input === 'lg') return larguraJanela; else
+            if(input === 'at') return alturaJanela;
+        },
+        handleResize() {
+            this.loadParticles();
+        },
     },
     computed: {
         particlesConfig() {
             return {
                 particles: {
                     number: {
-                        value: 120,
+                        value: (this.sizeScreen('lg') < 992) ? 30 : 120,
                         density: { enable: false, value_area: 6654.160052591919 }
                     },
                     color: { value: "#ffffff" },
@@ -43,7 +53,7 @@ export default {
                         enable: true,
                         distance: 150,
                         color: "#ffffff",
-                        opacity: 0.6,
+                        opacity: 0.4,
                         width: 1
                     },
                     move: {

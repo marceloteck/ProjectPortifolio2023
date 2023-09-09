@@ -8,6 +8,7 @@ import Layouts from '@/componentsJs/Layouts.js';
 import ConfigComponents from '@/componentsJs/ConfigComponents.js';
 import ContentPages from '@/componentsJs/ContentPages.js';
 import MainRoutesVue from '@/componentsJs/MainRoutesVue.js';
+import pluginsVue from '@/componentsJs/pluginsVue.js';
 
 // constante Map
 const ComponentsMap = {
@@ -20,6 +21,7 @@ const ComponentsMap = {
   ...ConfigComponents,
   ...ContentPages,
   ...MainRoutesVue,
+  ...pluginsVue,
 };
 
 export default ComponentsMap;
