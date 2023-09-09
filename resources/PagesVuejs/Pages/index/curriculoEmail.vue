@@ -4,7 +4,7 @@
             <div class="col-6 imgIlustration">
                 <imgEfects ImgSrc="Assets/image/index/dev.png" class="imgEfects" />
             </div>
-            <div class="col-12 col-md-6 ">
+            <div class="col-12 col-lg-6 ">
                 <h2>Tenha acesso ao meu currículo</h2>
                 <span>Escolha enviar por email ou baixar.</span>
                 <div class="formBtn">
@@ -59,14 +59,14 @@ $corTexto: #ffffff;
 .container-fluid{
     z-index: 2;
 
-    @media (max-width: 768px) { height: 50vh; }
+    @media (max-width:  992px) { height: 50vh; }
 
    .row {
     position: relative;
     height: 100%;
         .imgIlustration{
                 position: relative;
-                @media (max-width: 768px) { display: none; }
+                @media (max-width:  992px) { display: none; }
             
                 .imgEfects{
                     width: 85%;
@@ -85,8 +85,13 @@ $corTexto: #ffffff;
         position: relative;
         color: #fff;
 
+        @media (max-width:  992px) { width: 100%; }
+
         span{
-            @media (max-width: 768px) { display: none; }
+            @media (max-width:  993px) { display: none; }
+        }
+        h2{
+            @media (max-width: 860px) { font-size: calc(1.1rem + .9vw); }
         }
 
         .formBtn{
@@ -97,7 +102,7 @@ $corTexto: #ffffff;
             color: rgb(255, 255, 255);
             z-index: 1;
 
-            @media (max-width: 768px) { display: none; }
+            @media (max-width:  992px) { display: none; }
 
             .inputBtn{
                 padding: 18px 15px 15px 18px;
@@ -247,7 +252,7 @@ $corTexto: #ffffff;
             margin-top: 15px;
             position: relative;
 
-            @media screen and (min-width: 768px){ display: none;}
+            @media screen and (min-width:  993px){ display: none;}
             .inputBtn{
                 padding: 18px 15px 15px 18px;
                 border: 1px solid #fff;
@@ -278,7 +283,7 @@ $corTexto: #ffffff;
         }
         .Linkcv{
             margin-top: 15px;
-            @media screen and (min-width: 768px){display: none;}
+            @media screen and (min-width:  993px){display: none;}
             a{
                 text-decoration: none;
                 color: #fff;
