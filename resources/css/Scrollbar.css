@@ -1,6 +1,6 @@
 /* Estilo para a barra de rolagem vertical */
 ::-webkit-scrollbar {
-    width: 10px; /* Largura da barra de rolagem */
+    width: 8px; /* Largura da barra de rolagem */
   }
   
 
@@ -9,7 +9,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #808080; /* Cor da barra de rolagem */
+    background: linear-gradient(90deg, rgba(196, 133, 62, 0.9) 0%, rgba(251, 54, 64, 0.8) 100%); /* Cor da barra de rolagem */
     border-radius: 3px; /* Bordas arredondadas */
   }
   
@@ -19,5 +19,5 @@
   }
   
   ::-webkit-scrollbar-thumb:horizontal {
-    background-color: #636363; /* Cor da barra de rolagem horizontal */
+    background-color: #6b4d4d; /* Cor da barra de rolagem horizontal */
   }

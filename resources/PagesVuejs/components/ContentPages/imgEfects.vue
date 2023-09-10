@@ -1,7 +1,7 @@
 <template>
     <div id="container" ref="containerRef">
       <div id="element" ref="elementRef">
-        <img :src="ImgSrc" ref="elementRefImg" class="img-fluid">
+        <img :src="ImgSrc" ref="elementRefImg" class="img-fluid" alt="Potifólio">
       </div>
     </div>
   </template>

@@ -7,6 +7,11 @@ import Carousel_Skills from '@PagesVuejs/Pages/index/Carousel/Carousel_Skills.vu
 import curriculoEmail from '@PagesVuejs/Pages/index/curriculoEmail.vue';
 import cardProjectsIndex from '@PagesVuejs/Pages/index/cardProjectsIndex.vue';
 
-const MainRoutesVue = { mainIndex, EfeitoDigitacao, BarraBottomUser, Carousel_Skills, curriculoEmail, cardProjectsIndex };
+// Page About
+import mainAbout from '@PagesVuejs/Pages/about/mainAbout.vue';
+
+
+const MainRoutesVue = { mainIndex, EfeitoDigitacao, BarraBottomUser, Carousel_Skills, curriculoEmail, cardProjectsIndex,
+                        mainAbout };
 
 export default MainRoutesVue;

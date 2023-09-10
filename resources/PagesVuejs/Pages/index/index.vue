@@ -5,23 +5,27 @@
             <NavBar />
         </header>
 
-        <LayoutSectionIndex classes="section01">
+        <section class="section01">
             <particles />
             <mainIndex />
-        </LayoutSectionIndex>
+        </section>
 
-        <LayoutSectionIndex classes="section02">
+        <section class="section02">
             <Carousel_Skills />
             <curriculoEmail />
-        </LayoutSectionIndex>
+        </section>
 
-        <LayoutSectionIndex classes="section03">
+        <section class="section03">
             <cardProjectsIndex />
-        </LayoutSectionIndex>
+        </section>
+
+        <section class="footer">
+            <TheFooter />
+        </section>
     </article>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .section01{
         background: rgb(24, 26, 55);
         background: linear-gradient(36deg, rgba(24, 26, 55, 1) 0%, rgba(2, 15, 38, 1) 100%);
@@ -65,4 +69,13 @@
         padding-top: 20px;
 
     }
+    .footer{
+        border-top:2px solid rgb(37, 24, 17);
+        background-color: rgba(37, 24, 17, 0.7);
+        background-image: url('https://static.vecteezy.com/system/resources/previews/000/517/966/non_2x/vector-abstract-background-dark-and-black-overlaps-007.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+    }
+ 
 </style>

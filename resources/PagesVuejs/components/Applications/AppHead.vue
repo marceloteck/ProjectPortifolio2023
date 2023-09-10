@@ -34,18 +34,18 @@ const { title, description, keywords, imageSrc, facebook, twitter } =
 
 // Valores padrão para as metatags
 const NameApp = (import.meta.env.VITE_APP_NAME).replaceAll(/[_-]/g, ' ');
-const defaultTitle = '';
-const defaultDescription = '';
-const defaultKeywords = '';
-const defaultAuthor = '';
+const defaultTitle = 'Portifólio Marcelo henrique';
+const defaultDescription = 'Portifólio do Marcelo de sousa Henrique - desenvolvedor Full Stack Junior | Analista de sistemas';
+const defaultKeywords = 'dev, php, laravel, vue.js, inertia.js, mysql, ajax';
+const defaultAuthor = 'Marcelo henrique';
 const defaultImageUrl = '';
 const defaultUrl = window.location.href;
-const typeWebSite = ''; // website
+const typeWebSite = 'website'; // website
 const twitterCard = ''; // summary_large_image
 
 // config
-const ColorScheme = "";
-const themeColor = "";
+const ColorScheme = "#fda543";
+const themeColor = "#fda543";
 const iconRel = "https://sb-ui-kit-pro.startbootstrap.com/assets/img/favicon.png";
 
 // Calcula os valores finais das metatags combinando com os valores padrão

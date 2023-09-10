@@ -4,7 +4,7 @@
         <div class="container-xl">
             <div class="d-flex w-50">
                 <Link class="navbar-brand" :href="route('index.home')">
-                <img :src="logo" class="logo" />
+                <img :src="logo" class="logo" alt="Portifólio" />
                 </Link>
             </div>
 
@@ -26,7 +26,7 @@
             <div :class="['topnavbar', { 'topnavbarOpen': MenuToggle, 'topnavbarClose': MenuToggleClose }]">
                 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
                     <a :href="route('index.home')" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                        <span class="fs-4"><img :src="logodark" class="logo" /></span>
+                        <span class="fs-4"><img :src="logodark" class="logo" alt="Portifólio" /></span>
                     </a>
                     <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
@@ -45,15 +45,8 @@
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue';
+import NavRouterLink from '@resources/plugins/NavRouterLink.js';
 
-const NavRouterLink = [
-    { title: 'Inicio', route: 'index.home' },
-    { title: 'Sobre', route: 'index.about' },
-    { title: 'Experiencias', route: 'index.experiences' },
-    { title: 'Projetos', route: 'index.project' },
-    { title: 'Educação', route: 'index.education' },
-    { title: 'Contatos', route: 'index.contact' },
-];
 const logo = ref('Assets/image/index/logo2_l.png');
 const logodark = ref('Assets/image/index/logo2_b.png');
 const isSticky = ref(false);
@@ -134,6 +127,10 @@ nav {
         }
         .nav-link {
             text-shadow: none;
+        }
+        .active{
+            background: linear-gradient(90deg, #c4853e 0%, #fb3640 100%);
+            color: #fff !important;
         }
     }
 
@@ -218,6 +215,9 @@ nav {
         fill: #000;
         border: 1px solid #000;
     }
+    .active{
+            color: #b9803f !important;
+        }
 
 }
 

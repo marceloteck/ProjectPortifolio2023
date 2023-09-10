@@ -1,6 +1,6 @@
 // Importar componentes 
-import LayoutSectionIndex from '@PagesVuejs/components/Layouts/LayoutSectionIndex.vue';
+//import LayoutSectionIndex from '@PagesVuejs/components/Layouts/LayoutSectionIndex.vue';
 
-const Layouts = { LayoutSectionIndex };
+const Layouts = {  };
 
 export default Layouts;
