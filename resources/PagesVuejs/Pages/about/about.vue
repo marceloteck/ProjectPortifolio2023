@@ -2,20 +2,13 @@ s<template>
     <article>
         <AppHead title="Sobre" />
         <header>
-            <NavBar />
+            <NavBar class="NavBarComponents" />
         </header>
-        <section class="sectionMain">
+        <section class="sectionMainComponents">
             <mainAbout />
         </section>
-        <section class="footer">
+        <section class="footerComponents">
             <TheFooter />
         </section>
     </article>
 </template>
-
-<style lang="scss" scoped>
-    .sectionMain{
-        width: 100%;
-        min-height: 100vh;
-    }
-</style>

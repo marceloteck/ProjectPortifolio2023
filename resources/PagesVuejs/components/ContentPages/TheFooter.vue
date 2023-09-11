@@ -74,6 +74,7 @@ const contato = [
     $colorText: #fff;
     footer{
         color: $colorText;
+        
         .col{
             position: relative;
             @media screen and (max-width: 768px) { text-align: center; }

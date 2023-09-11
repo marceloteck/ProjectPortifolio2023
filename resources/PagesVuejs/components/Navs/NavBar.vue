@@ -4,7 +4,7 @@
         <div class="container-xl">
             <div class="d-flex w-50">
                 <Link class="navbar-brand" :href="route('index.home')">
-                <img :src="logo" class="logo" alt="Portifólio" />
+                <img :src="logo" :class="['logo', {'noIndexLogo': !route().current('index.home')}]" alt="Portifólio" />
                 </Link>
             </div>
 
@@ -172,6 +172,9 @@ nav {
         @media screen and (max-width: 700px) {
             width: 120px;
         }
+    }
+    .noIndexLogo{
+        width: 120px;
     }
 
     .nav-link {

@@ -19,7 +19,7 @@
             <cardProjectsIndex />
         </section>
 
-        <section class="footer">
+        <section class="footerComponents">
             <TheFooter />
         </section>
     </article>
@@ -69,13 +69,6 @@
         padding-top: 20px;
 
     }
-    .footer{
-        border-top:2px solid rgb(37, 24, 17);
-        background-color: rgba(37, 24, 17, 0.7);
-        background-image: url('https://static.vecteezy.com/system/resources/previews/000/517/966/non_2x/vector-abstract-background-dark-and-black-overlaps-007.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-        background-blend-mode: multiply;
-    }
+    
  
 </style>

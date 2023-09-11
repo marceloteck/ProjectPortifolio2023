@@ -10,9 +10,9 @@
             </span>
           </h2>
         </div>
-  
-        <div class="card" v-for="itens in 6" :key="itens">
-          <img src="https://images01.nicepagecdn.com/page/10/78/pt/modelo-site-preview-107805.jpg" alt="title">
+  <!-- https://images01.nicepagecdn.com/page/10/78/pt/modelo-site-preview-107805.jpg -->
+        <div class="card" v-for="itens in 2" :key="itens">
+          <img src="https://www.umbuzeiro.pb.gov.br/images/IMAGENS/em_breve.jpg" alt="title">
           <div class="card_Tecnolog d-flex justify-content-end">
             <div class="svg" v-for="svg in emUso" :key="svg.title">
               <div v-html="svg.icon"></div>
