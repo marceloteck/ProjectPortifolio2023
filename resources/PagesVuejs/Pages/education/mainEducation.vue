@@ -10,7 +10,9 @@
 
 
         <div class="container-xl">
-        <div class="row minProjetctContent ">
+        <div class="row projetctEducations">
+
+        <div class="col-12 col-lg-7">
 
           <div class="accordion" id="accordionEducation">
             <div class="accordion-item" v-for="IsItem in educations" :key="IsItem.item">
@@ -47,6 +49,19 @@
               </div>
             </div>
           </div>
+
+        </div>
+
+
+        <div class="col-12 col-lg-7"></div>
+
+
+
+
+
+
+
+
           
         </div>
       </div>
@@ -197,19 +212,47 @@ const svg = {
 </script>
 
 
-<style lang="css" scoped>
-.moreicon{
-  position: relative;
-  float: right;
-  transform: rotate(90deg);
-  transition: all 0.2s ease-in-out;
+<style lang="scss" scoped>
+
+.projetctEducations {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    .accordion-btn {
+        outline: none !important;
+        border: none !important;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+        font-size: 1.4rem;
+        color: black;
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: 600;
+    }
+    .icon{
+        float: left;
+        margin-right: 10px;
+    }
+    .moreicon{
+        position: relative;
+        float: right;
+        transform: rotate(90deg);
+        transition: all 0.2s ease-in-out;
+
+        .iconSvg{
+            color: #979494;
+        }
+        .showMore{
+            transform: rotate(0deg) !important;
+        }
+
+    }
+
+
 }
-.showMore{
-  transform: rotate(0deg) !important;
-}
-.moreicon .iconSvg{
-  color: #979494;
-}
+
+
 .TextBody{
   position: relative;
   padding-left: 15px;
@@ -254,22 +297,8 @@ const svg = {
   border:solid 1px rgb(243, 243, 243);
   background: rgb(243, 243, 243);
 }
-.icon{
-  float: left;
-  margin-right: 10px;
-}
-.accordion-btn {
-  outline: none !important;
-  border: none !important;
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  padding: 15px;
-  text-align: left;
-  font-size: 1.4rem;
-  color: black;
-  font-family: 'Titillium Web', sans-serif;
-  font-weight: 600;
-}
+
+
 
 
 </style>
