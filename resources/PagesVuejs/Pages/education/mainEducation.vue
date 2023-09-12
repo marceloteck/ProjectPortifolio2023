@@ -1,74 +1,56 @@
 <template>
-    <div class="container-fluid">
-        <LayoutTopPages>
-            <particlesCircles />
-            <template #titlePage>
-                Formação e Cursos
-            </template>
-        </LayoutTopPages>
-
-
-
-        <div class="container-xl">
-        <div class="row projetctEducations">
-
-        <div class="col-12 col-lg-7">
-
-          <div class="accordion" id="accordionEducation">
-            <div class="accordion-item" v-for="IsItem in educations" :key="IsItem.item">
-              <h2 class="accordion-header" :id="IsItem.item">
-                <button @click="BtnItemClick(IsItem.item)" class="accordion-btn" type="button" data-bs-toggle="collapse"
-                    :data-bs-target="'#collapse' + IsItem.item"
-                    :aria-expanded="(IsItem.item === 'item1') ? true : false"
-                    :aria-controls="'collapse' + IsItem.item">
-                  <div class="icon" v-html="svg.circleOk"></div> {{ IsItem.title }}
-                  <div :class="['moreicon', {'showMore': IsItem.item === selectBtnItem }]">
-                    <div class="iconSvg" v-html="svg.ExpandMore"></div>
-                  </div>
-                </button>
-              </h2>
-              <div :id="'collapse' + IsItem.item"
-                :class="(IsItem.item === 'item1') ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'"
-                :aria-labelledby="IsItem.item" data-bs-parent="#accordionEducation">
-                <div class="accordion-body">
-                  <div class="imgBody" :style="IsItem.size"> <img :src="IsItem.img" :alt="IsItem.title" /> </div>
-                  <div class="TextBody">
-                    <span class="title" v-if="IsItem.formation !== 'none'">{{ IsItem.formation }} </span> <br>
-                    <span class="periodo" v-if="IsItem.date !== 'none'">{{ IsItem.date }}</span> <br>
-                    <span class="link" 
-                    v-if="IsItem.link !== 'none' && (IsItem.WebLocal !== 'youtube' && IsItem.WebLocal !== 'link')">
-                      <a target="_blank" :href="IsItem.link">Ver certificado</a> {{ IsItem.WebLocal }}
-                    </span>
-                    <span class="link" 
-                    v-if="IsItem.link !== 'none' && (IsItem.WebLocal === 'youtube' || IsItem.WebLocal === 'link')">
-                      <a target="_blank" :href="IsItem.link">Acessar Link</a>
-                    </span>
-                  </div>
-                  
-                </div>
+<div class="container-fluid">
+  <LayoutTopPages>
+      <particlesCircles />
+      <template #titlePage>
+          Formação e Cursos
+      </template>
+  </LayoutTopPages>
+  <div class="container-xl">
+    <div class="row projetctEducations">
+    <div class="col-12 col-lg-7">
+      <div class="accordion" id="accordionEducation">
+        <div class="accordion-item" v-for="IsItem in educations" :key="IsItem.item">
+          <h2 class="accordion-header" :id="IsItem.item">
+            <button @click="BtnItemClick(IsItem.item)" class="accordion-btn" type="button" data-bs-toggle="collapse"
+                :data-bs-target="'#collapse' + IsItem.item"
+                :aria-expanded="(IsItem.item === 'item1') ? true : false"
+                :aria-controls="'collapse' + IsItem.item">
+              <div class="icon" v-html="svg.circleOk"></div> {{ IsItem.title }}
+              <div :class="['moreicon', {'showMore': IsItem.item === selectBtnItem }]">
+                <div class="iconSvg" v-html="svg.ExpandMore"></div>
+              </div>
+            </button>
+          </h2>
+          <div :id="'collapse' + IsItem.item"
+            :class="(IsItem.item === 'item1') ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'"
+            :aria-labelledby="IsItem.item" data-bs-parent="#accordionEducation">
+            <div class="accordion-body">
+              <div class="imgBody" :style="IsItem.size"> <img :src="IsItem.img" :alt="IsItem.title" /> </div>
+              <div class="TextBody">
+                <span class="title" v-if="IsItem.formation !== 'none'">{{ IsItem.formation }} </span> <br>
+                <span class="periodo" v-if="IsItem.date !== 'none'">{{ IsItem.date }}</span> <br>
+                <span class="link" 
+                v-if="IsItem.link !== 'none' && (IsItem.WebLocal !== 'youtube' && IsItem.WebLocal !== 'link')">
+                  <a target="_blank" :href="IsItem.link">Ver certificado</a> {{ IsItem.WebLocal }}
+                </span>
+                <span class="link" 
+                v-if="IsItem.link !== 'none' && (IsItem.WebLocal === 'youtube' || IsItem.WebLocal === 'link')">
+                  <a target="_blank" :href="IsItem.link">Acessar Link</a>
+                </span>
               </div>
             </div>
           </div>
-
-        </div>
-
-
-        <div class="col-12 col-lg-7"></div>
-
-
-
-
-
-
-
-
-          
         </div>
       </div>
-
-
-
     </div>
+
+    <div class="col-12 col-lg-5">
+      <imagensWeb ImgSrc="Assets/image/index/imgEducations.png" style="width: 100%;" />
+    </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script setup>
@@ -213,92 +195,90 @@ const svg = {
 
 
 <style lang="scss" scoped>
-
 .projetctEducations {
-    margin-top: 25px;
-    margin-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 
-    .accordion-btn {
-        outline: none !important;
-        border: none !important;
-        background-color: rgb(255, 255, 255);
+  .col-lg-5 {
+    @media screen and (max-width: 991px) { display: none;}
+  }
+
+  .accordion-btn {
+    outline: none !important;
+    border: none !important;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.4rem;
+    color: black;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+
+    @media screen and (max-width: 576px) { font-size: 1.2rem; }
+  }
+  .icon{
+    float: left;
+    margin-right: 10px;
+  }
+  .moreicon{
+    position: relative;
+    float: right;
+    transform: rotate(90deg);
+    transition: all 0.2s ease-in-out;
+
+    .iconSvg{
+        color: #979494;
+    }
+  }
+  .showMore{
+    transform: rotate(0deg) !important;
+  }
+  .accordion-body{
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    
+    .imgBody{
+      border:solid 1px #ccc;
+      border-radius:4px;
+      background: #f1f1f1;
+      transition: all .2s ease-in-out;
+
+      img{
         width: 100%;
-        padding: 15px;
-        text-align: left;
-        font-size: 1.4rem;
-        color: black;
-        font-family: 'Titillium Web', sans-serif;
-        font-weight: 600;
-    }
-    .icon{
-        float: left;
-        margin-right: 10px;
-    }
-    .moreicon{
+        min-width: 85px;
+        height: 100%;
+        min-height: 70px;
         position: relative;
-        float: right;
-        transform: rotate(90deg);
-        transition: all 0.2s ease-in-out;
-
-        .iconSvg{
-            color: #979494;
-        }
-        .showMore{
-            transform: rotate(0deg) !important;
-        }
-
+      }
     }
+    .imgBody:hover{
+      border:solid 1px rgb(243, 243, 243);
+      background: rgb(243, 243, 243);
+    }
+    .TextBody{
+      position: relative;
+      padding-left: 15px;
+      font-family: 'Titillium Web', sans-serif;
 
-
+      span.title{
+        font-weight: bold;
+      }
+      span.periodo{
+        font-weight: 500;
+        color: #424242;
+      }
+      span.link a{
+        font-weight: 600;
+        color: #1a46a5;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      span.link a:hover{
+        color: #37528b;
+      }
+    }
+  }
 }
-
-
-.TextBody{
-  position: relative;
-  padding-left: 15px;
-  font-family: 'Titillium Web', sans-serif;
-}
-.TextBody span.title{
-  font-weight: bold;
-
-}
-.TextBody span.periodo{
-  font-weight: 500;
-  color: #424242;
-}
-.TextBody span.link a{
-  font-weight: 600;
-  color: #1a46a5;
-  text-decoration: none;
-  cursor: pointer;
-}
-.TextBody span.link a:hover{
-  color: #37528b;
-}
-.accordion-body{
-  position: relative;
-  display: flex;
-  flex-direction:row;
-}
-.imgBody img{
-  width: 100%;
-  min-width: 85px;
-  height: 100%;
-  min-height: 70px;
-  position: relative;
-}
-.imgBody{
-  border:solid 1px #ccc;
-  border-radius:4px;
-  background: #f1f1f1;
-  transition: all .2s ease-in-out;
-}
-.imgBody:hover{
-  border:solid 1px rgb(243, 243, 243);
-  background: rgb(243, 243, 243);
-}
-
-
-
-
 </style>
