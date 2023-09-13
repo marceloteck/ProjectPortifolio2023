@@ -8,22 +8,31 @@
         </LayoutTopPages>
 
         <div class="row">
-            <div class="col-12 d-flex justify-content-center align-itens-center flex-wrap">
-
+            <div class="col-12">
                 <div class="contactsUser">
-
                     <div v-for="list in listContact" :key="list"
-                    @click="AbrirLink(list.title)" :class="['IconsContacts', list.class]">
+                    @click="clickSocial(list.class)" :class="['IconsContacts', list.class]">
                         <span class="tooltip">{{ list.title }}</span>
                         <div v-html="list.icon"></div>
                     </div>
-                    
-                    <br>
                     <div class="description" v-if="RedSocial === null">Clique para mais detalhes</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="detailsContacts">
+                    
+                    <div :class="['AppNumberUser', {'AppTopVisible': RedSocialOK('zap')}]">
+                        <span class="number zapBg">+55 (94) 9 98131-6065</span>
+                        <span class="copy zapBg" @click="copiarTexto('+55 (94) 9 98131-6065')"><i v-html="icons.copyIcon"></i></span>
+                        <span class="Enviar zapBg" @click="AbrirLink('zap')">
+                            <span class="iconSend"><i v-html="icons.sendIcon"></i></span>
+                        </span>
+                        <br> <div class="textInfo">Contato pelo Whatsapp</div>
+                    </div>
+
 
 
                 </div>
-
             </div>
         </div>
 
@@ -33,6 +42,8 @@
 <style lang="scss" scoped>
 .row {
     .col-12 {
+        display: flex;
+        justify-content: center;
         .contactsUser {
             color: black;
             width: fit-content;
@@ -40,6 +51,106 @@
             border-radius: 12px;
             float: left;
             border: 0px solid rgb(179, 179, 179);
+
+            .IconsContacts {
+                position: relative;
+                float: left;
+                padding: 10px;
+                color: rgb(12, 18, 26);
+                font-size: 3rem;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+
+                .tooltip {
+                    position: absolute;
+                    top: 0;
+                    font-size: 14px;
+                    background: #000000;
+                    color: #ffffff;
+                    padding: 5px 8px;
+                    border-radius: 5px;
+                    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    right: -3px;
+                }
+                .tooltip::before {
+                    position: absolute;
+                    content: "";
+                    height: 8px;
+                    width: 8px;
+                    background: #000000;
+                    bottom: -3px;
+                    left: 50%;
+                    transform: translate(-50%) rotate(45deg);
+                    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                }
+            }
+            .zap { color: #00860d; }
+            .zap:hover { color: #062c09; }
+            .telegram { color: #2294cf; }
+            .telegram:hover { color: #185e81; }
+            .linkedin { color: #126bc4; }
+            .linkedin:hover { color: #0e4781; }
+            .facebook { color: #415e9a; }
+            .facebook:hover { color: #253453; }
+
+            .description{
+                text-align: center;
+                font-weight: 400;
+            }
+        }
+        .detailsContacts {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .AppNumberUser {
+                margin-top: 450px;
+                padding: 10px;
+                color: aliceblue;
+                font-family: 'Titillium Web', sans-serif;
+                pointer-events: none;
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                opacity: 1;
+                position: absolute;
+
+                .copy{ height: 100%; }
+                .number, .Enviar, .copy {
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(17, 17, 17, 0.5);
+                    margin-right: 2px;
+                    padding: 13px;
+                    cursor: pointer;
+
+                    .iconSend{
+                        transform: rotate(-30deg);
+                        transition: all .2s ease-in-out;
+                    }
+                }
+                .Enviar:hover{
+                    .iconSend{
+                        transform: rotate(0deg);
+                    }
+                }
+                .zapBg{ background-color: rgb(5, 87, 13) !important;}
+                .textInfo{
+                    position: absolute;
+                    margin-top: 20px;
+                    color: #3f3f3f;
+                    text-align: center;
+                    width: 93%;
+                    font-weight: 400;
+                    
+                }
+            }
+            .AppTopVisible{
+                margin-top: 150px;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
         }
     }
 }
@@ -52,10 +163,13 @@ import svgIcons from '@resources/plugins/svg.js';
 
 const RedSocial = ref(null);
 
-const clickSocial = (btn) => {
-    RedSocial.value = btn;
+const clickSocial = (btn) => { 
+    if(RedSocial.value === null) RedSocial.value = btn;
+    else RedSocial.value = null;
 }
-
+const RedSocialOK = (ok) => { 
+    if(RedSocial === ok) return true;
+ }
 
 const listContact = [
     { title: 'WhatsApp', class: 'zap', icon: svgIcons.whatsapp },
@@ -64,22 +178,19 @@ const listContact = [
     { title: 'Facebook', class: 'facebook', icon: svgIcons.facebook },
 ]
 
-const contatoUser = {
+const icons = {
 sendIcon: svgIcons.sendicon,
 copyIcon: svgIcons.copyIcon,
 }
 
 function AbrirLink(link){
     const url = '';
-    if(link === 'Linkedin') url = 'https://www.linkedin.com/in/marcellohenrique-pro/';
-    else if(link === 'Facebook') url = 'https://www.facebook.com/marcelo.sousahenrique.92';
-    else if(link === 'WhatsApp') url = 'https://wa.me/5594981319065';
-    else if(link === 'Telegram') url = 'https://t.me/MarceloHenriquePro';
+    if(link === 'linkedin') url = 'https://www.linkedin.com/in/marcellohenrique-pro/';
+    else if(link === 'facebook') url = 'https://www.facebook.com/marcelo.sousahenrique.92';
+    else if(link === 'zap') url = 'https://wa.me/5594981319065';
+    else if(link === 'telegram') url = 'https://t.me/MarceloHenriquePro';
     window.open(url, '_blank');
 }
-
-
-
 
 function copiarTexto(conteudo) {
     var inputTemporario = document.createElement('input');
