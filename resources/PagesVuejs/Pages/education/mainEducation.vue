@@ -59,7 +59,8 @@ import { ref } from "vue";
 const selectBtnItem = ref('item1');
 
 const BtnItemClick = (btnItem) => {
-  selectBtnItem.value = btnItem;
+  if(selectBtnItem.value === btnItem) selectBtnItem.value = ''; 
+  else selectBtnItem.value = btnItem; 
 };
 
 const educations = [
