@@ -146,7 +146,7 @@
                 }
             }
             .AppTopVisible{
-                margin-top: 150px;
+                margin-top: 150px !important;
                 opacity: 1;
                 visibility: visible;
                 pointer-events: auto;
