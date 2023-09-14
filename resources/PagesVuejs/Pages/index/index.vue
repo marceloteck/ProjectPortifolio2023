@@ -65,7 +65,7 @@
     .section03{
         background: rgb(221, 221, 221);
         width: 100%;
-        min-height: 90vh;
+        min-height: 100vh;
         padding-top: 20px;
 
     }

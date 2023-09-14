@@ -12,3 +12,6 @@ s<template>
         </section>
     </article>
 </template>
+<style lang="scss" scoped>
+    
+</style>

@@ -15,34 +15,44 @@
                         <span class="tooltip">{{ list.title }}</span>
                         <div v-html="list.icon"></div>
                     </div>
-                    <div class="description" v-if="RedSocial === null">Clique para mais detalhes</div>
+                    <div class="description" v-if="RedSocial === null">Clique para mais detalhes
+                    <br> 
+                    <strong>
+                        <span @click="copiarTexto('marcellosh.12@gmail.com')" class="LinkEmail">marcellosh.12@gmail.com</span>
+                    </strong>
+                    </div>
                 </div>
             </div>
             <div class="col-12">
                 <div class="detailsContacts">
-                    
-                    <div :class="['AppNumberUser', {'AppTopVisible': RedSocialOK('zap')}]">
-                        <span class="number zapBg">+55 (94) 9 98131-6065</span>
-                        <span class="copy zapBg" @click="copiarTexto('+55 (94) 9 98131-6065')"><i v-html="icons.copyIcon"></i></span>
-                        <span class="Enviar zapBg" @click="AbrirLink('zap')">
+                    <div v-for="number in listNumber" :key="number"
+                    :class="['CardAppContacts', {'AppTopVisible': RedSocialOK(number.TypeSocial)}]">
+                        <span :class="['number', number.TypeSocial + 'Bg']">{{ number.number }}</span>
+                        <span :class="['copy', number.TypeSocial + 'Bg']" @click="copiarTexto(number.number)"><i v-html="icons.copyIcon"></i></span>
+                        <span :class="['Enviar', number.TypeSocial + 'Bg']" @click="AbrirLink(number.TypeSocial)">
                             <span class="iconSend"><i v-html="icons.sendIcon"></i></span>
                         </span>
-                        <br> <div class="textInfo">Contato pelo Whatsapp</div>
+                        <br> <div class="textInfo">{{ number.msg }}</div>
                     </div>
-
-
-
+                    <div v-for="social in ListRedsocial" :key="social"
+                    :class="['CardAppContacts', {'AppTopVisible': RedSocialOK(social.TypeSocial)}]" 
+                    @click="AbrirLink(social.TypeSocial)" >
+                        <span :class="['number', social.TypeSocial + 'Bg']">
+                            Abrir {{ social.titleRede}}: <u>{{ social.NameRede }}</u> 
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
-
 <style lang="scss" scoped>
 .row {
     .col-12 {
+        position: relative;
+        width: 100%;
         display: flex;
+        align-items: center;
         justify-content: center;
         .contactsUser {
             color: black;
@@ -52,6 +62,19 @@
             float: left;
             border: 0px solid rgb(179, 179, 179);
 
+            @media screen and (max-width: 396px) {
+                float: left;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .LinkEmail{
+                cursor: pointer;
+                text-decoration: none;
+                color:#000000;
+            }
             .IconsContacts {
                 position: relative;
                 float: left;
@@ -60,6 +83,7 @@
                 font-size: 3rem;
                 cursor: pointer;
                 transition: all 0.2s ease-in-out;
+                
 
                 .tooltip {
                     position: absolute;
@@ -87,8 +111,8 @@
                     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 }
             }
-            .zap { color: #00860d; }
-            .zap:hover { color: #062c09; }
+            .whatsapp { color: #00860d; }
+            .whatsapp:hover { color: #062c09; }
             .telegram { color: #2294cf; }
             .telegram:hover { color: #185e81; }
             .linkedin { color: #126bc4; }
@@ -97,8 +121,12 @@
             .facebook:hover { color: #253453; }
 
             .description{
+                width: 100%;
                 text-align: center;
                 font-weight: 400;
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+                @media screen and (max-width: 396px) {float: left;}
             }
         }
         .detailsContacts {
@@ -106,14 +134,14 @@
             justify-content: center;
             align-items: center;
 
-            .AppNumberUser {
+            .CardAppContacts {
                 margin-top: 450px;
                 padding: 10px;
                 color: aliceblue;
                 font-family: 'Titillium Web', sans-serif;
                 pointer-events: none;
                 transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                opacity: 1;
+                opacity: 0;
                 position: absolute;
 
                 .copy{ height: 100%; }
@@ -134,7 +162,14 @@
                         transform: rotate(0deg);
                     }
                 }
-                .zapBg{ background-color: rgb(5, 87, 13) !important;}
+                .whatsappBg{ background-color: rgb(0, 134, 13) !important; }
+                .whatsappBg:hover{ background-color: rgb(3, 109, 13) !important; }
+                .linkedinBg{ background-color: rgb(19, 80, 141) !important; }
+                .linkedinBg:hover{ background-color: rgb(13, 47, 82) !important; }
+                .telegramBg{ background-color: rgb(27, 99, 136) !important; }
+                .telegramBg:hover{ background-color: rgb(17, 60, 82) !important; }
+                .facebookBg{ background-color: rgb(45, 64, 102) !important; }
+                .facebookBg:hover{ background-color: rgb(29, 41, 65) !important; }
                 .textInfo{
                     position: absolute;
                     margin-top: 20px;
@@ -164,30 +199,38 @@ import svgIcons from '@resources/plugins/svg.js';
 const RedSocial = ref(null);
 
 const clickSocial = (btn) => { 
-    if(RedSocial.value === null) RedSocial.value = btn;
-    else RedSocial.value = null;
+    if(RedSocial.value === null) RedSocial.value = btn; else
+    if(RedSocial.value === null || RedSocial.value === btn) RedSocial.value = null;
+    else RedSocial.value = btn;
 }
 const RedSocialOK = (ok) => { 
-    if(RedSocial === ok) return true;
+    if(RedSocial.value === ok) return true;
  }
-
 const listContact = [
-    { title: 'WhatsApp', class: 'zap', icon: svgIcons.whatsapp },
-    { title: 'Linkedin', class: 'linkedin', icon: svgIcons.linkedin },
+    { title: 'WhatsApp', class: 'whatsapp', icon: svgIcons.whatsapp },
     { title: 'Telegram', class: 'telegram', icon: svgIcons.telegram },
+    { title: 'Linkedin', class: 'linkedin', icon: svgIcons.linkedin },
     { title: 'Facebook', class: 'facebook', icon: svgIcons.facebook },
+]
+const listNumber = [
+    { number: '+55 (94) 9 98131-6065', TypeSocial: 'whatsapp', msg: 'Contato pelo Whatsapp'},
+    { number: '+55 (94) 9 98131-6065', TypeSocial: 'telegram', msg: 'Contato pelo Telegram'}
+]
+const ListRedsocial = [
+    { titleRede: 'Linkedin', TypeSocial: 'linkedin', NameRede: 'marcellohenrique-pro'},
+    { titleRede: 'Facebook', TypeSocial: 'facebook', NameRede: 'marcelo.sousahenrique.92'},
 ]
 
 const icons = {
-sendIcon: svgIcons.sendicon,
-copyIcon: svgIcons.copyIcon,
+    sendIcon: svgIcons.sendicon,
+    copyIcon: svgIcons.copyIcon,
 }
 
 function AbrirLink(link){
-    const url = '';
+    let url = '';
     if(link === 'linkedin') url = 'https://www.linkedin.com/in/marcellohenrique-pro/';
     else if(link === 'facebook') url = 'https://www.facebook.com/marcelo.sousahenrique.92';
-    else if(link === 'zap') url = 'https://wa.me/5594981319065';
+    else if(link === 'whatsapp') url = 'https://wa.me/5594981319065';
     else if(link === 'telegram') url = 'https://t.me/MarceloHenriquePro';
     window.open(url, '_blank');
 }
