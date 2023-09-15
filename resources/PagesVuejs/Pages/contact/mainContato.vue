@@ -7,7 +7,7 @@
             </template>
         </LayoutTopPages>
 
-        <div class="row">
+        <div class="row desktop">
             <div class="col-12">
                 <div class="contactsUser">
                     <div v-for="list in listContact" :key="list"
@@ -44,10 +44,40 @@
                 </div>
             </div>
         </div>
+        <div class="row mobile">
+
+
+
+
+
+            <div class="accordion" id="accordioncontacts">
+
+                <div class="accordion-item" v-for="list in listContact" :key="list">
+                    <h2 class="accordion-header" :id="list.class + 'id'">
+                    <button 
+                    :class="['accordion-btn', list.class + 'Bg']" type="button" data-bs-toggle="collapse" :data-bs-target="'#' + list.class + 'Contact'" aria-expanded="false" :aria-controls="list.class + 'Contact'">
+                        <div v-html="list.icon"></div> <div class="textContact">{{ list.title }}</div> 
+                    </button>
+                    </h2>
+                    <div :id="list.class + 'Contact'" class="accordion-collapse collapse" :aria-labelledby="list.class + 'id'" data-bs-parent="#accordioncontacts">
+                    <div class="accordion-body">
+                        <strong>contato pelo whatsapp</strong> 
+                    </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
     </div>
 </template>
 <style lang="scss" scoped>
-.row {
+.desktop {
+    @media screen and (max-width: 400px) { display: none; }
     .col-12 {
         position: relative;
         width: 100%;
@@ -134,7 +164,7 @@
             justify-content: center;
             align-items: center;
 
-            .CardAppContacts {
+            .CardAppContacts{
                 margin-top: 450px;
                 padding: 10px;
                 color: aliceblue;
@@ -162,14 +192,6 @@
                         transform: rotate(0deg);
                     }
                 }
-                .whatsappBg{ background-color: rgb(0, 134, 13) !important; }
-                .whatsappBg:hover{ background-color: rgb(3, 109, 13) !important; }
-                .linkedinBg{ background-color: rgb(19, 80, 141) !important; }
-                .linkedinBg:hover{ background-color: rgb(13, 47, 82) !important; }
-                .telegramBg{ background-color: rgb(27, 99, 136) !important; }
-                .telegramBg:hover{ background-color: rgb(17, 60, 82) !important; }
-                .facebookBg{ background-color: rgb(45, 64, 102) !important; }
-                .facebookBg:hover{ background-color: rgb(29, 41, 65) !important; }
                 .textInfo{
                     position: absolute;
                     margin-top: 20px;
@@ -189,7 +211,69 @@
         }
     }
 }
-    
+.mobile {
+    display: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 400px) { display: block; }
+
+    .accordion-item {
+        border: 0px;
+        .accordion-header {
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+            
+            .accordion-btn {
+                outline: none !important;
+                border: none !important;
+                background-color: rgb(255, 255, 255);
+                width: 100%;
+                padding: 15px;
+                text-align: left;
+                font-size: 1.4rem;
+                color: rgb(255, 255, 255);
+                font-family: 'Titillium Web', sans-serif;
+                font-weight: 600;
+                box-shadow: none;
+                display: flex;
+                justify-content: start;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-content:end;
+                align-items: center;
+            }
+            .textContact {
+                margin-left: 15px;
+                font-size: 1.1rem;
+            }
+        }
+        .accordion-btn::after, .accordion-btn::before {
+            box-sizing: border-box;
+        }
+    }
+
+}
+.whatsappBg{ 
+    background-color: rgb(0, 134, 13) !important; 
+    @media screen and (max-width: 400px) { border-radius: 10px 10px 0px 0px; }
+}
+.whatsappBg:hover{ background-color: rgb(3, 109, 13) !important; }
+.linkedinBg{ background-color: rgb(19, 80, 141) !important; }
+.linkedinBg:hover{ background-color: rgb(13, 47, 82) !important; }
+.telegramBg{ background-color: rgb(27, 99, 136) !important; }
+.telegramBg:hover{ background-color: rgb(17, 60, 82) !important; }
+.facebookBg{ 
+    background-color: rgb(45, 64, 102) !important; 
+    transition: all 0.2s ease-in-out;
+    @media screen and (max-width: 400px) { border-radius: 0px 0px 10px 10px; } 
+}
+.facebookBg:focus{
+    @media screen and (max-width: 400px) { border-radius: 0px 0px 0px 0px; }
+}
+.facebookBg:hover{ background-color: rgb(29, 41, 65) !important; }
 </style>
 
 <script setup>
