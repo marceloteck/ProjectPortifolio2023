@@ -45,34 +45,38 @@
             </div>
         </div>
         <div class="row mobile">
-
-
-
-
-
             <div class="accordion" id="accordioncontacts">
-
-                <div class="accordion-item" v-for="list in listContact" :key="list">
-                    <h2 class="accordion-header" :id="list.class + 'id'">
+                <div class="accordion-item" v-for="list in listNumber" :key="list">
+                    <h2 class="accordion-header" :id="list.TypeSocial + 'id'">
                     <button 
-                    :class="['accordion-btn', list.class + 'Bg']" type="button" data-bs-toggle="collapse" :data-bs-target="'#' + list.class + 'Contact'" aria-expanded="false" :aria-controls="list.class + 'Contact'">
-                        <div v-html="list.icon"></div> <div class="textContact">{{ list.title }}</div> 
+                    :class="['accordion-btn', list.TypeSocial + 'Bg']" type="button" data-bs-toggle="collapse" :data-bs-target="'#' + list.TypeSocial + 'Contact'" aria-expanded="false" :aria-controls="list.class + 'Contact'">
+                        <div v-html="list.icon"></div> <div class="textContact">{{ list.TypeSocial }}</div> 
                     </button>
                     </h2>
-                    <div :id="list.class + 'Contact'" class="accordion-collapse collapse" :aria-labelledby="list.class + 'id'" data-bs-parent="#accordioncontacts">
+                    <div :id="list.TypeSocial + 'Contact'" class="accordion-collapse collapse" :aria-labelledby="list.TypeSocial + 'id'" data-bs-parent="#accordioncontacts">
                     <div class="accordion-body">
-                        <strong>contato pelo whatsapp</strong> 
+                        <strong>{{ list.number }}</strong>
+                        <button @click="AbrirLink(list.TypeSocial)" class="btn" type="button"><i v-html="icons.sendIcon"></i></button>
+                        <button @click="copiarTexto(list.number)" class="btn" type="button"><i v-html="icons.copyIcon"></i></button>
                     </div>
                     </div>
                 </div>
-
-
+                <div class="accordion-item" v-for="list in ListRedsocial" :key="list">
+                    <h2 class="accordion-header" :id="list.TypeSocial + 'id'">
+                    <button 
+                    :class="['accordion-btn', list.TypeSocial + 'Bg']" type="button" data-bs-toggle="collapse" :data-bs-target="'#' + list.TypeSocial + 'Contact'" aria-expanded="false" :aria-controls="list.class + 'Contact'">
+                        <div v-html="list.icon"></div> <div class="textContact">{{ list.TypeSocial }}</div> 
+                    </button>
+                    </h2>
+                    <div :id="list.TypeSocial + 'Contact'" class="accordion-collapse collapse" :aria-labelledby="list.TypeSocial + 'id'" data-bs-parent="#accordioncontacts">
+                    <div class="accordion-body">
+                        <strong>{{ list.NameRede }}</strong>
+                        <button @click="AbrirLink(list.TypeSocial)" class="btn" type="button"><i v-html="icons.sendIcon"></i></button>
+                    </div>
+                    </div>
+                </div>
             </div>
-
-
-
         </div>
-
     </div>
 </template>
 <style lang="scss" scoped>
@@ -176,7 +180,7 @@
 
                 .copy{ height: 100%; }
                 .number, .Enviar, .copy {
-                    border-radius: 5px;
+                    border-radius: 4px;
                     box-shadow: 0 0 10px rgba(17, 17, 17, 0.5);
                     margin-right: 2px;
                     padding: 13px;
@@ -215,6 +219,7 @@
     display: none;
     margin-top: 30px;
     margin-bottom: 30px;
+    font-family: 'Titillium Web', sans-serif;
     @media screen and (max-width: 400px) { display: block; }
 
     .accordion-item {
@@ -235,14 +240,12 @@
                 text-align: left;
                 font-size: 1.4rem;
                 color: rgb(255, 255, 255);
-                font-family: 'Titillium Web', sans-serif;
+                font-family:inherit;
                 font-weight: 600;
                 box-shadow: none;
                 display: flex;
-                justify-content: start;
                 flex-direction: row;
                 flex-wrap: wrap;
-                align-content:end;
                 align-items: center;
             }
             .textContact {
@@ -250,30 +253,36 @@
                 font-size: 1.1rem;
             }
         }
-        .accordion-btn::after, .accordion-btn::before {
-            box-sizing: border-box;
+        .accordion-body {
+            border: 1px solid #ccc;
+            font-family:inherit;
+            @media screen and (max-width: 345px) { font-size: 0.8rem; }
+            button{
+                position: relative;
+                float: right;
+                margin-left: 3px;
+                margin-top: -10px;
+
+                @media screen and (max-width: 310px) { margin-left: 0px; }
+            }
         }
     }
 
 }
-.whatsappBg{ 
-    background-color: rgb(0, 134, 13) !important; 
-    @media screen and (max-width: 400px) { border-radius: 10px 10px 0px 0px; }
-}
+.whatsappBg{ background-color: rgb(0, 134, 13) !important; }
 .whatsappBg:hover{ background-color: rgb(3, 109, 13) !important; }
 .linkedinBg{ background-color: rgb(19, 80, 141) !important; }
 .linkedinBg:hover{ background-color: rgb(13, 47, 82) !important; }
 .telegramBg{ background-color: rgb(27, 99, 136) !important; }
 .telegramBg:hover{ background-color: rgb(17, 60, 82) !important; }
-.facebookBg{ 
-    background-color: rgb(45, 64, 102) !important; 
-    transition: all 0.2s ease-in-out;
-    @media screen and (max-width: 400px) { border-radius: 0px 0px 10px 10px; } 
-}
-.facebookBg:focus{
-    @media screen and (max-width: 400px) { border-radius: 0px 0px 0px 0px; }
-}
+.facebookBg{ background-color: rgb(45, 64, 102) !important; }
 .facebookBg:hover{ background-color: rgb(29, 41, 65) !important; }
+
+.whatsappBg{ @media screen and (max-width: 400px) { border-radius: 4px 4px 0px 0px; } }
+.facebookBg{ @media screen and (max-width: 400px) { border-radius: 0px 0px 4px 4px; } }
+
+
+
 </style>
 
 <script setup>
@@ -297,12 +306,12 @@ const listContact = [
     { title: 'Facebook', class: 'facebook', icon: svgIcons.facebook },
 ]
 const listNumber = [
-    { number: '+55 (94) 9 98131-6065', TypeSocial: 'whatsapp', msg: 'Contato pelo Whatsapp'},
-    { number: '+55 (94) 9 98131-6065', TypeSocial: 'telegram', msg: 'Contato pelo Telegram'}
+    { number: '+55 (94) 9 98131-6065', TypeSocial: 'whatsapp', msg: 'Contato pelo Whatsapp', icon: svgIcons.whatsapp },
+    { number: '+55 (94) 9 98131-6065', TypeSocial: 'telegram', msg: 'Contato pelo Telegram', icon: svgIcons.telegram }
 ]
 const ListRedsocial = [
-    { titleRede: 'Linkedin', TypeSocial: 'linkedin', NameRede: 'marcellohenrique-pro'},
-    { titleRede: 'Facebook', TypeSocial: 'facebook', NameRede: 'marcelo.sousahenrique.92'},
+    { titleRede: 'Linkedin', TypeSocial: 'linkedin', NameRede: 'marcellohenrique-pro', icon: svgIcons.linkedin },
+    { titleRede: 'Facebook', TypeSocial: 'facebook', NameRede: 'marcelo.sousahenrique.92', icon: svgIcons.facebook },
 ]
 
 const icons = {

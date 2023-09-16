@@ -51,14 +51,16 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            margin-top: 13rem;
+            bottom: -6rem;
             position: absolute;
-            border: 4px solid #fda543;
+            border: 4px solid #cf3a1c;
             box-shadow: 0 0 20px 5px rgba(32, 32, 32, 0.5);
             transition: all 0.4s ease-in-out;
             z-index: 3;
 
-            @media screen and (max-width: 660px){ width: 15rem; height: 15rem; }
+    
+
+            @media screen and (max-width: 660px), (max-height: 620px) { width: 15rem; height: 15rem; }
         }
         .circleProfile:hover{
             width: 18.5rem;
@@ -72,56 +74,10 @@
             width: 100%;
             height: 100%;
         }
-       /* .topUser {
-            .col-12 {
-                width: 100%;
-                height: 45vh;
-                background: rgb(24, 26, 55);
-                background: linear-gradient(36deg, rgba(24, 26, 55, 1) 0%, rgba(2, 15, 38, 1) 100%);
-                background-image: url(https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80);
-                background-size: cover;
-                background-attachment: fixed;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                float: left;
-
-                .circleProfile{
-                    width: 18rem;
-                    height: 18rem;
-                    border-radius: 18rem;
-                    background-color: rgb(53, 53, 53);
-                    background-image: url("Assets/image/index/users/perfil.jpg");
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    margin-top: 13rem;
-                    position: absolute;
-                    border: 4px solid #fda543;
-                    box-shadow: 0 0 20px 5px rgba(32, 32, 32, 0.5);
-                    transition: all 0.4s ease-in-out;
-                    z-index: 3;
-
-                    @media screen and (max-width: 660px){ width: 15rem; height: 15rem; }
-                }
-                .circleProfile:hover{
-                    width: 18.5rem;
-                    height: 18.5rem;
-                    cursor: pointer;
-                }
-                .circleProfile img{
-                    align-items: center;
-                    justify-content: center;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }*/
         .userTitle{
             .col-12 {
-                margin-top: 3.5rem;
+                margin-top: 3.7rem;
+                @media screen and (max-height: 615px){ margin-top: 4.5rem; }
                 h2{
                     color: black;
                     margin-top: 3rem;

@@ -55,7 +55,8 @@
     }
     .section02, .section02::before{
         width: 100%;
-        min-height: 93vh;
+        height: 93vh;
+        min-height: 460px;
     }
     .section01, .section01::before{
         width: 100%;

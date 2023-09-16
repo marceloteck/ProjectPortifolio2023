@@ -24,7 +24,7 @@
             </div>
 
             <div :class="['topnavbar', { 'topnavbarOpen': MenuToggle, 'topnavbarClose': MenuToggleClose }]">
-                <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+                <div class="MenuResponsivo d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
                     <a :href="route('index.home')" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                         <span class="fs-4"><img :src="logodark" class="logo" alt="Portifólio" /></span>
                     </a>
@@ -119,7 +119,9 @@ nav {
         transition: all 0.8ms ease-in-out;
         font-family: $fontePrimary;
         color: #000;
-        z-index: 3;
+        z-index: 8;
+
+        @media screen and (max-height: 670px) { overflow-y: auto !important;}       
 
         ul li a{
             font-family: $fontePrimary;
@@ -132,20 +134,21 @@ nav {
             background: linear-gradient(90deg, #c4853e 0%, #fb3640 100%);
             color: #fff !important;
         }
+        
     }
 
     .topnavbarOpen {
         width: 250px;
         height: 100vh;
         border-radius: 0px;
-        animation: menuOpen 1s ease-in-out;
+        animation: menuOpen 0.4s ease-in-out;
     }
 
     .topnavbarClose {
         width: 0;
         height: 0;
         border-radius: 0px;
-        animation: menuClose 1s ease-in-out;
+        animation: menuClose 0.4s ease-in-out;
     }
     .backgroundMenu{
         position: absolute;
@@ -179,7 +182,7 @@ nav {
 
     .nav-link {
         color: $ColorNavLinkLigth;
-        text-shadow: 0px 0px 10px #000000;
+        text-shadow: 0px 0px 5px #000000;
 
         @media screen and (max-width: 700px) {
             text-shadow: none;

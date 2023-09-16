@@ -1,4 +1,4 @@
-s<template>
+<template>
     <article>
         <AppHead title="Contatos" />
         <header>
@@ -13,5 +13,8 @@ s<template>
     </article>
 </template>
 <style lang="scss" scoped>
-    
+    .sectionMainComponents{
+        height: auto;
+        min-height: 600px;
+    }
 </style>
