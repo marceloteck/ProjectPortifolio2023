@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\sendEmail;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -31,8 +32,11 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/test', function(){
-    return Inertia::render('Pages/testes/test');
-});
+// EMAIL
+Route::get('/test', [sendEmail::class, 'index'])->name('test');
+route::post('/test', [sendEmail::class, 'Send'])->name('sendEmail');
+
+
+
 
 require __DIR__.'/auth.php';

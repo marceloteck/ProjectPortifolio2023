@@ -49,12 +49,14 @@
     perspective: 1000px;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 75%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background: #fff;
+
+    @media screen and (max-width: 1200px){ height: 90%; }
+    @media screen and (max-width: 1050px){ height: 100%; }
 
     #element {
       width: 100%;
@@ -62,7 +64,6 @@
       position: relative;
       will-change: transform;
       transition: all .3s ease-in;
-      background-color: aqua;
 
       @media screen and (max-width: 1200px) { width: 100%; }
       

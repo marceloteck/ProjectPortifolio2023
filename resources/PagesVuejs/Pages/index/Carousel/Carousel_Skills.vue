@@ -1,5 +1,6 @@
 <template>
     <div class="container-fluid">
+      <div class="row">
         <Carousel v-bind="settings" :breakpoints="breakpoints">
             <Slide v-for="slide in linguagens" :key="slide">
                 <div class="card">
@@ -12,6 +13,7 @@
             </Slide>
         </Carousel>
     </div>
+  </div>
 </template>
   
 <style lang="scss" scoped>
