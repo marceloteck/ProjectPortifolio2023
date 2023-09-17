@@ -5,7 +5,7 @@
         <form @submit.prevent="sendEmail">
         <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="emailInput" v-model="userCV.emailInput" placeholder="name@example.com">
+            <input type="email" name="emailInput" class="form-control" id="emailInput" v-model="userCV.emailInput" placeholder="name@example.com">
             {{ userCV.emailInput }}
         </div>
         <div class="mb-3">

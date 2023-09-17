@@ -5,6 +5,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -16,7 +17,7 @@ class Curriculo extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(public readonly array $data)
     {
         //
     }
@@ -27,7 +28,8 @@ class Curriculo extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Curriculo',
+            from: new Address($this->data['fromEmail']),
+            subject: $this->data['subject'],
         );
     }
 
@@ -37,7 +39,7 @@ class Curriculo extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mails.CurriculoEmail',
         );
     }
 
