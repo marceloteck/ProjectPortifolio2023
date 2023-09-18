@@ -31,11 +31,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
 // EMAIL
-Route::get('/test', [sendEmailController::class, 'index'])->name('test');
-route::post('/test', [sendEmailController::class, 'Send'])->name('sendEmail');
+route::post('/sendEmail', [sendEmailController::class, 'Send'])->name('sendEmail');
 
+
+// TESTES
+Route::get('/test', [sendEmailController::class, 'index'])->name('test');
 
 
 

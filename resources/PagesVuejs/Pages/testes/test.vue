@@ -6,11 +6,6 @@
         <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
             <input type="email" name="emailInput" class="form-control" id="emailInput" v-model="userCV.emailInput" placeholder="name@example.com">
-            {{ userCV.emailInput }}
-        </div>
-        <div class="mb-3">
-            <label for="descriptionInput" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="descriptionInput" v-model="userCV.descriptionInput" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-success">enviar</button>
         </form>
@@ -39,5 +34,4 @@ function sendEmail(){
         console.log(error);
     }
 }
-
 </script>
