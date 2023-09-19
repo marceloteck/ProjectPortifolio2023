@@ -8,9 +8,9 @@
                 <h2>Tenha acesso ao meu currículo</h2>
                 <span>Escolha enviar por email ou baixar.</span>
                 <div class="formBtn">
-                    <input type="email" :style="inputBtnStyles" v-model="emailUser" class="inputBtn" placeholder="Digite seu E-mail">
-                    <button type="button" class="btn button shadow-lg bg-body rounded">
-                        <div v-if="emailUser !== ''">
+                    <input type="email" :style="inputBtnStyles" v-model="userCV.emailUser" class="inputBtn" placeholder="Digite seu E-mail">
+                    <button @click="sendingMail" type="button" class="btn button shadow-lg bg-body rounded">
+                        <div v-if="userCV.emailUser !== null">
                             <IconSendSvg classes="svgiconUp" />
                             <span>Enviar Email</span>
                         </div>
@@ -25,8 +25,8 @@
                     </button>
                 </div>
                 <div class="formEmail">
-                    <input type="email" v-model="emailUser" class="inputBtn" placeholder="Digite seu E-mail">
-                    <button type="button" class="btn sendbtn"><IconSendSvg classes="svgiconUp" /></button>
+                    <input type="email" v-model="userCV.emailUser" class="inputBtn" placeholder="Digite seu E-mail">
+                    <button @click="sendingMail" type="button" class="btn sendbtn"><IconSendSvg classes="svgiconUp" /></button>
                 </div>
                 <div class="Linkcv"><Link href="#">Baixar curriculo</Link></div>
 
@@ -37,17 +37,64 @@
 </template>
 
 <script setup>
-    import { ref, computed } from "vue";
+import { computed } from "vue";
+import { useForm, router } from "@inertiajs/vue3";
 
-    const emailUser = ref("");
+const userCV = useForm({ emailUser: null });
 
-    const inputBtnStyles = computed(() => {
-        return {
-            marginLeft: emailUser.value !== "" ? "-250px" : "0px",
-            opacity: emailUser.value !== "" ? "1" : "0",
-            width: emailUser.value !== "" ? "255px" : "155px",
-        };
-    });
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+});
+
+const ValidateEmail = computed(() => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return (emailRegex.test(userCV.emailUser) && userCV.emailUser !== null);;
+    
+});
+
+const sendingMail = () => {
+    if(ValidateEmail) sendEmail();
+    // if(ValidateEmail.value) console.log('email enviado: ' + ValidateEmail.value);
+    else Toast.fire({ icon: 'info', title: 'Deve ser um email válido!' });
+}
+
+function sendEmail(){
+    try {
+        console.log(userCV.emailUser);
+        router.post(route('sendEmail'), userCV, {
+            onBefore: (visit) => {},
+            onStart: (visit) => {},
+            onProgress: (progress) => {},
+            onSuccess: (page) => { 
+                Toast.fire({ icon: 'success', title: 'Enviado com successo!' });
+             },
+            onError: (errors) => { 
+                Toast.fire({ icon: 'Error', title: 'Erro ao Enviar o curriculo' });
+             },
+            onCancel: () => {},
+            onFinish: visit => {  },
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const inputBtnStyles = computed(() => {
+    const userInput = () => { return userCV.emailUser.value !== null; }
+    return {
+        marginLeft: userInput.value ? "-250px" : "0px",
+        opacity: userInput.value  ? "1" : "0",
+        width: userInput.value  ? "255px" : "155px",
+    };
+});
 const svgIconBtn = {
     iconSend: '',
     iconDown: '',
