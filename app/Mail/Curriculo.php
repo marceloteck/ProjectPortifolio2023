@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Attachment;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
@@ -28,7 +29,7 @@ class Curriculo extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address($this->data['fromEmail']),
+            from: new Address($this->data['fromEmail'], 'Marcelo de Sousa Henrique'),
             subject: $this->data['subject'],
         );
     }
@@ -50,6 +51,15 @@ class Curriculo extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        $publicPath = public_path();
+        $filePath = $publicPath . '/Assets/files/';
+        $fileName = 'Curriculo_Marcelo_Henrique.pdf';
+
+        return [
+            Attachment::fromPath($filePath . $fileName)
+                ->as($fileName)
+                ->withMime('application/pdf'),
+        ];
     }
 }
+//Curriculo_Marcelo_Henrique.pdf

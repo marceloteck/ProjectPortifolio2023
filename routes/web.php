@@ -32,11 +32,13 @@ Route::middleware('auth')->group(function () {
 });
 
 // EMAIL
-route::post('/sendEmail', [sendEmailController::class, 'Send'])->name('sendEmail');
+route::post('/', [sendEmailController::class, 'Send'])->name('sendEmail');
+route::get('/viewemail', [sendEmailController::class, 'view'])->name('viewemail');
 
 
 // TESTES
-Route::get('/test', [sendEmailController::class, 'index'])->name('test');
+Route::get('/testemail', [sendEmailController::class, 'index'])->name('test');
+Route::get('/testev1', [sendEmailController::class, 'v1test'])->name('v1test');
 
 
 

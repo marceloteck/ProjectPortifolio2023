@@ -38,9 +38,10 @@
 
 <script setup>
 import { computed } from "vue";
-import { useForm, router } from "@inertiajs/vue3";
+import { useForm, router  } from "@inertiajs/vue3";
 
-const userCV = useForm({ emailUser: null });
+const props = defineProps({ resposta: String, status: String });
+const userCV = useForm({ emailUser: '' });
 
 const Toast = Swal.mixin({
     toast: true,
@@ -56,35 +57,30 @@ const Toast = Swal.mixin({
 
 const ValidateEmail = computed(() => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return (emailRegex.test(userCV.emailUser) && userCV.emailUser !== null);;
+    return (emailRegex.test(userCV.emailUser) && userCV.emailUser !== '');;
     
 });
 
 const sendingMail = () => {
-    if(ValidateEmail) sendEmail();
-    // if(ValidateEmail.value) console.log('email enviado: ' + ValidateEmail.value);
+    if(ValidateEmail.value) sendEmail();
     else Toast.fire({ icon: 'info', title: 'Deve ser um email válido!' });
 }
 
-function sendEmail(){
-    try {
-        console.log(userCV.emailUser);
-        router.post(route('sendEmail'), userCV, {
-            onBefore: (visit) => {},
-            onStart: (visit) => {},
-            onProgress: (progress) => {},
-            onSuccess: (page) => { 
-                Toast.fire({ icon: 'success', title: 'Enviado com successo!' });
-             },
-            onError: (errors) => { 
-                Toast.fire({ icon: 'Error', title: 'Erro ao Enviar o curriculo' });
-             },
-            onCancel: () => {},
-            onFinish: visit => {  },
-        });
-    } catch (error) {
-        console.log(error);
-    }
+const sendEmail = async () => {
+  try {
+    router.post(route('sendEmail'), userCV, {
+        onBefore: (visit) => {},
+        onStart: (visit) => {},
+        onProgress: (progress) => {},
+        onSuccess: (page) => { Toast.fire({ icon: props.status, title: props.resposta }); },
+        onError: (errors) => { Toast.fire({ icon: props.status, title: props.resposta }); },
+        onCancel: () => {},
+        onFinish: visit => {  },
+    });
+
+  } catch (error) {
+    Toast.fire({ icon: 'error', title: 'Atualize a página, ocorreu algum erro!' });
+  }
 }
 
 const inputBtnStyles = computed(() => {

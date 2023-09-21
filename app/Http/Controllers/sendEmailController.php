@@ -11,8 +11,14 @@ use Illuminate\Http\Response;
 
 class sendEmailController extends Controller
 {
+
+    public $pageIndex;
+
+    public function __construct(){
+        $this->pageIndex = 'Pages/testes/email';
+    }
     public function index(){
-        return Inertia::render('Pages/testes/test');
+        return Inertia::render($this->pageIndex);
     }
     public function Send(Request $request){
         try {
@@ -25,16 +31,30 @@ class sendEmailController extends Controller
                     'subject' => 'Curriculo Marcelo henrique - Desenvolvedor Full Stack Junior',
                     'message' => 'Segue em anexo o meu curriculo',
                 ]));
-                return ['resposta' => 'Dados recebidos com sucesso!'];
+                
+                return Inertia::render($this->pageIndex, [
+                    'resposta' => 'Email enviado com sucesso!',
+                    'status' => 'success'
+                ]);
 
             }else { 
-                return Inertia::render('Pages/testes/test', [
-                    'errors' => 'email Invalido'
+                return Inertia::render($this->pageIndex, [
+                    'resposta' => 'Email não é válido!',
+                    'status' => 'error'
                 ]);
             };
             
         } catch (\Throwable $th) {
-            return ['resposta' => 'Não foi possivel enviar o Email!'];
+            return Inertia::render($this->pageIndex, [
+                'resposta' => 'Email não enviado, tente novamente!',
+                'status' => 'error'
+            ]);
         } 
+    }
+    public function view(){
+        return view('mails/CurriculoEmail');
+    } 
+    public function v1test(){
+        return view('mails/v1');
     }
 }
