@@ -379,7 +379,7 @@ table{
 }
 
 .text-author{
-	bordeR: 1px solid rgba(0,0,0,.05);
+	/* bordeR: 1px solid rgba(0,0,0,.05); */
 	max-width: 50%;
 	margin: 0 auto;
 	padding: 2em;
@@ -462,7 +462,8 @@ ul.social li{
 <tr>
 <td style="text-align: center;">
 <div class="text-author">
-<img src="/Assets/image/index/users/perfil.jpg" alt style="width: 100px; max-width: 600px; height: auto; margin: auto; display: block;">
+{{-- <img src="/Assets/image/index/users/perfil.jpg" alt style="width: 100px; max-width: 600px; height: auto; margin: auto; display: block;"> --}}
+<img src="https://i.imgur.com/6OGaWRg.png" alt='text aqui' style="width: 100px; max-width: 600px; height: auto; margin: auto; display: block;">
 <h3 class="name">Marcelo de Sousa Henrique</h3>
 <span class="position">Desenvolvedor Full Stack Júnior</span>
 <p><a href="#" class="btn btn-primary">Acessar Currículo</a></p>
@@ -480,7 +481,7 @@ ul.social li{
 <td valign="middle" class="bg_light footer email-section">
 <table>
 <tr>
-<td valign="top" width="33.333%" style="padding-top: 20px;">
+{{-- <td valign="top" width="33.333%" style="padding-top: 20px;">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
 <td style="text-align: left; padding-right: 10px;">
@@ -489,12 +490,12 @@ ul.social li{
 </td>
 </tr>
 </table>
-</td>
-<td valign="top" width="33.333%" style="padding-top: 20px;">
+</td> --}}
+<td valign="top" width="49.5%" style="padding-top: 20px;">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-<td style="text-align: left; padding-left: 5px; padding-right: 5px;">
-<h3 class="heading">Info. de Contato</h3>
+<td style="text-align: center; padding-left: 5px; padding-right: 5px;">
+<h3 class="heading">Contato</h3>
 <ul>
     <li><a href="#">Linkedin</a></li>
     <li><a href="#">whatsapp</a></li>
@@ -505,16 +506,16 @@ ul.social li{
 </tr>
 </table>
 </td>
-<td valign="top" width="33.333%" style="padding-top: 20px;">
+<td valign="top" width="49,5%" style="padding-top: 20px;">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-<td style="text-align: left; padding-left: 10px;">
-<h3 class="heading">Useful Links</h3>
+<td style="text-align: center; padding-left: 10px;">
+<h3 class="heading">Portifólio</h3>
 <ul>
 <li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">Work</a></li>
+<li><a href="#">Experiência</a></li>
+<li><a href="#">Educação</a></li>
+<li><a href="#">Projetos</a></li>
 </ul>
 </td>
 </tr>
