@@ -15,10 +15,7 @@ class sendEmailController extends Controller
     public $pageIndex;
 
     public function __construct(){
-        $this->pageIndex = 'Pages/testes/email';
-    }
-    public function index(){
-        return Inertia::render($this->pageIndex);
+        $this->pageIndex = 'Pages/index/index';
     }
     public function Send(Request $request){
         try {
@@ -54,7 +51,4 @@ class sendEmailController extends Controller
     public function view(){
         return view('mails/CurriculoEmail');
     } 
-    public function v1test(){
-        return view('mails/v1');
-    }
 }

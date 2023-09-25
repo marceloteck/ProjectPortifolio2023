@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-6 imgIlustration">
-                <imgEfects ImgSrc="Assets/image/index/dev.png" class="imgEfects" />
+                <imgEfects ImgSrc="/Assets/image/index/dev.png" class="imgEfects" />
             </div>
             <div class="col-12 col-lg-6 ">
                 <h2>Tenha acesso ao meu currículo</h2>
@@ -10,25 +10,31 @@
                 <div class="formBtn">
                     <input type="email" :style="inputBtnStyles" v-model="userCV.emailUser" class="inputBtn" placeholder="Digite seu E-mail">
                     <button @click="sendingMail" type="button" class="btn button shadow-lg bg-body rounded">
-                        <div v-if="userCV.emailUser !== null">
+                        <div v-if="userCV.emailUser !== ''">
                             <IconSendSvg classes="svgiconUp" />
                             <span>Enviar Email</span>
                         </div>
                         <div v-else>Passe o Mouse</div>
                     </button>
-                    <button type="button" class="btn text-light DownBtn">
+                    <a href="/Assets/files/Curriculo_Marcelo_Henrique.pdf" target="_blank">
+                        <button type="button" class="btn text-light DownBtn">
                         <div class="Btn">
                             <iconDownloadSvg class="svgIcon" />
                             <span class="icon2"></span>
                             <span class="tooltip">Download</span>
                         </div>
-                    </button>
+                        </button>
+                    </a>
                 </div>
                 <div class="formEmail">
                     <input type="email" v-model="userCV.emailUser" class="inputBtn" placeholder="Digite seu E-mail">
                     <button @click="sendingMail" type="button" class="btn sendbtn"><IconSendSvg classes="svgiconUp" /></button>
                 </div>
-                <div class="Linkcv"><Link href="#">Baixar curriculo</Link></div>
+                <div class="Linkcv">
+                    <a href="/Assets/files/Curriculo_Marcelo_Henrique.pdf" target="_blank">
+                    Baixar curriculo
+                    </a>
+                </div>
 
 
             </div>
@@ -37,11 +43,12 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useForm, router  } from "@inertiajs/vue3";
 
 const props = defineProps({ resposta: String, status: String });
 const userCV = useForm({ emailUser: '' });
+const userInput = ref('');
 
 const Toast = Swal.mixin({
     toast: true,
@@ -72,6 +79,8 @@ const sendEmail = async () => {
         onBefore: (visit) => {},
         onStart: (visit) => {},
         onProgress: (progress) => {},
+        preserveState: true,
+        preserveScroll: true,
         onSuccess: (page) => { Toast.fire({ icon: props.status, title: props.resposta }); },
         onError: (errors) => { Toast.fire({ icon: props.status, title: props.resposta }); },
         onCancel: () => {},
@@ -84,7 +93,7 @@ const sendEmail = async () => {
 }
 
 const inputBtnStyles = computed(() => {
-    const userInput = () => { return userCV.emailUser.value !== null; }
+    userInput.value = userCV.emailUser !== '' ? true : false; 
     return {
         marginLeft: userInput.value ? "-250px" : "0px",
         opacity: userInput.value  ? "1" : "0",

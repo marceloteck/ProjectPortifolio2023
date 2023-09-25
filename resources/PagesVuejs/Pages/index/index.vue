@@ -1,3 +1,6 @@
+<script setup>
+const props = defineProps({ resposta: String, status: String });
+</script>
 <template>
     <article>
         <AppHead title="inicio" />
@@ -12,7 +15,7 @@
 
         <section class="section02">
             <Carousel_Skills />
-            <curriculoEmail />
+            <curriculoEmail :resposta="props.resposta" :status="props.status" />
         </section>
 
         <section class="section03">

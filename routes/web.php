@@ -35,11 +35,7 @@ Route::middleware('auth')->group(function () {
 route::post('/', [sendEmailController::class, 'Send'])->name('sendEmail');
 route::get('/viewemail', [sendEmailController::class, 'view'])->name('viewemail');
 
-
 // TESTES
-Route::get('/testemail', [sendEmailController::class, 'index'])->name('test');
-Route::get('/testev1', [sendEmailController::class, 'v1test'])->name('v1test');
-
-
+// Route::get('/testemail', function () { return Inertia::render('Pages/testes/email'); })->name('test');
 
 require __DIR__.'/auth.php';

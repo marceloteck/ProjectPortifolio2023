@@ -40,8 +40,7 @@ class Curriculo extends Mailable
     public function content(): Content
     {
         return new Content(
-            // view: 'mails.CurriculoEmail',
-            view: 'mails.v1',
+            view: 'mails.CurriculoEmail',
         );
     }
 
@@ -63,4 +62,3 @@ class Curriculo extends Mailable
         ];
     }
 }
-//Curriculo_Marcelo_Henrique.pdf

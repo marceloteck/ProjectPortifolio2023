@@ -15,7 +15,9 @@
                 </div>
             </div>
             <div class="col-12 btnMobile">
-                <button class="btn">Download CV</button>
+                <a href="/Assets/files/Curriculo_Marcelo_Henrique.pdf" target="_blank" rel="noopener noreferrer">
+                    <button class="btn">Download CV</button>
+                </a> 
             </div>
             <div class="col-12 imgEfects col-lg-5">
                     <imgEfects ImgSrc="/Assets/image/index/programador1.0.png" />

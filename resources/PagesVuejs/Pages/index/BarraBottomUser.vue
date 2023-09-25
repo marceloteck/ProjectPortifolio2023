@@ -4,7 +4,7 @@ import { router } from "@inertiajs/vue3";
 
 const IsLoading = ref(false);
 const content = [
-    ['Programação', 'Conhecimento', 'Veja minha base de conhecimento.', 'index.about'],
+    ['Conhecimento', 'Conhecimento', 'Veja minha base de conhecimento.', 'index.about'],
     ['Projetos', 'Meus Projetos', 'Clique para ver meus projetos.', 'index.project'],
     ['Currículo', 'Meu Currículo', 'Clique para ver meu currículo.', 'index.contact'],
 ];
