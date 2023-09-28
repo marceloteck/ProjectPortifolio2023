@@ -21,9 +21,9 @@ Route::middleware('guest')->group(function () {
 // end rotas
 
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -34,6 +34,11 @@ Route::middleware('auth')->group(function () {
 // EMAIL
 route::post('/', [sendEmailController::class, 'Send'])->name('sendEmail');
 route::get('/viewemail', [sendEmailController::class, 'view'])->name('viewemail');
+
+// CURRICULO
+route::get('/curriculo', function () { 
+    return Inertia::render('Pages/cv/curriculo'); 
+})->name('cvUser');
 
 // TESTES
 // Route::get('/testemail', function () { return Inertia::render('Pages/testes/email'); })->name('test');

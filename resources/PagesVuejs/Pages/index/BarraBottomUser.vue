@@ -6,7 +6,7 @@ const IsLoading = ref(false);
 const content = [
     ['Conhecimento', 'Conhecimento', 'Veja minha base de conhecimento.', 'index.about'],
     ['Projetos', 'Meus Projetos', 'Clique para ver meus projetos.', 'index.project'],
-    ['Currículo', 'Meu Currículo', 'Clique para ver meu currículo.', 'index.contact'],
+    ['Currículo', 'Meu Currículo', 'Clique para ver meu currículo.', 'cvUser'],
 ];
 function linkClick(linkRota) {
     router.visit(route(linkRota), {
