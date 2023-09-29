@@ -26,11 +26,12 @@ import mainContato from '@PagesVuejs/Pages/contact/mainContato.vue';
 
 // curriculo virtual
 import navCv from '@PagesVuejs/Pages/cv/navCv.vue';
+import mainCv from '@PagesVuejs/Pages/cv/mainCv.vue';
 
 
 
 const MainRoutesVue = { mainIndex, EfeitoDigitacao, BarraBottomUser, Carousel_Skills, curriculoEmail, cardProjectsIndex,
                         mainAbout, cardSkills, mainExperiences, mainProject, mainEducation, mainContato,
-                        navCv, };
+                        navCv, mainCv,  };
 
 export default MainRoutesVue;
