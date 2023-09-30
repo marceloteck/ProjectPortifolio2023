@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
-  <title> Curriculo Marcelo henrique - Desenvolvedor Full Stack Junior </title>
+  <title> Marcelo Henrique - Curriculo </title>
   <!--[if !mso]><!-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!--<![endif]-->
@@ -300,23 +300,23 @@
                                       <tr>
                                         <td align="center" style="font-size:0px;word-break:break-word;">
                                           <!--[if !mso><!-->
-                                          <input type="checkbox" id="b3702bde59499181" class="mj-menu-checkbox" style="display:none !important; max-height:0; visibility:hidden;">
+                                          <input type="checkbox" id="a24df0140e8c9db3" class="mj-menu-checkbox" style="display:none !important; max-height:0; visibility:hidden;">
                                           <!--<![endif]-->
                                           <div class="mj-menu-trigger" style="display:none;max-height:0px;max-width:0px;font-size:0px;overflow:hidden;">
-                                            <label for="b3702bde59499181" class="mj-menu-label" style="display:block;cursor:pointer;mso-hide:all;-moz-user-select:none;user-select:none;color:#fa8739;font-size:30px;font-family:Ubuntu, Helvetica, Arial, sans-serif;text-transform:uppercase;text-decoration:none;line-height:30px;padding:10px;" align="center">
+                                            <label for="a24df0140e8c9db3" class="mj-menu-label" style="display:block;cursor:pointer;mso-hide:all;-moz-user-select:none;user-select:none;color:#fa8739;font-size:30px;font-family:Ubuntu, Helvetica, Arial, sans-serif;text-transform:uppercase;text-decoration:none;line-height:30px;padding:10px;" align="center">
                                               <span class="mj-menu-icon-open" style="mso-hide:all;"> &#9776; </span>
                                               <span class="mj-menu-icon-close" style="display:none;mso-hide:all;"> &#8855; </span>
                                             </label>
                                           </div>
                                           <div class="mj-inline-links" style>
                                             <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center"><tr><td style="padding:15px 10px;" class="" ><![endif]-->
-                                            <a class="mj-link" href="https://www.linkedin.com/in/marcellohenrique-pro/" target="_blank" style="display:inline-block;color:#000000;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;"> Linkedin </a>
+                                            <a class="mj-link" href="#https://www.linkedin.com/in/marcellohenrique-pro/" target="_blank" style="display:inline-block;color:#000000;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;"> Linkedin </a>
                                             <!--[if mso | IE]></td><td style="padding:15px 10px;" class="" ><![endif]-->
-                                            <a class="mj-link" href="https://github.com/marceloteck" target="_blank" style="display:inline-block;color:#000000;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;"> github </a>
+                                            <a class="mj-link" href="#https://github.com/marceloteck" target="_blank" style="display:inline-block;color:#000000;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;"> github </a>
                                             <!--[if mso | IE]></td><td style="padding:15px 10px;" class="" ><![endif]-->
-                                            <a class="mj-link" href="https://www.facebook.com/marcelo.sousahenrique.92" target="_blank" style="display:inline-block;color:#000000;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;"> facebook </a>
+                                            <a class="mj-link" href="#https://www.facebook.com/marcelo.sousahenrique.92" target="_blank" style="display:inline-block;color:#000000;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;"> facebook </a>
                                             <!--[if mso | IE]></td><td style="padding:15px 10px;" class="" ><![endif]-->
-                                            <a class="mj-link" href="https://wa.me/5594981319065" target="_blank" style="display:inline-block;color:#000000;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;"> whatsapp </a>
+                                            <a class="mj-link" href="#https://wa.me/5594981319065" target="_blank" style="display:inline-block;color:#000000;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:22px;text-decoration:none;text-transform:uppercase;padding:15px 10px;"> whatsapp </a>
                                             <!--[if mso | IE]></td></tr></table><![endif]-->
                                           </div>
                                         </td>
