@@ -1,1 +1,0 @@
-import{_ as s,o,c as a,p as t,f as n,b as e}from"./app-2b2fbde5.js";const _={},d=c=>(t("data-v-cfd4f5cf"),c=c(),n(),c),i={class:"gif"},p=d(()=>e("div",{class:"containe"},[e("span"),e("span"),e("span"),e("span")],-1)),f=[p];function r(c,l){return o(),a("div",i,f)}const h=s(_,[["render",r],["__scopeId","data-v-cfd4f5cf"]]);export{h as default};
