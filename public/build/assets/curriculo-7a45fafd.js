@@ -1,0 +1,1 @@
+import{_ as t,r as e,o as a,c as r,a as o}from"./app-2b2fbde5.js";const s={};function p(l,u){const n=e("AppHead"),c=e("navCv"),_=e("mainCv");return a(),r("div",null,[o(n,{title:"Curriculo"}),o(c),o(_)])}const i=t(s,[["render",p],["__scopeId","data-v-33425a47"]]);export{i as default};

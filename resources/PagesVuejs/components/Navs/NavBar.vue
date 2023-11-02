@@ -47,8 +47,8 @@
 import { onMounted, onBeforeUnmount, ref } from 'vue';
 import NavRouterLink from '@resources/plugins/NavRouterLink.js';
 
-const logo = ref('Assets/image/index/logo2_l.png');
-const logodark = ref('Assets/image/index/logo2_b.png');
+const logo = ref('/Assets/image/index/logo2_l.png');
+const logodark = ref('/Assets/image/index/logo2_b.png');
 const isSticky = ref(false);
 const MenuToggle = ref(false);
 const MenuToggleClose = ref(false);
@@ -57,8 +57,8 @@ const handleScroll = () => {
     const scrollTop = document.documentElement.scrollTop;
     isSticky.value = scrollTop > 0 && route().current('index.home');
 
-    if (isSticky.value) logo.value = 'Assets/image/index/Logo2_b.png';
-    else logo.value = 'Assets/image/index/Logo2_l.png';
+    if (isSticky.value) logo.value = '/Assets/image/index/logo2_b.png';
+    else logo.value = '/Assets/image/index/logo2_l.png';
 };
 
 const MenuBar = () => {

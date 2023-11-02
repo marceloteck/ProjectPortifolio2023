@@ -48,7 +48,7 @@
 import { ref } from 'vue';
 import NavRouterLink from '@resources/plugins/NavRouterLink.js';
 
-const logo = ref('Assets/image/index/logo2_l.png');
+const logo = ref('/Assets/image/index/logo2_l.png');
 const yearProject = () =>{
     const anoAtual = new Date().getFullYear();
     const anodoProjeto = '2023';

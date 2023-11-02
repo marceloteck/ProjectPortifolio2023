@@ -32,7 +32,7 @@ const props = defineProps({ resposta: String, status: String });
     .section01{
         background: rgb(24, 26, 55);
         background: linear-gradient(36deg, rgba(24, 26, 55, 1) 0%, rgba(2, 15, 38, 1) 100%);
-        background-image: url('Assets/image/index/backgrounds/background_dark.avif');
+        background-image: url('/Assets/image/index/backgrounds/background_dark.avif');
         background-size: cover;
         background-attachment: fixed;
         background-blend-mode: multiply;
@@ -43,7 +43,7 @@ const props = defineProps({ resposta: String, status: String });
     .section02 {
         background: rgb(24, 26, 55);
         background: linear-gradient(36deg, rgb(34, 35, 43) 0%, rgb(19, 20, 26) 100%);
-        background-image: url('Assets/image/index/backgrounds/emailCurriculoBackground.avif');
+        background-image: url('/Assets/image/index/backgrounds/emailCurriculoBackground.avif');
         background-size: cover;
         background-attachment: fixed;
         background-blend-mode: multiply;
