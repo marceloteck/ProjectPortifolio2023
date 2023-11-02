@@ -1,17 +1,16 @@
 <template>
     <div class="container-xl">
-      <div class="row cardContent">
-        
-        <div class="barraTitle"  v-if="topbarTitle">
-          <h2>Projetos
-            <span class="badge">
-              <span class="tooltip">Todos</span>
-              <i class="material-icons">forward</i>
-            </span>
-          </h2>
-        </div>
-  <!-- https://images01.nicepagecdn.com/page/10/78/pt/modelo-site-preview-107805.jpg -->
-        <div class="card" v-for="itens in 2" :key="itens">
+        <div class="row cardContent">
+            <div class="barraTitle" v-if="topbarTitle">
+                <h2>
+                    Projetos
+                    <span class="badge">
+                        <span class="tooltip">Todos</span>
+                        <i class="material-icons">forward</i>
+                    </span>
+                </h2>
+            </div>
+            <!-- <div class="card" v-for="itens in 2" :key="itens">
           <img src="https://www.umbuzeiro.pb.gov.br/images/IMAGENS/em_breve.jpg" alt="title">
           <div class="card_Tecnolog d-flex justify-content-end">
             <div class="svg" v-for="svg in emUso" :key="svg.title">
@@ -23,42 +22,90 @@
             <div class="iconView"><div v-html="internet"></div></div>
             <div class="iconGitHub"><div v-html="svgIcons.github"></div></div>
           </div>
+        </div> -->
+
+            <div class="card" v-for="itens in cardProjects" :key="itens">
+                <img :src="itens.urlImg" :alt="itens.title" />
+                <div class="card_Tecnolog d-flex justify-content-end">
+                    <div class="svg">
+                        <div v-html="itens.icon"></div>
+                    </div>
+                </div>
+                <div class="card__content">
+                    <div class="title">{{ itens.title }}</div>
+                    <a :href="itens.url" target="_bank">
+                        <div class="iconView">
+                            <div v-html="internet"></div>
+                        </div>
+                    </a>
+                    <a :href="itens.github" target="_bank">
+                        <div class="iconGitHub">
+                            <div v-html="svgIcons.github"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-  
-      </div>
     </div>
-  </template>
-  
-  <script setup>
-import { ref } from 'vue';
-import svgIcons from '@resources/plugins/svgIndexCard.js';
-const { topbarTitleCode } = defineProps(['topbarTitleCode']);
+</template>
+
+<script setup>
+import { ref } from "vue";
+import svgIcons from "@resources/plugins/svgIndexCard.js";
+const { topbarTitleCode } = defineProps(["topbarTitleCode"]);
 
 const topbarTitle = ref(true);
 
 if (topbarTitleCode === "false") topbarTitle.value = false;
 
-
 const emUso = [
-{ title: 'vue.js', icon: svgIcons.vue_js },
+    {
+        title: "vue.js",
+        icon: svgIcons.vue_js,
+    },
 ];
 
 const linguagens = [
-  { title: 'php', icon: svgIcons.php },
-  { title: 'html', icon: svgIcons.html5 },
-  { title: 'css', icon: svgIcons.css3 },
-  { title: 'laravel', icon: svgIcons.laravel },
-  { title: 'vue.js', icon: svgIcons.vue_js },
-  { title: 'Inertia.js', icon: svgIcons.inertia },
-  { title: 'JavaScript', icon: svgIcons.js },
-  { title: 'bootstrap', icon: svgIcons.bootstrap },
-  { title: 'npm', icon: svgIcons.npm },
-  { title: 'c#', icon: svgIcons.csharp },
-  { title: 'git', icon: svgIcons.git },
-  { title: 'github', icon: svgIcons.github },
+    { title: "php", icon: svgIcons.php },
+    { title: "html", icon: svgIcons.html5 },
+    { title: "css", icon: svgIcons.css3 },
+    { title: "laravel", icon: svgIcons.laravel },
+    { title: "vue.js", icon: svgIcons.vue_js },
+    { title: "Inertia.js", icon: svgIcons.inertia },
+    { title: "JavaScript", icon: svgIcons.js },
+    { title: "bootstrap", icon: svgIcons.bootstrap },
+    { title: "npm", icon: svgIcons.npm },
+    { title: "c#", icon: svgIcons.csharp },
+    { title: "git", icon: svgIcons.git },
+    { title: "github", icon: svgIcons.github },
 ];
 
-const internet = '<svg width="1.9rem" height="1.9rem" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.2929 9.70708C20.5789 9.99307 21.009 10.0786 21.3827 9.92385C21.7564 9.76907 22 9.40443 22 8.99997V2.99997C22 2.44768 21.5523 1.99997 21 1.99997H15C14.5955 1.99997 14.2309 2.24361 14.0761 2.61729C13.9213 2.99096 14.0069 3.42108 14.2929 3.70708L16.2322 5.64641L9.58574 12.2929C9.19522 12.6834 9.19522 13.3166 9.58574 13.7071L10.2928 14.4142C10.6834 14.8048 11.3165 14.8048 11.7071 14.4142L18.3536 7.76774L20.2929 9.70708Z" fill="currentColor"/><path d="M4.5 8.00006C4.5 7.72392 4.72386 7.50006 5 7.50006H10.0625C10.6148 7.50006 11.0625 7.05234 11.0625 6.50006V5.50006C11.0625 4.94777 10.6148 4.50006 10.0625 4.50006H5C3.067 4.50006 1.5 6.06706 1.5 8.00006V19.0001C1.5 20.9331 3.067 22.5001 5 22.5001H16C17.933 22.5001 19.5 20.9331 19.5 19.0001V13.9376C19.5 13.3853 19.0523 12.9376 18.5 12.9376H17.5C16.9477 12.9376 16.5 13.3853 16.5 13.9376V19.0001C16.5 19.2762 16.2761 19.5001 16 19.5001H5C4.72386 19.5001 4.5 19.2762 4.5 19.0001V8.00006Z" fill="currentColor"/></svg>';
+const cardProjects = [
+    {
+        title: "Meu Portifólio",
+        icon: svgIcons.vue_js,
+        urlImg: "/build/assets/Assets/image/posts/img1-portifolio.png",
+        github: "https://github.com/marceloteck/ProjectPortifolio2023",
+        url: "https://marcelohenriquepro.dev.br/",
+    },
+    {
+        title: "Em construção - Envio de E-mails",
+        icon: svgIcons.laravel,
+        urlImg: "/build/assets/Assets/image/posts/send-email-pro.png",
+        github: "https://github.com/marceloteck/Send-Email-Laravel",
+        url: "https://info.marcelohenriquepro.dev.br/Send-Email-Laravel/",
+    },
+    {
+        title: "Assistente Virtual Jarvis",
+        icon: svgIcons.csharp,
+        urlImg: "/build/assets/Assets/image/posts/Assistente-Jarvis.png",
+        github: "https://github.com/marceloteck/Assistente-Virtual-Jarvis",
+        url: "https://info.marcelohenriquepro.dev.br/Assistente-Virtual-Jarvis/",
+    },
+];
+
+const internet =
+    '<svg width="1.9rem" height="1.9rem" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.2929 9.70708C20.5789 9.99307 21.009 10.0786 21.3827 9.92385C21.7564 9.76907 22 9.40443 22 8.99997V2.99997C22 2.44768 21.5523 1.99997 21 1.99997H15C14.5955 1.99997 14.2309 2.24361 14.0761 2.61729C13.9213 2.99096 14.0069 3.42108 14.2929 3.70708L16.2322 5.64641L9.58574 12.2929C9.19522 12.6834 9.19522 13.3166 9.58574 13.7071L10.2928 14.4142C10.6834 14.8048 11.3165 14.8048 11.7071 14.4142L18.3536 7.76774L20.2929 9.70708Z" fill="currentColor"/><path d="M4.5 8.00006C4.5 7.72392 4.72386 7.50006 5 7.50006H10.0625C10.6148 7.50006 11.0625 7.05234 11.0625 6.50006V5.50006C11.0625 4.94777 10.6148 4.50006 10.0625 4.50006H5C3.067 4.50006 1.5 6.06706 1.5 8.00006V19.0001C1.5 20.9331 3.067 22.5001 5 22.5001H16C17.933 22.5001 19.5 20.9331 19.5 19.0001V13.9376C19.5 13.3853 19.0523 12.9376 18.5 12.9376H17.5C16.9477 12.9376 16.5 13.3853 16.5 13.9376V19.0001C16.5 19.2762 16.2761 19.5001 16 19.5001H5C4.72386 19.5001 4.5 19.2762 4.5 19.0001V8.00006Z" fill="currentColor"/></svg>';
 
 /*
 <svg fill="fillcurrent" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.8rem" height="1.8rem" viewBox="0 0 490.068 490.068" xml:space="preserve"> <g><g> <path d="M245.035,0.002C109.922,0.002,0,109.923,0,245.034c0,135.11,109.922,245.032,245.033,245.032c135.111,0,245.035-109.922,245.035-245.032C490.068,109.923,380.146,0.002,245.035,0.002z M330.31,432.776c3.816-6.087,7.463-12.612,10.914-19.599c7.812-15.817,14.368-33.436,19.631-52.326c18.887-5.262,36.505-11.814,52.322-19.627c6.985-3.449,13.512-7.1,19.599-10.914C412.123,375.592,375.591,412.124,330.31,432.776z M57.293,330.311c6.086,3.817,12.612,7.465,19.597,10.914c15.817,7.812,33.438,14.369,52.324,19.627c5.262,18.892,11.816,36.509,19.631,52.326c3.451,6.985,7.099,13.512,10.914,19.599C114.477,412.124,77.942,375.59,57.293,330.311z M159.759,57.295c-3.817,6.086-7.463,12.611-10.914,19.597c-7.813,15.819-14.369,33.437-19.631,52.326c-18.886,5.262-36.504,11.816-52.324,19.628c-6.985,3.45-13.51,7.099-19.597,10.914C77.942,114.479,114.477,77.944,159.759,57.295z M446.211,225.651h-70.758c-0.724-18.003-2.45-35.618-5.132-52.589C407.622,186.249,435.336,204.854,446.211,225.651z M370.321,317.008c2.682-16.973,4.406-34.584,5.132-52.591h70.758C435.336,285.213,407.622,303.818,370.321,317.008z M43.857,264.417h70.758c0.724,18.003,2.45,35.618,5.132,52.591C82.447,303.818,54.729,285.213,43.857,264.417z M119.747,173.062c-2.683,16.971-4.407,34.584-5.132,52.589H43.857C54.729,204.854,82.447,186.249,119.747,173.062z M336.651,225.651h-72.233v-72.233c22.438,1.034,44.062,3.843,64.165,8.071C332.81,181.593,335.617,203.214,336.651,225.651z M328.583,328.582c-20.104,4.229-41.728,7.036-64.165,8.07v-72.235h72.233C335.617,286.854,332.81,308.475,328.583,328.582z M153.417,264.417h72.235v72.233c-22.438-1.034-44.061-3.844-64.165-8.071C157.259,308.475,154.451,286.854,153.417,264.417z M161.485,161.487			c20.104-4.229,41.728-7.038,64.165-8.071v72.236h-72.233C154.451,203.214,157.259,181.593,161.485,161.487z M264.418,114.616			v-70.76c20.797,10.875,39.404,38.59,52.59,75.893C300.036,117.066,282.422,115.34,264.418,114.616z M225.652,43.856v70.76			c-18.005,0.724-35.618,2.45-52.589,5.133C186.248,82.446,204.856,54.731,225.652,43.856z M225.652,375.452v70.761			c-20.796-10.876-39.404-38.59-52.589-75.893C190.032,373.002,207.647,374.729,225.652,375.452z M264.418,446.213v-70.761			c18.006-0.724,35.618-2.45,52.59-5.132C303.819,407.623,285.215,435.337,264.418,446.213z M413.178,148.844			c-15.815-7.813-33.437-14.37-52.322-19.628c-5.263-18.889-11.816-36.507-19.631-52.326c-3.451-6.985-7.101-13.511-10.914-19.597			c45.28,20.648,81.812,57.184,102.463,102.465C426.687,155.943,420.161,152.294,413.178,148.844z"/>	</g></g></svg>
@@ -66,18 +113,18 @@ const internet = '<svg width="1.9rem" height="1.9rem" viewBox="0 0 24 24" fill="
 </script>
 
 <style lang="scss" scoped>
-.row{
-  position: relative;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
+.row {
+    position: relative;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 .cardContent {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     .barraTitle {
         margin-bottom: 25px;
         position: relative;
@@ -126,7 +173,8 @@ const internet = '<svg width="1.9rem" height="1.9rem" viewBox="0 0 24 24" fill="
                 visibility: visible;
                 pointer-events: auto;
             }
-            .tooltip, .tooltip::before{
+            .tooltip,
+            .tooltip::before {
                 background-color: #d8d8d8;
                 color: #333;
                 border-color: #a5a5a5;
@@ -145,23 +193,41 @@ const internet = '<svg width="1.9rem" height="1.9rem" viewBox="0 0 24 24" fill="
         overflow: hidden;
         margin: 15px;
         padding: 0;
-        transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 
-        @media screen and (max-width: 1320px) { width: 22rem; height: 218px;}
-        @media screen and (max-width: 1170px) { width: 28rem; height: 230px;}
-        @media screen and (max-width: 980px) { width: 25rem; height: 219px;}
-        @media screen and (max-width: 890px) { width: 22rem; height: 219px;}
-        @media screen and (max-width: 788px) { width: 18rem; height: 198px;}
-        @media screen and (max-width: 660px) { width: 28rem; height: 230px;}
+        @media screen and (max-width: 1320px) {
+            width: 22rem;
+            height: 218px;
+        }
+        @media screen and (max-width: 1170px) {
+            width: 28rem;
+            height: 230px;
+        }
+        @media screen and (max-width: 980px) {
+            width: 25rem;
+            height: 219px;
+        }
+        @media screen and (max-width: 890px) {
+            width: 22rem;
+            height: 219px;
+        }
+        @media screen and (max-width: 788px) {
+            width: 18rem;
+            height: 198px;
+        }
+        @media screen and (max-width: 660px) {
+            width: 28rem;
+            height: 230px;
+        }
 
         img {
-          width: 100%;
-          height: 100%;
-          position: relative;
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
         svg {
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
         .card_Tecnolog {
             position: absolute;
@@ -170,7 +236,7 @@ const internet = '<svg width="1.9rem" height="1.9rem" viewBox="0 0 24 24" fill="
             border-radius: 50px;
             padding: 10px;
             box-sizing: border-box;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             background: linear-gradient(90deg, #c4853e 0%, #fb3640 100%);
             display: flex;
             justify-content: center;
@@ -194,54 +260,54 @@ const internet = '<svg width="1.9rem" height="1.9rem" viewBox="0 0 24 24" fill="
             box-sizing: border-box;
             background-color: rgba(255, 255, 255, 0.5);
             opacity: 1;
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-            font-family: 'Titillium Web', sans-serif;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            font-family: "Titillium Web", sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
 
-            .title{
-              height: 50px;
-              position: relative;
-              float: left;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding-left: 8px;
-              padding-right: 8px;
+            .title {
+                height: 50px;
+                position: relative;
+                float: left;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 8px;
+                padding-right: 8px;
             }
-            .iconView{
-              position: relative;
-              float: right;
-              width: 50px;
-              height: 50px;
-              background: #e93e46;
-              background: linear-gradient(45deg, #926839 0%, #e93e46 100%);
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              color: #fff;
-              cursor: pointer;
-              transition: all .5s ease-in-out;
+            .iconView {
+                position: relative;
+                float: right;
+                width: 50px;
+                height: 50px;
+                background: #e93e46;
+                background: linear-gradient(45deg, #926839 0%, #e93e46 100%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
             }
-            .iconGitHub{
-              position: relative;
-              float: right;
-              width: 50px;
-              height: 50px;
-              background: #e93e46;
-              background: linear-gradient(45deg, #926839 0%, #e93e46 100%);
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              color: #fff;
-              cursor: pointer;
-              transition: all .5s ease-in-out;
+            .iconGitHub {
+                position: relative;
+                float: right;
+                width: 50px;
+                height: 50px;
+                background: #e93e46;
+                background: linear-gradient(45deg, #926839 0%, #e93e46 100%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
             }
-            .iconGitHub:hover, .iconView:hover{
-              background: linear-gradient(95deg, #855f35 0%, #d43940 100%);
+            .iconGitHub:hover,
+            .iconView:hover {
+                background: linear-gradient(95deg, #855f35 0%, #d43940 100%);
             }
         }
-
     }
     .card:hover {
         transform: rotate(0deg) scale(1.1);
