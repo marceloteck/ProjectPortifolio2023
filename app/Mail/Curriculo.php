@@ -53,7 +53,7 @@ class Curriculo extends Mailable
     {
         $publicPath = public_path();
         $filePath = $publicPath . '/Assets/files/';
-        $fileName = 'Curriculo_Marcelo_Henrique.pdf';
+        $fileName = 'Curriculo Marcelo de Sousa Henrique - Desenvolvedor Full-Stack.pdf';
 
         return [
             Attachment::fromPath($filePath . $fileName)
