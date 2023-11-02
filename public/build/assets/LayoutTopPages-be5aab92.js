@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as d,b as s,A as o}from"./app-83d2361d.js";const _={},n={class:"row topUser"},c={class:"col-12"};function r(e,l){return a(),d("div",n,[s("div",c,[o(e.$slots,"default",{},void 0,!0),s("h2",null,[o(e.$slots,"titlePage",{},void 0,!0)])])])}const f=t(_,[["render",r],["__scopeId","data-v-68f1d79d"]]);export{f as default};
