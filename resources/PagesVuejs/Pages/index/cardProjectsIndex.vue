@@ -93,14 +93,14 @@ const cardProjects = [
         icon: svgIcons.laravel,
         urlImg: "/Assets/image/posts/send-email-pro.png",
         github: "https://github.com/marceloteck/Send-Email-Laravel",
-        url: "https://info.marcelohenriquepro.dev.br/Send-Email-Laravel/",
+        url: "https://info.marcelohenriquepro.dev.br/p/Send-Email-Laravel/",
     },
     {
         title: "Assistente Virtual Jarvis",
         icon: svgIcons.csharp,
         urlImg: "/Assets/image/posts/Assistente-Jarvis.png",
         github: "https://github.com/marceloteck/Assistente-Virtual-Jarvis",
-        url: "https://info.marcelohenriquepro.dev.br/Assistente-Virtual-Jarvis/",
+        url: "https://info.marcelohenriquepro.dev.br/p/Assistente-Virtual-Jarvis/",
     },
 ];
 
