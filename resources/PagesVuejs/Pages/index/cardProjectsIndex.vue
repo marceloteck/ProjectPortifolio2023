@@ -33,12 +33,12 @@
                 </div>
                 <div class="card__content">
                     <div class="title">{{ itens.title }}</div>
-                    <a :href="itens.url" target="_bank">
+                    <a :href="itens.url" target="_blank">
                         <div class="iconView">
                             <div v-html="internet"></div>
                         </div>
                     </a>
-                    <a :href="itens.github" target="_bank">
+                    <a :href="itens.github" target="_blank">
                         <div class="iconGitHub">
                             <div v-html="svgIcons.github"></div>
                         </div>
