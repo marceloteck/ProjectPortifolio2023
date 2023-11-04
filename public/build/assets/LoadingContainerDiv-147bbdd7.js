@@ -1,0 +1,1 @@
+import{_ as o,o as a,c as t,p as c,f as n,b as e}from"./app-2d2579a9.js";const _={},d=s=>(c("data-v-782e0357"),s=s(),n(),s),i={class:"gif"},p=d(()=>e("div",{class:"containe"},[e("span"),e("span"),e("span"),e("span")],-1)),r=[p];function f(s,l){return a(),t("div",i,r)}const h=o(_,[["render",f],["__scopeId","data-v-782e0357"]]);export{h as default};
