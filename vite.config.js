@@ -20,6 +20,7 @@ export default defineConfig({
     resolve: {
         alias: {
           '@PagesVuejs': 'resources/PagesVuejs',
+          '@resources': 'resources/',
         },
       },
 
