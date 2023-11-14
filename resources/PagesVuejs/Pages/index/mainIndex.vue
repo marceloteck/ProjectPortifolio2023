@@ -16,7 +16,7 @@
             </div>
             <div class="col-12 btnMobile">
                 <a
-                    href="/Assets/files/Curriculo_Marcelo_Henrique.pdf"
+                    href="/Assets/files/Curriculo Marcelo de Sousa Henrique - Desenvolvedor Full-Stack.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

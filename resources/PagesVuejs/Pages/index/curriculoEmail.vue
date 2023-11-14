@@ -2,41 +2,69 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-6 imgIlustration">
-                <imgEfects ImgSrc="/Assets/image/index/dev.png" class="imgEfects" />
+                <imgEfects
+                    ImgSrc="/Assets/image/index/dev.png"
+                    class="imgEfects"
+                />
             </div>
-            <div class="col-12 col-lg-6 ">
+            <div class="col-12 col-lg-6">
                 <h2>Tenha acesso ao meu currículo</h2>
                 <span>Escolha enviar por email ou baixar.</span>
                 <div class="formBtn">
-                    <input type="email" :style="inputBtnStyles" v-model="userCV.emailUser" class="inputBtn" placeholder="Digite seu E-mail">
-                    <button @click="sendingMail" type="button" class="btn button shadow-lg bg-body rounded">
+                    <input
+                        type="email"
+                        :style="inputBtnStyles"
+                        v-model="userCV.emailUser"
+                        class="inputBtn"
+                        placeholder="Digite seu E-mail"
+                    />
+                    <button
+                        @click="sendingMail"
+                        type="button"
+                        class="btn button shadow-lg bg-body rounded"
+                    >
                         <div v-if="userCV.emailUser !== ''">
                             <IconSendSvg classes="svgiconUp" />
                             <span>Enviar Email</span>
                         </div>
                         <div v-else>Passe o Mouse</div>
                     </button>
-                    <a href="/Assets/files/Curriculo_Marcelo_Henrique.pdf" target="_blank">
+                    <a
+                        href="/Assets/files/Curriculo Marcelo de Sousa Henrique - Desenvolvedor Full-Stack.pdf"
+                        target="_blank"
+                    >
                         <button type="button" class="btn text-light DownBtn">
-                        <div class="Btn">
-                            <iconDownloadSvg class="svgIcon" />
-                            <span class="icon2"></span>
-                            <span class="tooltip">Download</span>
-                        </div>
+                            <div class="Btn">
+                                <iconDownloadSvg class="svgIcon" />
+                                <span class="icon2"></span>
+                                <span class="tooltip">Download</span>
+                            </div>
                         </button>
                     </a>
                 </div>
                 <div class="formEmail">
-                    <input type="email" v-model="userCV.emailUser" class="inputBtn" placeholder="Digite seu E-mail">
-                    <button @click="sendingMail" type="button" class="btn sendbtn"><IconSendSvg classes="svgiconUp" /></button>
+                    <input
+                        type="email"
+                        v-model="userCV.emailUser"
+                        class="inputBtn"
+                        placeholder="Digite seu E-mail"
+                    />
+                    <button
+                        @click="sendingMail"
+                        type="button"
+                        class="btn sendbtn"
+                    >
+                        <IconSendSvg classes="svgiconUp" />
+                    </button>
                 </div>
                 <div class="Linkcv">
-                    <a href="/Assets/files/Curriculo_Marcelo_Henrique.pdf" target="_blank">
-                    Baixar curriculo
+                    <a
+                        href="/Assets/files/Curriculo Marcelo de Sousa Henrique - Desenvolvedor Full-Stack.pdf"
+                        target="_blank"
+                    >
+                        Baixar curriculo
                     </a>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -44,92 +72,102 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { useForm, router  } from "@inertiajs/vue3";
+import { useForm, router } from "@inertiajs/vue3";
 
 const props = defineProps({ resposta: String, status: String });
-const userCV = useForm({ emailUser: '' });
-const userInput = ref('');
+const userCV = useForm({ emailUser: "" });
+const userInput = ref("");
 
 const Toast = Swal.mixin({
     toast: true,
-    position: 'top-end',
+    position: "top-end",
     showConfirmButton: false,
     timer: 2000,
     timerProgressBar: true,
     didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
 });
 
 const ValidateEmail = computed(() => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return (emailRegex.test(userCV.emailUser) && userCV.emailUser !== '');;
-    
+    return emailRegex.test(userCV.emailUser) && userCV.emailUser !== "";
 });
 
 const sendingMail = () => {
-    if(ValidateEmail.value) sendEmail();
-    else Toast.fire({ icon: 'info', title: 'Deve ser um email válido!' });
-}
+    if (ValidateEmail.value) sendEmail();
+    else Toast.fire({ icon: "info", title: "Deve ser um email válido!" });
+};
 
 const sendEmail = async () => {
-  try {
-    router.post(route('sendEmail'), userCV, {
-        onBefore: (visit) => {},
-        onStart: (visit) => {},
-        onProgress: (progress) => {},
-        preserveState: true,
-        preserveScroll: true,
-        onSuccess: (page) => { Toast.fire({ icon: props.status, title: props.resposta }); },
-        onError: (errors) => { Toast.fire({ icon: props.status, title: props.resposta }); },
-        onCancel: () => {},
-        onFinish: visit => {  },
-    });
-
-  } catch (error) {
-    Toast.fire({ icon: 'error', title: 'Atualize a página, ocorreu algum erro!' });
-  }
-}
+    try {
+        router.post(route("sendEmail"), userCV, {
+            onBefore: (visit) => {},
+            onStart: (visit) => {},
+            onProgress: (progress) => {},
+            preserveState: true,
+            preserveScroll: true,
+            onSuccess: (page) => {
+                Toast.fire({ icon: props.status, title: props.resposta });
+            },
+            onError: (errors) => {
+                Toast.fire({ icon: props.status, title: props.resposta });
+            },
+            onCancel: () => {},
+            onFinish: (visit) => {},
+        });
+    } catch (error) {
+        Toast.fire({
+            icon: "error",
+            title: "Atualize a página, ocorreu algum erro!",
+        });
+    }
+};
 
 const inputBtnStyles = computed(() => {
-    userInput.value = userCV.emailUser !== '' ? true : false; 
+    userInput.value = userCV.emailUser !== "" ? true : false;
     return {
         marginLeft: userInput.value ? "-250px" : "0px",
-        opacity: userInput.value  ? "1" : "0",
-        width: userInput.value  ? "255px" : "155px",
+        opacity: userInput.value ? "1" : "0",
+        width: userInput.value ? "255px" : "155px",
     };
 });
 const svgIconBtn = {
-    iconSend: '',
-    iconDown: '',
-}
+    iconSend: "",
+    iconDown: "",
+};
 </script>
 
 <style lang="scss" scoped>
 $corTexto: #ffffff;
-.container-fluid{
+.container-fluid {
     z-index: 2;
 
-    @media (max-width:  992px) { height: 50vh; }
+    @media (max-width: 992px) {
+        height: 50vh;
+    }
 
-   .row {
-    position: relative;
-    height: 100%;
-        .imgIlustration{
-                position: relative;
-                @media (max-width:  992px) { display: none; }
-            
-                .imgEfects{
-                    width: 85%;
+    .row {
+        position: relative;
+        height: 100%;
+        .imgIlustration {
+            position: relative;
+            @media (max-width: 992px) {
+                display: none;
+            }
 
-                    @media screen and (max-width: 992px){ width: 100%; }
-                    
+            .imgEfects {
+                width: 85%;
+
+                @media screen and (max-width: 992px) {
+                    width: 100%;
                 }
             }
+        }
     }
-    
-    .col-12{
+
+    .col-12 {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -137,16 +175,22 @@ $corTexto: #ffffff;
         position: relative;
         color: #fff;
 
-        @media (max-width:  992px) { width: 100%; }
-
-        span{
-            @media (max-width:  993px) { display: none; }
-        }
-        h2{
-            @media (max-width: 860px) { font-size: calc(1.1rem + .9vw); }
+        @media (max-width: 992px) {
+            width: 100%;
         }
 
-        .formBtn{
+        span {
+            @media (max-width: 993px) {
+                display: none;
+            }
+        }
+        h2 {
+            @media (max-width: 860px) {
+                font-size: calc(1.1rem + 0.9vw);
+            }
+        }
+
+        .formBtn {
             margin-top: 15px;
             transition: all 0.2s ease-in-out;
             position: relative;
@@ -154,9 +198,11 @@ $corTexto: #ffffff;
             color: rgb(255, 255, 255);
             z-index: 1;
 
-            @media (max-width:  992px) { display: none; }
+            @media (max-width: 992px) {
+                display: none;
+            }
 
-            .inputBtn{
+            .inputBtn {
                 padding: 18px 15px 15px 18px;
                 border: 1px solid #fff;
                 border-radius: 5px 0px 0px 5px;
@@ -169,7 +215,7 @@ $corTexto: #ffffff;
                 color: aliceblue;
                 transition: all 0.3s ease-in-out;
             }
-            .inputBtn:focus{
+            .inputBtn:focus {
                 outline: none;
             }
 
@@ -180,7 +226,7 @@ $corTexto: #ffffff;
                 width: 180px;
                 box-shadow: 2px #000;
                 background: rgb(24, 26, 55);
-                background: linear-gradient(36deg, #CB7C3E 0%, #FB3740 100%);
+                background: linear-gradient(36deg, #cb7c3e 0%, #fb3740 100%);
                 position: relative;
                 overflow: hidden;
                 font-size: 19px;
@@ -188,19 +234,19 @@ $corTexto: #ffffff;
                 z-index: 1;
                 transition: all 0.3s ease-in-out;
 
-                .svgiconUp{
+                .svgiconUp {
                     transition: all 0.2s ease-in-out;
                     margin-right: 5px;
                 }
             }
-            .button:focus{
+            .button:focus {
                 border: 1px solid transparent;
             }
-            .button:hover  .svgiconUp{
+            .button:hover .svgiconUp {
                 position: relative;
                 rotate: 42deg;
             }
-            .DownBtn{
+            .DownBtn {
                 position: absolute;
                 margin-top: 5px;
                 margin-left: -90px;
@@ -209,7 +255,7 @@ $corTexto: #ffffff;
                 border: 1px solid #fff;
                 border-radius: 0px 5px 5px 0px;
                 background-color: rgb(7, 16, 46);
-                color: #FB3740;
+                color: #fb3740;
                 transition: all 0.3s ease-in-out;
 
                 .Btn {
@@ -223,7 +269,7 @@ $corTexto: #ffffff;
                     justify-content: center;
                     cursor: pointer;
                     position: relative;
-                    transition-duration: .3s;
+                    transition-duration: 0.3s;
                     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
 
                     .svgIcon {
@@ -248,7 +294,7 @@ $corTexto: #ffffff;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        transition-duration: .2s;
+                        transition-duration: 0.2s;
                         pointer-events: none;
                         letter-spacing: 0.5px;
                     }
@@ -262,12 +308,12 @@ $corTexto: #ffffff;
                         background-position: center;
                         transform: rotate(45deg);
                         left: -5%;
-                        transition-duration: .3s;
+                        transition-duration: 0.3s;
                     }
                 }
             }
         }
-        .formBtn:hover{
+        .formBtn:hover {
             .inputBtn {
                 opacity: 1 !important;
                 margin-left: -250px !important;
@@ -278,11 +324,11 @@ $corTexto: #ffffff;
                 margin-left: -5px !important;
             }
             .DownBtn:hover {
-                transition-duration: .3s;
+                transition-duration: 0.3s;
 
                 .tooltip {
                     opacity: 1;
-                    transition-duration: .3s;
+                    transition-duration: 0.3s;
                 }
                 .icon2 {
                     border-bottom: 2px solid rgb(235, 235, 235);
@@ -291,11 +337,12 @@ $corTexto: #ffffff;
                 }
                 .svgIcon {
                     fill: rgb(255, 255, 255);
-                    animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: slide-in-top 0.6s
+                        cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
                 }
             }
         }
-        .formEmail{
+        .formEmail {
             width: fit-content;
             display: flex;
             justify-content: center;
@@ -304,8 +351,10 @@ $corTexto: #ffffff;
             margin-top: 15px;
             position: relative;
 
-            @media screen and (min-width:  993px){ display: none;}
-            .inputBtn{
+            @media screen and (min-width: 993px) {
+                display: none;
+            }
+            .inputBtn {
                 padding: 18px 15px 15px 18px;
                 border: 1px solid #fff;
                 border-radius: 5px;
@@ -316,31 +365,33 @@ $corTexto: #ffffff;
                 color: aliceblue;
                 transition: all 0.3s ease-in-out;
             }
-            .inputBtn:focus{
+            .inputBtn:focus {
                 outline: none;
             }
-            .sendbtn{
+            .sendbtn {
                 position: absolute;
                 right: 4px;
                 width: 50px;
                 height: 50px;
                 display: inline-block;
-                background: linear-gradient(36deg, #CB7C3E 0%, #FB3740 100%);
+                background: linear-gradient(36deg, #cb7c3e 0%, #fb3740 100%);
 
-                .svgiconUp{
+                .svgiconUp {
                     fill: #fff;
                     color: #fff;
                 }
             }
         }
-        .Linkcv{
+        .Linkcv {
             margin-top: 15px;
-            @media screen and (min-width:  993px){display: none;}
-            a{
+            @media screen and (min-width: 993px) {
+                display: none;
+            }
+            a {
                 text-decoration: none;
                 color: #fff;
             }
-            a:hover{
+            a:hover {
                 text-decoration: underline;
             }
         }
@@ -349,13 +400,13 @@ $corTexto: #ffffff;
 
 @keyframes slide-in-top {
     0% {
-      transform: translateY(-10px);
-      opacity: 0;
+        transform: translateY(-10px);
+        opacity: 0;
     }
-  
+
     100% {
-      transform: translateY(0px);
-      opacity: 1;
+        transform: translateY(0px);
+        opacity: 1;
     }
-  }
+}
 </style>
