@@ -2,43 +2,76 @@
     <div class="container-fluid">
         <LayoutTopPages>
             <particlesCircles />
-            <template #titlePage>
-                Contatos
-            </template>
+            <template #titlePage> Contatos </template>
         </LayoutTopPages>
 
         <div class="row desktop">
             <div class="col-12">
                 <div class="contactsUser">
-                    <div v-for="list in listContact" :key="list"
-                    @click="clickSocial(list.class)" :class="['IconsContacts', list.class]">
+                    <div
+                        v-for="list in listContact"
+                        :key="list"
+                        @click="clickSocial(list.class)"
+                        :class="['IconsContacts', list.class]"
+                    >
                         <span class="tooltip">{{ list.title }}</span>
                         <div v-html="list.icon"></div>
                     </div>
-                    <div class="description" v-if="RedSocial === null">Clique para mais detalhes
-                    <br> 
-                    <strong>
-                        <span @click="copiarTexto('marcellosh.12@gmail.com')" class="LinkEmail">marcellosh.12@gmail.com</span>
-                    </strong>
+                    <div class="description" v-if="RedSocial === null">
+                        Clique para mais detalhes
+                        <br />
+                        <strong>
+                            <span
+                                @click="copiarTexto('marcellosh.12@gmail.com')"
+                                class="LinkEmail"
+                            >
+                                marcellosh.12@gmail.com
+                            </span>
+                        </strong>
                     </div>
                 </div>
             </div>
             <div class="col-12">
                 <div class="detailsContacts">
-                    <div v-for="number in listNumber" :key="number"
-                    :class="['CardAppContacts', {'AppTopVisible': RedSocialOK(number.TypeSocial)}]">
-                        <span :class="['number', number.TypeSocial + 'Bg']">{{ number.number }}</span>
-                        <span :class="['copy', number.TypeSocial + 'Bg']" @click="copiarTexto(number.number)"><i v-html="icons.copyIcon"></i></span>
-                        <span :class="['Enviar', number.TypeSocial + 'Bg']" @click="AbrirLink(number.TypeSocial)">
-                            <span class="iconSend"><i v-html="icons.sendIcon"></i></span>
+                    <div
+                        v-for="number in listNumber"
+                        :key="number"
+                        :class="[
+                            'CardAppContacts',
+                            { AppTopVisible: RedSocialOK(number.TypeSocial) },
+                        ]"
+                    >
+                        <span :class="['number', number.TypeSocial + 'Bg']">{{
+                            number.number
+                        }}</span>
+                        <span
+                            :class="['copy', number.TypeSocial + 'Bg']"
+                            @click="copiarTexto(number.number)"
+                            ><i v-html="icons.copyIcon"></i
+                        ></span>
+                        <span
+                            :class="['Enviar', number.TypeSocial + 'Bg']"
+                            @click="AbrirLink(number.TypeSocial)"
+                        >
+                            <span class="iconSend"
+                                ><i v-html="icons.sendIcon"></i
+                            ></span>
                         </span>
-                        <br> <div class="textInfo">{{ number.msg }}</div>
+                        <br />
+                        <div class="textInfo">{{ number.msg }}</div>
                     </div>
-                    <div v-for="social in ListRedsocial" :key="social"
-                    :class="['CardAppContacts', {'AppTopVisible': RedSocialOK(social.TypeSocial)}]" 
-                    @click="AbrirLink(social.TypeSocial)" >
+                    <div
+                        v-for="social in ListRedsocial"
+                        :key="social"
+                        :class="[
+                            'CardAppContacts',
+                            { AppTopVisible: RedSocialOK(social.TypeSocial) },
+                        ]"
+                        @click="AbrirLink(social.TypeSocial)"
+                    >
                         <span :class="['number', social.TypeSocial + 'Bg']">
-                            Abrir {{ social.titleRede}}: <u>{{ social.NameRede }}</u> 
+                            Abrir {{ social.titleRede }}:
+                            <u>{{ social.NameRede }}</u>
                         </span>
                     </div>
                 </div>
@@ -46,33 +79,83 @@
         </div>
         <div class="row mobile">
             <div class="accordion" id="accordioncontacts">
-                <div class="accordion-item" v-for="list in listNumber" :key="list">
+                <div
+                    class="accordion-item"
+                    v-for="list in listNumber"
+                    :key="list"
+                >
                     <h2 class="accordion-header" :id="list.TypeSocial + 'id'">
-                    <button 
-                    :class="['accordion-btn', list.TypeSocial + 'Bg']" type="button" data-bs-toggle="collapse" :data-bs-target="'#' + list.TypeSocial + 'Contact'" aria-expanded="false" :aria-controls="list.class + 'Contact'">
-                        <div v-html="list.icon"></div> <div class="textContact">{{ list.TypeSocial }}</div> 
-                    </button>
+                        <button
+                            :class="['accordion-btn', list.TypeSocial + 'Bg']"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            :data-bs-target="'#' + list.TypeSocial + 'Contact'"
+                            aria-expanded="false"
+                            :aria-controls="list.class + 'Contact'"
+                        >
+                            <div v-html="list.icon"></div>
+                            <div class="textContact">{{ list.TypeSocial }}</div>
+                        </button>
                     </h2>
-                    <div :id="list.TypeSocial + 'Contact'" class="accordion-collapse collapse" :aria-labelledby="list.TypeSocial + 'id'" data-bs-parent="#accordioncontacts">
-                    <div class="accordion-body">
-                        <strong>{{ list.number }}</strong>
-                        <button @click="AbrirLink(list.TypeSocial)" class="btn" type="button"><i v-html="icons.sendIcon"></i></button>
-                        <button @click="copiarTexto(list.number)" class="btn" type="button"><i v-html="icons.copyIcon"></i></button>
-                    </div>
+                    <div
+                        :id="list.TypeSocial + 'Contact'"
+                        class="accordion-collapse collapse"
+                        :aria-labelledby="list.TypeSocial + 'id'"
+                        data-bs-parent="#accordioncontacts"
+                    >
+                        <div class="accordion-body">
+                            <strong>{{ list.number }}</strong>
+                            <button
+                                @click="AbrirLink(list.TypeSocial)"
+                                class="btn"
+                                type="button"
+                            >
+                                <i v-html="icons.sendIcon"></i>
+                            </button>
+                            <button
+                                @click="copiarTexto(list.number)"
+                                class="btn"
+                                type="button"
+                            >
+                                <i v-html="icons.copyIcon"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item" v-for="list in ListRedsocial" :key="list">
+                <div
+                    class="accordion-item"
+                    v-for="list in ListRedsocial"
+                    :key="list"
+                >
                     <h2 class="accordion-header" :id="list.TypeSocial + 'id'">
-                    <button 
-                    :class="['accordion-btn', list.TypeSocial + 'Bg']" type="button" data-bs-toggle="collapse" :data-bs-target="'#' + list.TypeSocial + 'Contact'" aria-expanded="false" :aria-controls="list.class + 'Contact'">
-                        <div v-html="list.icon"></div> <div class="textContact">{{ list.TypeSocial }}</div> 
-                    </button>
+                        <button
+                            :class="['accordion-btn', list.TypeSocial + 'Bg']"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            :data-bs-target="'#' + list.TypeSocial + 'Contact'"
+                            aria-expanded="false"
+                            :aria-controls="list.class + 'Contact'"
+                        >
+                            <div v-html="list.icon"></div>
+                            <div class="textContact">{{ list.TypeSocial }}</div>
+                        </button>
                     </h2>
-                    <div :id="list.TypeSocial + 'Contact'" class="accordion-collapse collapse" :aria-labelledby="list.TypeSocial + 'id'" data-bs-parent="#accordioncontacts">
-                    <div class="accordion-body">
-                        <strong>{{ list.NameRede }}</strong>
-                        <button @click="AbrirLink(list.TypeSocial)" class="btn" type="button"><i v-html="icons.sendIcon"></i></button>
-                    </div>
+                    <div
+                        :id="list.TypeSocial + 'Contact'"
+                        class="accordion-collapse collapse"
+                        :aria-labelledby="list.TypeSocial + 'id'"
+                        data-bs-parent="#accordioncontacts"
+                    >
+                        <div class="accordion-body">
+                            <strong>{{ list.NameRede }}</strong>
+                            <button
+                                @click="AbrirLink(list.TypeSocial)"
+                                class="btn"
+                                type="button"
+                            >
+                                <i v-html="icons.sendIcon"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,20 +164,27 @@
 </template>
 <style lang="scss" scoped>
 .desktop {
-    @media screen and (max-width: 400px) { display: none; }
+    height: 55dvh;
+    @media screen and (max-width: 400px) {
+        display: none;
+    }
     .col-12 {
         position: relative;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+
         .contactsUser {
             color: black;
             width: fit-content;
-            padding: 5px  50px  5px  50px; 
+            height: 150px;
+            padding: 5px 50px 5px 50px;
             border-radius: 12px;
             float: left;
             border: 0px solid rgb(179, 179, 179);
+            margin-top: -50px;
+            position: absolute;
 
             @media screen and (max-width: 396px) {
                 float: left;
@@ -104,10 +194,10 @@
                 flex-direction: column;
             }
 
-            .LinkEmail{
+            .LinkEmail {
                 cursor: pointer;
                 text-decoration: none;
-                color:#000000;
+                color: #000000;
             }
             .IconsContacts {
                 position: relative;
@@ -117,7 +207,6 @@
                 font-size: 3rem;
                 cursor: pointer;
                 transition: all 0.2s ease-in-out;
-                
 
                 .tooltip {
                     position: absolute;
@@ -145,22 +234,40 @@
                     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 }
             }
-            .whatsapp { color: #00860d; }
-            .whatsapp:hover { color: #062c09; }
-            .telegram { color: #2294cf; }
-            .telegram:hover { color: #185e81; }
-            .linkedin { color: #126bc4; }
-            .linkedin:hover { color: #0e4781; }
-            .facebook { color: #415e9a; }
-            .facebook:hover { color: #253453; }
+            .whatsapp {
+                color: #00860d;
+            }
+            .whatsapp:hover {
+                color: #062c09;
+            }
+            .telegram {
+                color: #2294cf;
+            }
+            .telegram:hover {
+                color: #185e81;
+            }
+            .linkedin {
+                color: #126bc4;
+            }
+            .linkedin:hover {
+                color: #0e4781;
+            }
+            .facebook {
+                color: #415e9a;
+            }
+            .facebook:hover {
+                color: #253453;
+            }
 
-            .description{
+            .description {
                 width: 100%;
                 text-align: center;
                 font-weight: 400;
                 transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-                @media screen and (max-width: 396px) {float: left;}
+                @media screen and (max-width: 396px) {
+                    float: left;
+                }
             }
         }
         .detailsContacts {
@@ -168,46 +275,49 @@
             justify-content: center;
             align-items: center;
 
-            .CardAppContacts{
-                margin-top: 450px;
+            .CardAppContacts {
+                margin-top: 150px;
                 padding: 10px;
                 color: aliceblue;
-                font-family: 'Titillium Web', sans-serif;
+                font-family: "Titillium Web", sans-serif;
                 pointer-events: none;
                 transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 opacity: 0;
                 position: absolute;
 
-                .copy{ height: 100%; }
-                .number, .Enviar, .copy {
+                .copy {
+                    height: 100%;
+                }
+                .number,
+                .Enviar,
+                .copy {
                     border-radius: 4px;
                     box-shadow: 0 0 10px rgba(17, 17, 17, 0.5);
                     margin-right: 2px;
                     padding: 13px;
                     cursor: pointer;
 
-                    .iconSend{
+                    .iconSend {
                         transform: rotate(-30deg);
-                        transition: all .2s ease-in-out;
+                        transition: all 0.2s ease-in-out;
                     }
                 }
-                .Enviar:hover{
-                    .iconSend{
+                .Enviar:hover {
+                    .iconSend {
                         transform: rotate(0deg);
                     }
                 }
-                .textInfo{
+                .textInfo {
                     position: absolute;
                     margin-top: 20px;
                     color: #3f3f3f;
                     text-align: center;
                     width: 93%;
                     font-weight: 400;
-                    
                 }
             }
-            .AppTopVisible{
-                margin-top: 150px !important;
+            .AppTopVisible {
+                margin-top: -200px !important;
                 opacity: 1;
                 visibility: visible;
                 pointer-events: auto;
@@ -219,8 +329,10 @@
     display: none;
     margin-top: 30px;
     margin-bottom: 30px;
-    font-family: 'Titillium Web', sans-serif;
-    @media screen and (max-width: 400px) { display: block; }
+    font-family: "Titillium Web", sans-serif;
+    @media screen and (max-width: 400px) {
+        display: block;
+    }
 
     .accordion-item {
         border: 0px;
@@ -230,7 +342,6 @@
             display: flex;
             align-items: center;
 
-            
             .accordion-btn {
                 outline: none !important;
                 border: none !important;
@@ -240,7 +351,7 @@
                 text-align: left;
                 font-size: 1.4rem;
                 color: rgb(255, 255, 255);
-                font-family:inherit;
+                font-family: inherit;
                 font-weight: 600;
                 box-shadow: none;
                 display: flex;
@@ -255,103 +366,150 @@
         }
         .accordion-body {
             border: 1px solid #ccc;
-            font-family:inherit;
-            @media screen and (max-width: 345px) { font-size: 0.8rem; }
-            button{
+            font-family: inherit;
+            @media screen and (max-width: 345px) {
+                font-size: 0.8rem;
+            }
+            button {
                 position: relative;
                 float: right;
                 margin-left: 3px;
                 margin-top: -10px;
 
-                @media screen and (max-width: 310px) { margin-left: 0px; }
+                @media screen and (max-width: 310px) {
+                    margin-left: 0px;
+                }
             }
         }
     }
-
 }
-.whatsappBg{ background-color: rgb(0, 134, 13) !important; }
-.whatsappBg:hover{ background-color: rgb(3, 109, 13) !important; }
-.linkedinBg{ background-color: rgb(19, 80, 141) !important; }
-.linkedinBg:hover{ background-color: rgb(13, 47, 82) !important; }
-.telegramBg{ background-color: rgb(27, 99, 136) !important; }
-.telegramBg:hover{ background-color: rgb(17, 60, 82) !important; }
-.facebookBg{ background-color: rgb(45, 64, 102) !important; }
-.facebookBg:hover{ background-color: rgb(29, 41, 65) !important; }
+.whatsappBg {
+    background-color: rgb(0, 134, 13) !important;
+}
+.whatsappBg:hover {
+    background-color: rgb(3, 109, 13) !important;
+}
+.linkedinBg {
+    background-color: rgb(19, 80, 141) !important;
+}
+.linkedinBg:hover {
+    background-color: rgb(13, 47, 82) !important;
+}
+.telegramBg {
+    background-color: rgb(27, 99, 136) !important;
+}
+.telegramBg:hover {
+    background-color: rgb(17, 60, 82) !important;
+}
+.facebookBg {
+    background-color: rgb(45, 64, 102) !important;
+}
+.facebookBg:hover {
+    background-color: rgb(29, 41, 65) !important;
+}
 
-.whatsappBg{ @media screen and (max-width: 400px) { border-radius: 4px 4px 0px 0px; } }
-.facebookBg{ @media screen and (max-width: 400px) { border-radius: 0px 0px 4px 4px; } }
-
-
-
+.whatsappBg {
+    @media screen and (max-width: 400px) {
+        border-radius: 4px 4px 0px 0px;
+    }
+}
+.facebookBg {
+    @media screen and (max-width: 400px) {
+        border-radius: 0px 0px 4px 4px;
+    }
+}
 </style>
 
 <script setup>
 import { ref } from "vue";
-import svgIcons from '@resources/plugins/svg.js';
+import svgIcons from "@resources/plugins/svg.js";
 
 const RedSocial = ref(null);
 
-const clickSocial = (btn) => { 
-    if(RedSocial.value === null) RedSocial.value = btn; else
-    if(RedSocial.value === null || RedSocial.value === btn) RedSocial.value = null;
+const clickSocial = (btn) => {
+    if (RedSocial.value === null) RedSocial.value = btn;
+    else if (RedSocial.value === null || RedSocial.value === btn)
+        RedSocial.value = null;
     else RedSocial.value = btn;
-}
-const RedSocialOK = (ok) => { 
-    if(RedSocial.value === ok) return true;
- }
+};
+const RedSocialOK = (ok) => {
+    if (RedSocial.value === ok) return true;
+};
 const listContact = [
-    { title: 'WhatsApp', class: 'whatsapp', icon: svgIcons.whatsapp },
-    { title: 'Telegram', class: 'telegram', icon: svgIcons.telegram },
-    { title: 'Linkedin', class: 'linkedin', icon: svgIcons.linkedin },
-    { title: 'Facebook', class: 'facebook', icon: svgIcons.facebook },
-]
+    { title: "WhatsApp", class: "whatsapp", icon: svgIcons.whatsapp },
+    { title: "Telegram", class: "telegram", icon: svgIcons.telegram },
+    { title: "Linkedin", class: "linkedin", icon: svgIcons.linkedin },
+    { title: "Facebook", class: "facebook", icon: svgIcons.facebook },
+];
 const listNumber = [
-    { number: '+55 (94) 9 98131-6065', TypeSocial: 'whatsapp', msg: 'Contato pelo Whatsapp', icon: svgIcons.whatsapp },
-    { number: '+55 (94) 9 98131-6065', TypeSocial: 'telegram', msg: 'Contato pelo Telegram', icon: svgIcons.telegram }
-]
+    {
+        number: "+55 (94) 9 98131-6065",
+        TypeSocial: "whatsapp",
+        msg: "Contato pelo Whatsapp",
+        icon: svgIcons.whatsapp,
+    },
+    {
+        number: "+55 (94) 9 98131-6065",
+        TypeSocial: "telegram",
+        msg: "Contato pelo Telegram",
+        icon: svgIcons.telegram,
+    },
+];
 const ListRedsocial = [
-    { titleRede: 'Linkedin', TypeSocial: 'linkedin', NameRede: 'marcellohenrique-pro', icon: svgIcons.linkedin },
-    { titleRede: 'Facebook', TypeSocial: 'facebook', NameRede: 'marcelo.sousahenrique.92', icon: svgIcons.facebook },
-]
+    {
+        titleRede: "Linkedin",
+        TypeSocial: "linkedin",
+        NameRede: "marcellohenrique-pro",
+        icon: svgIcons.linkedin,
+    },
+    {
+        titleRede: "Facebook",
+        TypeSocial: "facebook",
+        NameRede: "marcelo.sousahenrique.92",
+        icon: svgIcons.facebook,
+    },
+];
 
 const icons = {
     sendIcon: svgIcons.sendicon,
     copyIcon: svgIcons.copyIcon,
-}
+};
 
-function AbrirLink(link){
-    let url = '';
-    if(link === 'linkedin') url = 'https://www.linkedin.com/in/marcellohenrique-pro/';
-    else if(link === 'facebook') url = 'https://www.facebook.com/marcelo.sousahenrique.92';
-    else if(link === 'whatsapp') url = 'https://wa.me/5594981319065';
-    else if(link === 'telegram') url = 'https://t.me/MarceloHenriquePro';
-    window.open(url, '_blank');
+function AbrirLink(link) {
+    let url = "";
+    if (link === "linkedin")
+        url = "https://www.linkedin.com/in/marcellohenrique-pro/";
+    else if (link === "facebook")
+        url = "https://www.facebook.com/marcelo.sousahenrique.92";
+    else if (link === "whatsapp") url = "https://wa.me/5594981319065";
+    else if (link === "telegram") url = "https://t.me/MarceloHenriquePro";
+    window.open(url, "_blank");
 }
 
 function copiarTexto(conteudo) {
-    var inputTemporario = document.createElement('input');
-    inputTemporario.setAttribute('value', conteudo);
+    var inputTemporario = document.createElement("input");
+    inputTemporario.setAttribute("value", conteudo);
     document.body.appendChild(inputTemporario);
     inputTemporario.select();
 
-    document.execCommand('copy');
+    document.execCommand("copy");
     document.body.removeChild(inputTemporario);
 
     const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-    toast.addEventListener('mouseenter', Swal.stopTimer)
-    toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-    })
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+    });
 
     Toast.fire({
-    icon: 'success',
-    title: 'Copiado com successo!'
-    })
+        icon: "success",
+        title: "Copiado com successo!",
+    });
 }
 </script>
