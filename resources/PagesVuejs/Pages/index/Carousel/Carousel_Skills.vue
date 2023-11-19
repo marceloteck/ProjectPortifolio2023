@@ -150,7 +150,7 @@ export default defineComponent({
         breakpoints: {
             // 300px and up
             300: {
-                itemsToShow: 1,
+                itemsToShow: 3,
                 snapAlign: "center",
             },
             // 425px and up
