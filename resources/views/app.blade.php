@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <!-- Styles -->
         @include('AssetsGlobal/globalCss')
+        @include('configApp/analytics')
 
         <!-- Scripts -->
         @routes
