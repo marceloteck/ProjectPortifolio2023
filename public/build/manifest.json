@@ -1,6 +1,6 @@
 {
   "resources/PagesVuejs/Pages/about/about.vue": {
-    "file": "assets/about-6465dae4.js",
+    "file": "assets/about-15dab633.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -15,7 +15,7 @@
     "css": [
       "assets/cardSkills-47c1f31b.css"
     ],
-    "file": "assets/cardSkills-da6b96e9.js",
+    "file": "assets/cardSkills-e9bb3bd8.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -30,7 +30,7 @@
     "css": [
       "assets/mainAbout-00e9bb5a.css"
     ],
-    "file": "assets/mainAbout-705f30e1.js",
+    "file": "assets/mainAbout-5e6c46c4.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -45,7 +45,7 @@
     "css": [
       "assets/contact-ec63f19f.css"
     ],
-    "file": "assets/contact-5f6480e6.js",
+    "file": "assets/contact-1c5db854.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -53,14 +53,14 @@
     "src": "resources/PagesVuejs/Pages/contact/contact.vue"
   },
   "resources/PagesVuejs/Pages/contact/mainContato.css": {
-    "file": "assets/mainContato-43c8cde9.css",
+    "file": "assets/mainContato-713ed7d5.css",
     "src": "resources/PagesVuejs/Pages/contact/mainContato.css"
   },
   "resources/PagesVuejs/Pages/contact/mainContato.vue": {
     "css": [
-      "assets/mainContato-43c8cde9.css"
+      "assets/mainContato-713ed7d5.css"
     ],
-    "file": "assets/mainContato-f8e0e14d.js",
+    "file": "assets/mainContato-cd685253.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -75,7 +75,7 @@
     "css": [
       "assets/curriculo-f498fb87.css"
     ],
-    "file": "assets/curriculo-b53bd708.js",
+    "file": "assets/curriculo-47faf1d8.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -90,7 +90,7 @@
     "css": [
       "assets/mainCv-945ca49d.css"
     ],
-    "file": "assets/mainCv-63dce392.js",
+    "file": "assets/mainCv-4e539bf1.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -98,7 +98,7 @@
     "src": "resources/PagesVuejs/Pages/cv/mainCv.vue"
   },
   "resources/PagesVuejs/Pages/cv/navCv.vue": {
-    "file": "assets/navCv-d01cf3ce.js",
+    "file": "assets/navCv-a1c16502.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -106,7 +106,7 @@
     "src": "resources/PagesVuejs/Pages/cv/navCv.vue"
   },
   "resources/PagesVuejs/Pages/education/education.vue": {
-    "file": "assets/education-9e6479db.js",
+    "file": "assets/education-2d5a1aca.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -121,7 +121,7 @@
     "css": [
       "assets/mainEducation-b558ef24.css"
     ],
-    "file": "assets/mainEducation-c5bf632f.js",
+    "file": "assets/mainEducation-6f979a84.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -129,7 +129,7 @@
     "src": "resources/PagesVuejs/Pages/education/mainEducation.vue"
   },
   "resources/PagesVuejs/Pages/experiences/experiences.vue": {
-    "file": "assets/experiences-53d74e78.js",
+    "file": "assets/experiences-94569382.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -144,7 +144,7 @@
     "css": [
       "assets/mainExperiences-bd35aee6.css"
     ],
-    "file": "assets/mainExperiences-973f06dd.js",
+    "file": "assets/mainExperiences-9db7c838.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -159,7 +159,7 @@
     "css": [
       "assets/BarraBottomUser-97287a24.css"
     ],
-    "file": "assets/BarraBottomUser-61d74ff3.js",
+    "file": "assets/BarraBottomUser-1e4302e6.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -174,7 +174,7 @@
     "css": [
       "assets/Carousel_Skills-c103545c.css"
     ],
-    "file": "assets/Carousel_Skills-4d5cf64a.js",
+    "file": "assets/Carousel_Skills-f6eff38c.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -182,14 +182,14 @@
     "src": "resources/PagesVuejs/Pages/index/Carousel/Carousel_Skills.vue"
   },
   "resources/PagesVuejs/Pages/index/EfeitoDigitacao.css": {
-    "file": "assets/EfeitoDigitacao-e21348cc.css",
+    "file": "assets/EfeitoDigitacao-76fd7f70.css",
     "src": "resources/PagesVuejs/Pages/index/EfeitoDigitacao.css"
   },
   "resources/PagesVuejs/Pages/index/EfeitoDigitacao.vue": {
     "css": [
-      "assets/EfeitoDigitacao-e21348cc.css"
+      "assets/EfeitoDigitacao-76fd7f70.css"
     ],
-    "file": "assets/EfeitoDigitacao-2366eb7c.js",
+    "file": "assets/EfeitoDigitacao-30b210d3.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -204,7 +204,7 @@
     "css": [
       "assets/cardProjectsIndex-e2ac168f.css"
     ],
-    "file": "assets/cardProjectsIndex-92a504bb.js",
+    "file": "assets/cardProjectsIndex-347bc96f.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -219,7 +219,7 @@
     "css": [
       "assets/curriculoEmail-4be68b13.css"
     ],
-    "file": "assets/curriculoEmail-8d3980c4.js",
+    "file": "assets/curriculoEmail-583a9344.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -234,7 +234,7 @@
     "css": [
       "assets/index-d68c0a98.css"
     ],
-    "file": "assets/index-37f71341.js",
+    "file": "assets/index-9051b8c5.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -249,7 +249,7 @@
     "css": [
       "assets/mainIndex-5c0aa431.css"
     ],
-    "file": "assets/mainIndex-6e30f9fb.js",
+    "file": "assets/mainIndex-95a50132.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -257,7 +257,7 @@
     "src": "resources/PagesVuejs/Pages/index/mainIndex.vue"
   },
   "resources/PagesVuejs/Pages/project/mainProject.vue": {
-    "file": "assets/mainProject-5e52ff90.js",
+    "file": "assets/mainProject-5be56d0e.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -265,7 +265,7 @@
     "src": "resources/PagesVuejs/Pages/project/mainProject.vue"
   },
   "resources/PagesVuejs/Pages/project/project.vue": {
-    "file": "assets/project-46607d28.js",
+    "file": "assets/project-0017aeed.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -273,7 +273,7 @@
     "src": "resources/PagesVuejs/Pages/project/project.vue"
   },
   "resources/PagesVuejs/Pages/testes/email.vue": {
-    "file": "assets/email-d04dc1ac.js",
+    "file": "assets/email-3b8a5875.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -281,7 +281,7 @@
     "src": "resources/PagesVuejs/Pages/testes/email.vue"
   },
   "resources/PagesVuejs/components/Applications/AppHead.vue": {
-    "file": "assets/AppHead-d713b5cf.js",
+    "file": "assets/AppHead-671858c5.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -296,7 +296,7 @@
     "css": [
       "assets/Loading-6c2c9b8f.css"
     ],
-    "file": "assets/Loading-568f1853.js",
+    "file": "assets/Loading-4e4fde00.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -311,7 +311,7 @@
     "css": [
       "assets/LoadingContainer-183f3466.css"
     ],
-    "file": "assets/LoadingContainer-39408161.js",
+    "file": "assets/LoadingContainer-6ada2137.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -326,7 +326,7 @@
     "css": [
       "assets/LoadingContainerDiv-d37eaac0.css"
     ],
-    "file": "assets/LoadingContainerDiv-27a59876.js",
+    "file": "assets/LoadingContainerDiv-ae1030df.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -341,7 +341,7 @@
     "css": [
       "assets/particles-f6e9213a.css"
     ],
-    "file": "assets/particles-8df31320.js",
+    "file": "assets/particles-0eeb5839.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -356,7 +356,7 @@
     "css": [
       "assets/particles-f6e9213a.css"
     ],
-    "file": "assets/particlesCircles-38a7eb59.js",
+    "file": "assets/particlesCircles-49e568a2.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -371,7 +371,7 @@
     "css": [
       "assets/TheFooter-d452b93b.css"
     ],
-    "file": "assets/TheFooter-3261103e.js",
+    "file": "assets/TheFooter-b2c28fce.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -386,7 +386,7 @@
     "css": [
       "assets/buttonsSocial-d76f5a5c.css"
     ],
-    "file": "assets/buttonsSocial-3bb70e04.js",
+    "file": "assets/buttonsSocial-5d475e98.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -401,7 +401,7 @@
     "css": [
       "assets/buttonsSocialsquare-7ff8cd1c.css"
     ],
-    "file": "assets/buttonsSocialsquare-66245050.js",
+    "file": "assets/buttonsSocialsquare-fccacc13.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -416,7 +416,7 @@
     "css": [
       "assets/imagensWeb-31051fb5.css"
     ],
-    "file": "assets/imagensWeb-ee16818a.js",
+    "file": "assets/imagensWeb-38d794c1.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -431,7 +431,7 @@
     "css": [
       "assets/imgEfects-44bf04f3.css"
     ],
-    "file": "assets/imgEfects-ab627380.js",
+    "file": "assets/imgEfects-e8c94571.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -446,7 +446,7 @@
     "css": [
       "assets/LayoutTopPages-59c92846.css"
     ],
-    "file": "assets/LayoutTopPages-f5694dd3.js",
+    "file": "assets/LayoutTopPages-71b50331.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -461,7 +461,7 @@
     "css": [
       "assets/NavBar-b0b030fc.css"
     ],
-    "file": "assets/NavBar-b16b70c3.js",
+    "file": "assets/NavBar-9da328f8.js",
     "imports": [
       "resources/js/config/app.js"
     ],
@@ -469,12 +469,12 @@
     "src": "resources/PagesVuejs/components/Navs/NavBar.vue"
   },
   "resources/js/config/app.css": {
-    "file": "assets/app-a542e985.css",
+    "file": "assets/app-b9df9658.css",
     "src": "resources/js/config/app.css"
   },
   "resources/js/config/app.js": {
     "css": [
-      "assets/app-a542e985.css"
+      "assets/app-b9df9658.css"
     ],
     "dynamicImports": [
       "resources/PagesVuejs/Pages/about/about.vue",
@@ -513,7 +513,7 @@
       "resources/PagesVuejs/components/Layouts/LayoutTopPages.vue",
       "resources/PagesVuejs/components/Navs/NavBar.vue"
     ],
-    "file": "assets/app-e1e7141c.js",
+    "file": "assets/app-be56137b.js",
     "isEntry": true,
     "src": "resources/js/config/app.js"
   }
