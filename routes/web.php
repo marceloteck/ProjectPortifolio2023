@@ -42,5 +42,6 @@ route::get('/curriculo', function () {
 
 // TESTES
 // Route::get('/testemail', function () { return Inertia::render('Pages/testes/email'); })->name('test');
+ Route::get('/teste', function () { return Inertia::render('Pages/testes/test'); })->name('test');
 
 require __DIR__.'/auth.php';

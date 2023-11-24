@@ -1,4 +1,4 @@
-s<template>
+<template>
     <article>
         <AppHead title="Formação e Cursos" />
         <header>
