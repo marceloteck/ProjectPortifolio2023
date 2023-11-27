@@ -19,7 +19,7 @@
                 </div>
                 <div class="card__content">
                     <div class="title">{{ itens.title }}</div>
-                    <a :href="itens.url" target="_blank">
+                    <a v-if="itens.url" :href="itens.url" target="_blank">
                         <div class="iconView">
                             <div v-html="internet"></div>
                         </div>
@@ -79,7 +79,7 @@ const cardProjects = [
         icon: svgIcons.laravel,
         urlImg: "/Assets/image/posts/send-email-pro.png",
         github: "https://github.com/marceloteck/Send-Email-Laravel",
-        url: "https://info.marcelohenriquepro.dev.br/p/Send-Email-Laravel",
+        //url: "https://info.marcelohenriquepro.dev.br/p/Send-Email-Laravel",
     },
     {
         title: "Assistente Virtual Jarvis",
